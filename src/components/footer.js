@@ -58,36 +58,36 @@ function Footer() {
         <div className='flex flex-col justify-between'>
           <h1 className='text-lg font-semibold my-4'>Follow Us On</h1>
           <a
-            className='hover:text-cyan cursor-pointer'
+            className='hover:text-cyan cursor-pointer m-1'
             href='https://www.facebook.com/quanber1003'
             target='_blank'
           >
-            <i className='fa fa-facebook-official m-2'></i> Facebook
+            <i className='fa fa-facebook-official'></i> Facebook
           </a>
           <a
-            className='hover:text-cyan cursor-pointer'
+            className='hover:text-cyan cursor-pointer  m-1'
             href='https://twitter.com/ber1xD'
             target='_blank'
           >
-            <i className='fa fa-twitter m-2'></i> Twitter
+            <i className='fa fa-twitter'></i> Twitter
           </a>
           <a
-            className='hover:text-cyan cursor-pointer'
+            className='hover:text-cyan cursor-pointer  m-1'
             href='https://www.instagram.com/quanber123/'
             target='_blank'
           >
-            <i className='fa fa-instagram m-2'></i> Instagram
+            <i className='fa fa-instagram'></i> Instagram
           </a>
-          <a className='hover:text-cyan cursor-pointer'>
-            <i className='fa fa-youtube m-2'></i> Youtube
+          <a className='hover:text-cyan cursor-pointer  m-1'>
+            <i className='fa fa-youtube'></i> Youtube
           </a>
-          <a className='hover:text-cyan cursor-pointer'>
-            <i className='fa fa-pinterest m-2'></i> Pinterest
+          <a className='hover:text-cyan cursor-pointer  m-1'>
+            <i className='fa fa-pinterest'></i> Pinterest
           </a>
         </div>
       </section>
       <section className='copyright'>
-        <div className='container m-auto flex justify-between items-center py-8'>
+        <div className='container m-auto flex justify-between items-center py-6'>
           <p>Copyright Toyman | Built with Toyman by Tran Manh Quan</p>
           <img src={payments} alt='payments' />
         </div>
