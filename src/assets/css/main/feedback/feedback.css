@@ -1,0 +1,41 @@
+.feedback-users {
+  background-color: #eee;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 50px;
+}
+.slide-active {
+  animation: SlideActive 0.3s linear;
+}
+@keyframes SlideActive {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(50%);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.feedback-slide-btn-left.far.fa-arrow-alt-circle-left {
+  top: 45%;
+  left: -3%;
+}
+.feedback-slide-btn-right.far.fa-arrow-alt-circle-right {
+  top: 45%;
+  right: -3%;
+}
+.far.fa-arrow-alt-circle-left,
+.far.fa-arrow-alt-circle-right {
+  color: #ff6899;
+  border-radius: 50%;
+}
+.far.fa-arrow-alt-circle-left:hover,
+.far.fa-arrow-alt-circle-right:hover {
+  color: #4acdd5;
+}
