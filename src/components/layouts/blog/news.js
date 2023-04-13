@@ -50,23 +50,28 @@ function News({ blogs }) {
     );
   });
   const handleIncrement = useCallback(() => {
-    if (countPage > Math.ceil(blogs.length / blogsInPage - 1)) return;
-    setChange(true);
-    setCountPage(countPage + 1);
-    const newIndex =
-      currentIndex === blogs.length - blogsInPage
-        ? currentIndex
-        : currentIndex + blogsInPage;
-    setCurrentIndex(newIndex);
-  }, [countPage]);
+    if (countPage >= Math.ceil(blogs.length / blogsInPage)) {
+      return;
+    } else {
+      setChange(true);
+      setCountPage(countPage + 1);
+      const newIndex =
+        currentIndex === blogs.length - blogsInPage
+          ? currentIndex
+          : currentIndex + blogsInPage;
+      setCurrentIndex(newIndex);
+    }
+  }, [countPage, blogs.length, currentIndex]);
   const handleDecrement = useCallback(() => {
-    if (countPage === 1) return;
-    setChange(false);
-    setCountPage(countPage - 1);
-    if (currentIndex === 0) return;
-    const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
-    setCurrentIndex(newIndex);
-  }, [countPage]);
+    if (countPage === 1) {
+      return;
+    } else {
+      setChange(false);
+      setCountPage(countPage - 1);
+      const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
+      setCurrentIndex(newIndex);
+    }
+  }, [countPage, blogs.length, currentIndex]);
   return (
     <section className='left-active'>
       <div className='flex nav-blog items-center'>
