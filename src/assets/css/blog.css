@@ -1,3 +1,7 @@
+.nav-blog {
+  background-color: #f8f8f8;
+  height: 80px;
+}
 .blog {
   width: calc(100% / 3 - 100px);
   margin: 40px;
@@ -64,3 +68,9 @@
 /* .hidden {
   display: none;
 } */
+.blog-detail-date {
+  color: #a4a3a3;
+}
+.blog-detail-img {
+  border-radius: 12px;
+}

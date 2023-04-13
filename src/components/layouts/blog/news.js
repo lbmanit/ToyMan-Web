@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../../../Spinner';
 import { Link } from 'react-router-dom';
 import '../../../assets/css/blog.css';
-function New({ blogs }) {
+function News({ blogs }) {
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [change, setChange] = useState(false);
@@ -15,50 +15,56 @@ function New({ blogs }) {
       transform: hoverIndex === index ? 'scale(1.2)' : 'none',
     };
     return (
-      <article
-        className='blog p-4 cursor-pointer'
+      <Link
         key={index}
-        onMouseOver={() => setHoverIndex(index)}
-        onMouseOut={() => setHoverIndex(null)}
+        className='blog p-4 cursor-pointer'
+        to={{
+          pathname: `/news/${blog.id}`,
+          search: `?blog=${JSON.stringify(blog)}`,
+        }}
       >
-        <div className='relative'>
-          <LazyLoad
-            className='img-wrapper'
-            height={563}
-            offset={100}
-            once
-            placeholder={<Spinner />}
-          >
-            <img style={styleImg} src={blog.image} alt={blog.title} />
-            <h2 className='date-blog absolute top-full z-50x px-4 py-1 -mt-6 text-base'>
-              {blog.dateUpLoad}
-            </h2>
-          </LazyLoad>
-        </div>
-        <h1 className='text-xl font-bold mt-8 mb-4 hover:text-cyan cursor-pointer'>
-          {blog.title}
-        </h1>
-        <p className='content-blog'>{blog.content}</p>
-      </article>
+        <article
+          onMouseOver={() => setHoverIndex(index)}
+          onMouseOut={() => setHoverIndex(null)}
+        >
+          <div className='relative'>
+            <LazyLoad
+              className='img-wrapper'
+              height={563}
+              offset={100}
+              once
+              placeholder={<Spinner />}
+            >
+              <img style={styleImg} src={blog.image} alt={blog.title} />
+              <h2 className='date-blog absolute top-full z-50x px-4 py-1 -mt-6 text-base'>
+                {blog.dateUpLoad}
+              </h2>
+            </LazyLoad>
+          </div>
+          <h1 className='text-xl font-bold mt-8 mb-4 hover:text-cyan cursor-pointer'>
+            {blog.title}
+          </h1>
+          <p className='content-blog'>{blog.content}</p>
+        </article>
+      </Link>
     );
   });
-  function handlePrevClick() {
-    setChange(false);
-    if (currentIndex === 0) return;
-    setCountPage((prevCount) => prevCount - 1);
-    const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
-    setCurrentIndex(newIndex);
-  }
-  function handleNextClick() {
+  const handleIncrement = useCallback(() => {
     setChange(true);
-    if (currentIndex === blogs.length - 1) return;
-    setCountPage((prevCount) => prevCount + 1);
+    setCountPage(countPage + 1);
     const newIndex =
       currentIndex === blogs.length - blogsInPage
         ? currentIndex
         : currentIndex + blogsInPage;
     setCurrentIndex(newIndex);
-  }
+  }, [countPage]);
+  const handleDecrement = useCallback(() => {
+    setChange(false);
+    setCountPage(countPage - 1);
+    if (currentIndex === 0) return;
+    const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
+    setCurrentIndex(newIndex);
+  }, [countPage]);
   return (
     <section className='left-active'>
       <div className='flex nav-blog items-center'>
@@ -80,18 +86,18 @@ function New({ blogs }) {
           className={`fa fa-angle-left text-3xl mx-4 ${
             currentIndex === 0 ? 'hidden' : ''
           }`}
-          onClick={handlePrevClick}
+          onClick={handleDecrement}
         ></i>
         <h1 className='bg-cyan text-white text-xl count-page'>{countPage}</h1>
         <i
           className={`fa fa-angle-right text-3xl mx-4 ${
             currentIndex >= blogs.length - 6 ? 'hidden' : ''
           }`}
-          onClick={handleNextClick}
+          onClick={handleIncrement}
         ></i>
       </div>
     </section>
   );
 }
 
-export default New;
+export default News;
