@@ -78,10 +78,10 @@ function Footer() {
           >
             <i className='fa fa-instagram'></i> Instagram
           </a>
-          <a className='hover:text-cyan cursor-pointer  m-1'>
+          <a href='#' className='hover:text-cyan cursor-pointer  m-1'>
             <i className='fa fa-youtube'></i> Youtube
           </a>
-          <a className='hover:text-cyan cursor-pointer  m-1'>
+          <a href='#' className='hover:text-cyan cursor-pointer  m-1'>
             <i className='fa fa-pinterest'></i> Pinterest
           </a>
         </div>
