@@ -22,3 +22,35 @@
   color: #fff;
   border-radius: 16px;
 }
+
+.fa.fa-angle-left,
+.fa.fa-angle-right {
+  cursor: pointer;
+  background-color: #f8f8f8;
+  color: #a4a3a3;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.fa.fa-angle-left:hover,
+.fa.fa-angle-right:hover {
+  color: #fff;
+  background-color: #4acdd5;
+}
+
+.count-page {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/* .hidden {
+  display: none;
+} */
