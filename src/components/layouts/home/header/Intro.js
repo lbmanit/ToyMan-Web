@@ -14,7 +14,7 @@ function Intro() {
   const [change, setChange] = useState(true);
   return (
     <section
-      className='relative flex justify-between items-center p-24 active'
+      className='relative flex justify-between items-center p-24 mb-24'
       style={backgroundIntro}
     >
       <div className={`${change ? 'next-intro' : 'prev-intro'}`}>
@@ -34,13 +34,13 @@ function Intro() {
           </a>
         </div>
       </div>
-      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-        <img
-          className={`${change ? 'next-intro' : 'prev-intro'}`}
-          src={change ? animated : h1thmb}
-          alt={change ? animated : h1thmb}
-        />
-      </LazyLoad>
+      {/* <LazyLoad height={200} offset={50} once placeholder={<Spinner />}> */}
+      <img
+        className={`${change ? 'next-intro' : 'prev-intro'}`}
+        src={change ? animated : h1thmb}
+        alt={change ? animated : h1thmb}
+      />
+      {/* </LazyLoad> */}
       <div>
         <i
           className={`absolute z-20 cursor-pointer text-cyan bottom-6 right-1/2 mx-4 ${

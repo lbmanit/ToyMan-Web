@@ -4,10 +4,12 @@ const Header = lazy(() => import('../home/header/index'));
 const Main = lazy(() => import('../home/main/index'));
 function Home() {
   return (
-    <Suspense fallback={<Spinner />}>
+    <React.Fragment>
       <Header />
-      <Main />
-    </Suspense>
+      <Suspense fallback={<Spinner />}>
+        <Main />
+      </Suspense>
+    </React.Fragment>
   );
 }
 

@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <div className='bg-light'>
-        <p className='text-cyan text-center py-2'>
+        <p className='text-cyan text-center text-base py-6'>
           Get 35% off for&nbsp;
           <a
             className='hover:text-pink transition-colors'

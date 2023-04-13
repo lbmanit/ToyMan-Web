@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   const [isSticky, setSticky] = useState(false);
   const handleScroll = () => {
-    if (window.pageYOffset > 150) {
+    if (window.pageYOffset > 200) {
       setSticky(true);
     } else {
       setSticky(false);
@@ -36,7 +36,7 @@ function Navbar() {
           <Link to='/collections'>Shop</Link>
         </li>
         <li className='m-4 header-nav'>
-          <Link to='/blog'>Blog</Link>
+          <Link to='/news'>Blog</Link>
         </li>
         <li className='m-4 header-nav'>
           <Link to='/pages'>Pages</Link>

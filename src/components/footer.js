@@ -3,11 +3,11 @@ import LazyLoad from 'react-lazyload';
 import Spinner from '../Spinner';
 import logo from '../assets/images/logo/toymanlogo.jpeg';
 import payments from '../assets/images/payments/payments_large_25c93ac6-988d-4e66-b116-eab60a12eced_large.png';
-import '../assets/css/footer/footer.css';
+import '../assets/css/footer.css';
 function Footer() {
   return (
     <footer>
-      <section className='flex justify-around items-center p-8'>
+      <section className='flex justify-around items-center p-8 active'>
         <div>
           <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
             <img className='my-2' src={logo} alt='toy-logo' />

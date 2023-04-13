@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './components/layouts/home';
-import Page404 from './components/layouts/404';
-import Navbar from './components/Navbar';
-import Footer from './components/footer';
+import Spinner from './Spinner';
+import './assets/css/animation.css';
+const Home = lazy(() => import('./components/layouts/home'));
+const Page404 = lazy(() => import('./components/layouts/404'));
+const Navbar = lazy(() => import('./components/Navbar'));
+const Footer = lazy(() => import('./components/footer'));
+const Blog = lazy(() => import('./components/layouts/blog'));
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='*' element={<Page404 />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <Suspense fallback={<Spinner />}>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='*' element={<Page404 />} />
+          <Route path='/news' element={<Blog />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </Suspense>
   );
 }
 

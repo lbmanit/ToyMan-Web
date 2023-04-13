@@ -8,10 +8,8 @@ function Categories() {
   });
   return (
     <React.Fragment>
-      <div className='category-title container m-auto'>
-        <h1 className='text-center text-3xl font-semibold mt-24'>
-          Shop By Age
-        </h1>
+      <div className='category-title container m-auto right-active'>
+        <h1 className='text-center text-3xl font-semibold'>Shop By Age</h1>
         <h3 className='text-center text-cyan text-xl mt-4 mb-8'>
           Our Collections
         </h3>

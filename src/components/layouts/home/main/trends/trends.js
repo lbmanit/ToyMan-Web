@@ -3,7 +3,7 @@ import itemsData from '../../../../../data/itemsData';
 import Featured from './navTrends/featured';
 import BestSellers from './navTrends/bestSellers';
 import NewArrivals from './navTrends/newArrivals';
-import '../../../../../assets/css/main/trends/trends.css';
+import '../../../../../assets/css/main/trends.css';
 function Trends() {
   const [Items, setItems] = useState(itemsData);
   const [selectTab, setSelectTab] = useState('featured');
@@ -45,7 +45,7 @@ function Trends() {
     }
   }
   return (
-    <div className='container m-auto'>
+    <section className='container m-auto jumpActive'>
       <h1 className='trends-title text-3xl text-center font-semibold mt-8'>
         We Love Trends
       </h1>
@@ -79,12 +79,12 @@ function Trends() {
           <h1>New Arrivals</h1>
         </li>
       </ul>
-      <div className='favorite-items flex flex-wrap jumpActive'>
+      <div className='favorite-items flex flex-wrap'>
         {selectTab === 'featured' && <Featured itemsData={Items} />}
         {selectTab === 'bestSellers' && <BestSellers itemsData={Items} />}
         {selectTab === 'newArrivals' && <NewArrivals itemsData={Items} />}
       </div>
-    </div>
+    </section>
   );
 }
 

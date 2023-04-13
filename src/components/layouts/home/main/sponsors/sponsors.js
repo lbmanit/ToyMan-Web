@@ -12,11 +12,11 @@ function Sponsors() {
     return <img key={index} src={sponsor} alt={index} />;
   });
   return (
-    <section className='container m-auto'>
+    <section className='container m-auto left-active'>
       <LazyLoad
         className='flex justify-between my-16'
         height={563}
-        offset={100}
+        offset={50}
         once
         placeholder={<Spinner />}
       >

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import '../../assets/css/404.css';
 function Page404() {
   return (
-    <section>
+    <section className='left-active'>
       <div className='flex items-center nav-404'>
         <Link to='/'>
           <h1 className='text-cyan text-xl m-2 ml-16'>Home</h1>

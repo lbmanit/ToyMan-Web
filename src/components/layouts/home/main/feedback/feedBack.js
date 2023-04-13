@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import feedBackData from './feedBackData';
-import '../../../../../assets/css/main/feedback/feedback.css';
+import '../../../../../assets/css/main/feedback.css';
 import Spinner from '../../../../../Spinner';
 
 function FeedBack() {
@@ -24,7 +24,7 @@ function FeedBack() {
     return (
       <article className='feedback-users w-1/2 m-4 p-8' key={user.id}>
         <div className='relative flex items-center'>
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+          <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
             <img src={user.avatarUser} alt={user.name} />
           </LazyLoad>
           <div className='m-4'>
@@ -41,7 +41,7 @@ function FeedBack() {
   });
 
   return (
-    <section className='container m-auto'>
+    <section className='container m-auto right-active'>
       <h1 className='text-3xl text-center mt-24'>Customer Saying</h1>
       <h3 className='text-xl text-center text-cyan m-8'>
         Customer Testimonials

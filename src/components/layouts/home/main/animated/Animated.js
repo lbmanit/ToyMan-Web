@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import animatedData from './animatedData';
-import '../../../../../assets/css/main/animated/animated.css';
+import '../../../../../assets/css/main/animated.css';
 import Spinner from '../../../../../Spinner';
 function Animated() {
   const [animated, setAnimated] = useState(animatedData);
   const animatedElement = animated.map((e) => {
     return (
       <article
-        className='main-animated cursor-pointer relative m-4 overflow-hidden'
+        className='main-animated cursor-pointer relative m-4 overflow-hidden left-active'
         key={e.id}
       >
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
           <img className='animated-img' src={e.url} alt={e.title} />
         </LazyLoad>
         <div

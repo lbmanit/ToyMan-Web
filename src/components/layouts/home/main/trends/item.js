@@ -27,7 +27,7 @@ function Item(props) {
   return (
     <article
       key={props.id}
-      className='relative main-item active'
+      className='relative main-item left-active'
       onMouseEnter={() => setIsShow(true)}
       onMouseLeave={() => setIsShow(false)}
     >
@@ -64,7 +64,7 @@ function Item(props) {
       {isShow && (
         <ul
           className={`product-action  ${
-            isShow ? 'active' : ''
+            isShow ? 'left-active' : ''
           } absolute text-xl flex flex-col z-10 top-1/4 right-8`}
         >
           <li className='product-item-action  m-2 mt-4'>
