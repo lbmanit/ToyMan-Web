@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import itemsData from '../../../../../data/itemsData';
 import Item from '../trends/item';
 function Loves() {
-  const [items, setItems] = useState(itemsData);
+  const [items, setItems] = useState([]);
+  useEffect(() => {
+    setItems(itemsData);
+  }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShow, setIsShow] = useState(false);
-
   const loveItems = () => {
     const endIndex = currentIndex + 3;
     return items.slice(currentIndex, endIndex).map((item, index) => {
       return <Item key={index} {...item} />;
     });
   };
-
   const handlePrevClick = () => {
     const newIndex = currentIndex === 0 ? items.length - 3 : currentIndex - 1;
     setCurrentIndex(newIndex);

@@ -26,21 +26,21 @@ function Intro() {
         </p>
         <p className='text-2xl mt-4 mb-8'>Flat 10% Off On Order Above $29.99</p>
         <div className='flex items-center text-2xl'>
-          <a className='animated my-6'>
+          <div className='animated my-6'>
             SHOP NOW <i className='fa fa-hand-point-right'></i>
-          </a>
-          <a className='m-6 text-7xl'>
+          </div>
+          <div className='m-6 text-7xl'>
             <i className='fa fa-play-circle'></i>
-          </a>
+          </div>
         </div>
       </div>
-      {/* <LazyLoad height={200} offset={50} once placeholder={<Spinner />}> */}
-      <img
-        className={`${change ? 'next-intro' : 'prev-intro'}`}
-        src={change ? animated : h1thmb}
-        alt={change ? animated : h1thmb}
-      />
-      {/* </LazyLoad> */}
+      <LazyLoad height={200} offset={50} once placeholder={<Spinner />}>
+        <img
+          className={`${change ? 'next-intro' : 'prev-intro'}`}
+          src={change ? animated : h1thmb}
+          alt={change ? animated : h1thmb}
+        />
+      </LazyLoad>
       <div>
         <i
           className={`absolute z-20 cursor-pointer text-cyan bottom-6 right-1/2 mx-4 ${

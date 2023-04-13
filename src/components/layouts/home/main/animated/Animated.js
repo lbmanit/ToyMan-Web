@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import animatedData from './animatedData';
 import '../../../../../assets/css/main/animated.css';
 import Spinner from '../../../../../Spinner';
 function Animated() {
-  const [animated, setAnimated] = useState(animatedData);
+  const [animated, setAnimated] = useState([]);
+  useEffect(() => {
+    setAnimated(animatedData);
+  }, []);
   const animatedElement = animated.map((e) => {
     return (
       <article

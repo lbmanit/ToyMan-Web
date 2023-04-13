@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import feedBackData from './feedBackData';
 import '../../../../../assets/css/main/feedback.css';
 import Spinner from '../../../../../Spinner';
 
 function FeedBack() {
-  const [users, setUsers] = useState(feedBackData);
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    setUsers(feedBackData);
+  }, []);
   const [slideActive, setSlideActive] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
   const endIndex = currentSlide + 2;
@@ -22,7 +25,12 @@ function FeedBack() {
   };
   const feedBackUsers = users.slice(currentSlide, endIndex).map((user) => {
     return (
-      <article className='feedback-users w-1/2 m-4 p-8' key={user.id}>
+      <article
+        className={`${
+          slideActive ? 'feedback-active' : ''
+        }feedback-users w-1/2 m-4 p-8`}
+        key={user.id}
+      >
         <div className='relative flex items-center'>
           <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
             <img src={user.avatarUser} alt={user.name} />

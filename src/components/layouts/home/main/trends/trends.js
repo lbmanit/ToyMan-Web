@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import itemsData from '../../../../../data/itemsData';
 import Featured from './navTrends/featured';
 import BestSellers from './navTrends/bestSellers';
 import NewArrivals from './navTrends/newArrivals';
 import '../../../../../assets/css/main/trends.css';
 function Trends() {
-  const [Items, setItems] = useState(itemsData);
+  const [Items, setItems] = useState([]);
+  useEffect(() => {
+    setItems(itemsData);
+  }, []);
   const [selectTab, setSelectTab] = useState('featured');
   const styleNav = {
     backgroundColor: '#e83e8c',
