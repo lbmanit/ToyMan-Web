@@ -50,6 +50,7 @@ function News({ blogs }) {
     );
   });
   const handleIncrement = useCallback(() => {
+    if (countPage > Math.ceil(blogs.length / blogsInPage - 1)) return;
     setChange(true);
     setCountPage(countPage + 1);
     const newIndex =
@@ -59,6 +60,7 @@ function News({ blogs }) {
     setCurrentIndex(newIndex);
   }, [countPage]);
   const handleDecrement = useCallback(() => {
+    if (countPage === 1) return;
     setChange(false);
     setCountPage(countPage - 1);
     if (currentIndex === 0) return;
@@ -83,16 +85,12 @@ function News({ blogs }) {
       </div>
       <div className='flex justify-center items-center mb-8'>
         <i
-          className={`fa fa-angle-left text-3xl mx-4 ${
-            currentIndex === 0 ? 'hidden' : ''
-          }`}
+          className={`fa fa-angle-left text-3xl mx-4`}
           onClick={handleDecrement}
         ></i>
         <h1 className='bg-cyan text-white text-xl count-page'>{countPage}</h1>
         <i
-          className={`fa fa-angle-right text-3xl mx-4 ${
-            currentIndex >= blogs.length - 6 ? 'hidden' : ''
-          }`}
+          className={`fa fa-angle-right text-3xl mx-4`}
           onClick={handleIncrement}
         ></i>
       </div>
