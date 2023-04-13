@@ -7,7 +7,6 @@ function BlogDetail() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const blog = JSON.parse(searchParams.get('blog'));
-  console.log(blog);
   return (
     <section className='left-active'>
       <div className='flex items-center nav-blog'>
