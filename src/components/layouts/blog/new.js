@@ -3,18 +3,33 @@ import LazyLoad from 'react-lazyload';
 import Spinner from '../../../Spinner';
 import { Link } from 'react-router-dom';
 import '../../../assets/css/blog.css';
-
 function New({ blogs }) {
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [change, setChange] = useState(false);
+  const [hoverIndex, setHoverIndex] = useState(null);
   const blogsInPage = 6;
   const endIndex = currentIndex + blogsInPage;
   const blog = blogs.slice(currentIndex, endIndex).map((blog, index) => {
+    const styleImg = {
+      transform: hoverIndex === index ? 'scale(1.2)' : 'none',
+    };
     return (
-      <article className='blog p-4' key={index}>
+      <article
+        className='blog p-4 cursor-pointer'
+        key={index}
+        onMouseOver={() => setHoverIndex(index)}
+        onMouseOut={() => setHoverIndex(null)}
+      >
         <div className='relative'>
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-            <img src={blog.image} alt={blog.title} />
+          <LazyLoad
+            className='img-wrapper'
+            height={563}
+            offset={100}
+            once
+            placeholder={<Spinner />}
+          >
+            <img style={styleImg} src={blog.image} alt={blog.title} />
             <h2 className='date-blog absolute top-full z-50x px-4 py-1 -mt-6 text-base'>
               {blog.dateUpLoad}
             </h2>
@@ -28,12 +43,14 @@ function New({ blogs }) {
     );
   });
   function handlePrevClick() {
+    setChange(false);
     if (currentIndex === 0) return;
     setCountPage((prevCount) => prevCount - 1);
     const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
     setCurrentIndex(newIndex);
   }
   function handleNextClick() {
+    setChange(true);
     if (currentIndex === blogs.length - 1) return;
     setCountPage((prevCount) => prevCount + 1);
     const newIndex =
@@ -51,7 +68,13 @@ function New({ blogs }) {
         <h1 className='text-xl text-cyan mx-4'>/</h1>
         <h1 className='text-xl text-pink'>News</h1>
       </div>
-      <div className='m-auto flex flex-wrap p-10'>{blog}</div>
+      <div
+        className={`m-auto flex flex-wrap p-10 ${
+          change ? 'right-active' : 'left-active'
+        }`}
+      >
+        {blog}
+      </div>
       <div className='flex justify-center items-center mb-8'>
         <i
           className={`fa fa-angle-left text-3xl mx-4 ${
