@@ -4,7 +4,7 @@ import Spinner from './Spinner';
 import './assets/css/animation.css';
 import './assets/css/header.css';
 const Home = lazy(() => import('./components/layouts/home'));
-const Page404 = lazy(() => import('./components/layouts/404'));
+const Page404 = lazy(() => import('./components/404'));
 const Navbar = lazy(() => import('./components/Navbar'));
 const Footer = lazy(() => import('./components/footer'));
 const Blog = lazy(() => import('./components/layouts/blog'));

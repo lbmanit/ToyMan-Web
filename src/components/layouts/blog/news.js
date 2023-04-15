@@ -20,7 +20,7 @@ function News({ blogs }) {
         className='blog p-4 cursor-pointer'
         to={{
           pathname: `/news/${blog.id}`,
-          search: `?blog=${JSON.stringify(blog)}`,
+          search: `?blogs=${JSON.stringify(blogs)}`,
         }}
       >
         <article

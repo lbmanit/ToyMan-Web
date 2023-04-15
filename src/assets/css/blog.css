@@ -13,6 +13,26 @@
   width: 100%;
   height: 80px;
 }
+.search-store {
+  border: 1px solid #cdcdcd;
+  border-radius: 24px;
+}
+.search-store-input {
+  width: 90%;
+  border-right: 1px solid #cdcdcd;
+}
+.search-store-input:focus {
+  outline: none;
+}
+.search-store-icon {
+  width: 10%;
+}
+.recent-blog {
+  border-bottom: 1px solid #cdcdcd;
+}
+.blog-img {
+  border-radius: 8px;
+}
 .img-wrapper {
   width: 100%;
   height: 100%;
@@ -30,7 +50,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
+.main-content {
+  border-left: 5px solid #4acdd5;
+}
 .date-blog {
   background-color: #ff6799;
   color: #fff;
