@@ -5,6 +5,7 @@
 @layer base {
   * {
     font-family: monospace;
+    text-transform: capitalize;
   }
 }
 @layer components {

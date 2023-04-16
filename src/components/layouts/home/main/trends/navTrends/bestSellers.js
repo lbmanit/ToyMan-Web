@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../item';
+import Item from '../../../../../item';
 function BestSellers(props) {
   const bestSellers = props.itemsData
     .filter((item) => item.details.mod === 'SALE')

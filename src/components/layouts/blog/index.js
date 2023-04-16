@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import blogsData from '../../../data/blogsData';
 import News from './news';
-function Blog() {
+function Blogs() {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     setBlogs(blogsData);
@@ -16,4 +16,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default Blogs;

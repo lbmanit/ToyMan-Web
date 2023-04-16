@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import itemsData from '../../../../../data/itemsData';
-import Item from '../trends/item';
+import Item from '../../../../item';
 function Loves() {
   const [items, setItems] = useState([]);
   useEffect(() => {

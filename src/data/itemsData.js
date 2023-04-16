@@ -13,7 +13,7 @@ export default [
   {
     id: 1680895651046,
     avatarUrl: img1,
-    name: 'Round new red toy',
+    title: 'Round new red toy',
     price: 20,
     salePrice: 14,
     details: {
@@ -25,11 +25,12 @@ export default [
       isFavorite: true,
       rate: 3,
     },
+    type: 'item',
   },
   {
     id: 1680895655587,
     avatarUrl: img2,
-    name: 'Baby bag red',
+    title: 'Baby bag red',
     price: 15,
     salePrice: 9,
     details: {
@@ -41,11 +42,12 @@ export default [
       isFavorite: true,
       rate: 4,
     },
+    type: 'item',
   },
   {
     id: 1680895657409,
     avatarUrl: img3,
-    name: 'Hug me doll pink',
+    title: 'Hug me doll pink',
     price: 30,
     salePrice: 22,
     details: {
@@ -57,11 +59,12 @@ export default [
       isFavorite: true,
       rate: 2,
     },
+    type: 'item',
   },
   {
     id: 1680895657957,
     avatarUrl: img4,
-    name: 'Baby new red shoes',
+    title: 'Baby new red shoes',
     price: 22,
     salePrice: 13,
     details: {
@@ -73,11 +76,12 @@ export default [
       isFavorite: false,
       rate: 3,
     },
+    type: 'item',
   },
   {
     id: 1680895659421,
     avatarUrl: img5,
-    name: 'Animals pet green',
+    title: 'Animals pet green',
     price: 8,
     salePrice: 6,
     details: {
@@ -89,11 +93,12 @@ export default [
       isFavorite: false,
       rate: 5,
     },
+    type: 'item',
   },
   {
     id: 1681117920540,
     avatarUrl: img6,
-    name: 'Baby gulps green',
+    title: 'Baby gulps green',
     price: 7,
     salePrice: 5,
     details: {
@@ -105,11 +110,12 @@ export default [
       isFavorite: true,
       rate: 5,
     },
+    type: 'item',
   },
   // {
   //   id: 1680896366789,
   //   avatarUrl: img7,
-  //   name: 'Green tortilla box',
+  //   title: 'Green tortilla box',
   //   price: 12,
   //   salePrice: 8,
   //   details: {
@@ -125,7 +131,7 @@ export default [
   {
     id: 1681117920209,
     avatarUrl: img8,
-    name: 'Baby sound box',
+    title: 'Baby sound box',
     price: 12,
     salePrice: 8,
     details: {
@@ -137,11 +143,12 @@ export default [
       isFavorite: true,
       rate: 1,
     },
+    type: 'item',
   },
   {
     id: 1681117919813,
     avatarUrl: img9,
-    name: 'Fox baby pant pink',
+    title: 'Fox baby pant pink',
     price: 16,
     salePrice: 12,
     details: {
@@ -153,11 +160,12 @@ export default [
       isFavorite: true,
       rate: 2,
     },
+    type: 'item',
   },
   {
     id: 1681117919456,
     avatarUrl: img10,
-    name: 'Robot toy blue',
+    title: 'Robot toy blue',
     price: 13,
     salePrice: 8,
     details: {
@@ -173,7 +181,7 @@ export default [
   {
     id: 1681117915757,
     avatarUrl: img11,
-    name: 'White dog box',
+    title: 'White dog box',
     price: 15,
     salePrice: 11,
     details: {
@@ -185,5 +193,6 @@ export default [
       isFavorite: true,
       rate: 5,
     },
+    type: 'item',
   },
 ];

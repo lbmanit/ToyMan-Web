@@ -7,8 +7,8 @@ const Home = lazy(() => import('./components/layouts/home'));
 const Page404 = lazy(() => import('./components/404'));
 const Navbar = lazy(() => import('./components/Navbar'));
 const Footer = lazy(() => import('./components/footer'));
-const Blog = lazy(() => import('./components/layouts/blog'));
-const BlogDetail = lazy(() => import('./components/layouts/blog/blogDetail'));
+const Blogs = lazy(() => import('./components/layouts/blog'));
+const MainBlog = lazy(() => import('./components/layouts/blog/mainBlog'));
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -17,8 +17,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<Page404 />} />
-          <Route path='/news' element={<Blog />} />
-          <Route path='/news/:id' element={<BlogDetail />} />
+          <Route path='/news' element={<Blogs />} />
+          <Route path='/news/:id' element={<MainBlog />} />
         </Routes>
         <Footer />
       </BrowserRouter>

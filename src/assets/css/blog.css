@@ -18,15 +18,14 @@
   border-radius: 24px;
 }
 .search-store-input {
-  width: 90%;
-  border-right: 1px solid #cdcdcd;
+  width: 100%;
 }
 .search-store-input:focus {
   outline: none;
 }
-.search-store-icon {
+/* .search-store-icon {
   width: 10%;
-}
+} */
 .recent-blog {
   border-bottom: 1px solid #cdcdcd;
 }

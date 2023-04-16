@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../item';
+import Item from '../../../../../item';
 function Featured(props) {
   const featured = props.itemsData.slice(0, 6).map((item, index) => {
     return <Item key={index} {...item} />;

@@ -12,7 +12,7 @@ export default [
   {
     id: 1681456020211,
     image: new1,
-    title: 'Toyman food habits',
+    title: 'toyman food habits',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhen voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum sed ut perspiciatis.',
     mainContent:
@@ -23,11 +23,13 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['food', 'habitats', 'toy'],
+    type: 'blog',
   },
   {
     id: 1681456023177,
     image: new2,
-    title: 'Beautiful smile in world',
+    title: 'beautiful smile in world',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhen voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum sed ut perspiciatis.',
     mainContent:
@@ -38,6 +40,8 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['smile', 'beautiful', 'world'],
+    type: 'blog',
   },
   {
     id: 1681456024706,
@@ -53,11 +57,13 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['toy', 'kids'],
+    type: 'blog',
   },
   {
     id: 1681456025238,
     image: new5,
-    title: 'How to tech block your kids',
+    title: 'how to tech block your kids',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhen voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum sed ut perspiciatis.',
     mainContent:
@@ -68,11 +74,13 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['kids', 'block'],
+    type: 'blog',
   },
   {
     id: 1681456025670,
     image: new8,
-    title: 'Cute baby for new toy',
+    title: 'cute baby for new toy',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhen voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum sed ut perspiciatis.',
     mainContent:
@@ -83,11 +91,13 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['cute', 'boy', 'toy'],
+    type: 'blog',
   },
   {
     id: 1681456026083,
     image: new9,
-    title: 'Hello Birthday baby boy',
+    title: 'hello Birthday baby boy',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhen voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum sed ut perspiciatis.',
     mainContent:
@@ -98,11 +108,13 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['boy', 'birthday', 'baby'],
+    type: 'blog',
   },
   {
     id: 1681456059727,
     image: new10,
-    title: 'Baby girl with star toy',
+    title: 'baby girl with star toy',
     content:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ull laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprhen voluptate velit esse cillum dolore eu fugiat to nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit anim id est to laborum sed ut perspiciatis.',
     mainContent:
@@ -113,5 +125,7 @@ export default [
       avatar1: animated_img1,
       avatar2: animated_img2,
     },
+    tags: ['baby', 'girl', 'star', 'toy'],
+    type: 'blog',
   },
 ];

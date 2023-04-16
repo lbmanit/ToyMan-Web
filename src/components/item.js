@@ -1,7 +1,8 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import { useState } from 'react';
-import Spinner from '../../../../../Spinner';
+import Spinner from '../Spinner';
+import { Link } from 'react-router-dom';
 function Item(props) {
   const [isShow, setIsShow] = useState(false);
   const [styleMod, setStyleMod] = useState({
@@ -25,7 +26,8 @@ function Item(props) {
     };
   }
   return (
-    <article
+    <Link
+      to='/toys'
       key={props.id}
       className='relative main-item left-active'
       onMouseEnter={() => setIsShow(true)}
@@ -34,7 +36,7 @@ function Item(props) {
       <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
         <img className='rounded-2xl' src={props.avatarUrl} alt={props.name} />
       </LazyLoad>
-      <p className='product-name-action text-2xl mt-4'>{props.name}</p>
+      <p className='product-name-action text-2xl mt-4'>{props.title}</p>
       <p className='text-xl font-semibold my-2'>
         <span
           className={`${
@@ -78,7 +80,7 @@ function Item(props) {
           </li>
         </ul>
       )}
-    </article>
+    </Link>
   );
 }
 

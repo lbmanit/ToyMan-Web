@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../item';
+import Item from '../../../../../item';
 function NewArrivals(props) {
   const newArrivals = props.itemsData
     .filter((item) => item.details.mod === 'NEW')
