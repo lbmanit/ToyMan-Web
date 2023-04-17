@@ -45,16 +45,18 @@ function MainBlog() {
     });
   return (
     <section className='left-active'>
-      <div className='flex items-center nav-blog'>
-        <Link to='/'>
-          <h1 className='text-cyan text-xl m-2 ml-16'>Home</h1>
-        </Link>
-        <h1 className='text-cyan text-xl m-2'>/</h1>
-        <Link to='/news'>
-          <h1 className='text-cyan text-xl m-2'>Blog</h1>
-        </Link>
-        <h1 className='text-cyan text-xl m-2'>/</h1>
-        <h1 className='text-pink text-xl m-2'>{mainBlog.title}</h1>
+      <div className='flex nav-blog'>
+        <div className='container m-auto flex items-center font-bold'>
+          <Link to='/'>
+            <h1 className='text-cyan text-xl m-2 ml-16'>Home</h1>
+          </Link>
+          <h1 className='text-cyan text-xl m-2'>/</h1>
+          <Link to='/news'>
+            <h1 className='text-cyan text-xl m-2'>Blog</h1>
+          </Link>
+          <h1 className='text-cyan text-xl m-2'>/</h1>
+          <h1 className='text-pink text-xl m-2'>{mainBlog.title}</h1>
+        </div>
       </div>
 
       <div className='container m-auto flex overflow-hidden my-20 left-active'>

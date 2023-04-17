@@ -62,17 +62,13 @@ function ItemDetail(props) {
               <h1>Ask About This Product</h1>
             </div>
           </div>
-          <div className='input-item'>
+          <div className='input-item text-center'>
             <div className='flex items-center rounded-2xl'>
-              <div className='text-xl w-1/4 flex justify-between py-2 px-4 my-4 input-count'>
+              <div className='text-xl flex justify-between py-2 px-4 my-4 input-count'>
                 <h1 className='cursor-pointer' onClick={handleDecrement}>
                   -
                 </h1>
-                <input
-                  className='w-1/4 text-center'
-                  type='text'
-                  value={count}
-                />
+                <input className='w-1/6' type='text' value={count} />
                 <h1 className='cursor-pointer' onClick={handleIncrement}>
                   +
                 </h1>

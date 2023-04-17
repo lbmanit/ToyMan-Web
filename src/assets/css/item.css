@@ -8,19 +8,22 @@
   height: 80px;
 }
 .input-item {
-  width: 50%;
+  width: 60%;
 }
 .input-count {
-  width: 20%;
+  width: 30%;
   color: #a3a3a3;
   border: 1px solid #eee;
   border-radius: 8px;
 }
+/* .input-count > input {
+  width: 50px;
+} */
 .input-count > input:focus {
   outline: none;
 }
 .add-item {
-  width: 80%;
+  width: 100%;
   border-radius: 24px;
   background-color: #4acdd5;
   color: aliceblue;

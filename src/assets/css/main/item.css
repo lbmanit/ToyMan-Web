@@ -1,0 +1,4 @@
+.main-item {
+  width: calc(100% / 3 - 100px);
+  margin: auto;
+}

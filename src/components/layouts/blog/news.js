@@ -74,12 +74,14 @@ function News({ blogs }) {
   }, [countPage, blogs.length, currentIndex]);
   return (
     <section className='left-active'>
-      <div className='flex nav-blog items-center'>
-        <Link className='text-xl text-cyan ml-10' to='/'>
-          Home
-        </Link>
-        <h1 className='text-xl text-cyan mx-4'>/</h1>
-        <h1 className='text-xl text-pink'>News</h1>
+      <div className='flex nav-blog'>
+        <div className='container m-auto flex items-center font-bold nav-blog'>
+          <Link className='text-xl text-cyan' to='/'>
+            Home
+          </Link>
+          <h1 className='text-xl text-cyan mx-2'>/</h1>
+          <h1 className='text-xl text-pink'>News</h1>
+        </div>
       </div>
       <div
         className={`m-auto flex flex-wrap p-10 ${

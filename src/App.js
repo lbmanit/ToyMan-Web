@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Spinner from './Spinner';
 import './assets/css/animation.css';
 import './assets/css/header.css';
+import './assets/css/item.css';
 const Home = lazy(() => import('./components/layouts/home'));
 const Page404 = lazy(() => import('./components/404'));
 const Navbar = lazy(() => import('./components/Navbar'));
