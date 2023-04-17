@@ -9,7 +9,7 @@ const Navbar = lazy(() => import('./components/Navbar'));
 const Footer = lazy(() => import('./components/footer'));
 const Blogs = lazy(() => import('./components/layouts/blog'));
 const MainBlog = lazy(() => import('./components/layouts/blog/mainBlog'));
-const ItemList = lazy(() => import('./components/layouts/items/itemList'));
+const ItemList = lazy(() => import('./components/layouts/shop/itemList'));
 const MainItem = lazy(() => import('./components/layouts/items/mainItem'));
 function App() {
   return (

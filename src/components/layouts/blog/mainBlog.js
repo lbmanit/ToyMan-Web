@@ -43,7 +43,6 @@ function MainBlog() {
         </Link>
       );
     });
-  console.log(blogs.concat(collections));
   return (
     <section className='left-active'>
       <div className='flex items-center nav-blog'>

@@ -39,6 +39,7 @@ function Search({ products }) {
       <input
         className='search-store-input'
         type='text'
+        placeholder='Search our store...'
         value={searchValue}
         onChange={handleChange}
       />

@@ -5,12 +5,12 @@ import Spinner from '../../../Spinner';
 function Item(props) {
   const { avatarUrl, title, name, price, salePrice, details } = props;
   const [isShow, setIsShow] = useState(false);
-  const [styleMod, setStyleMod] = useState({
+  const styleMod = {
     backgroundColor: '',
     top: '',
     right: '',
     left: '',
-  });
+  };
   let newMod = {};
   if (props.details.mod === 'SALE') {
     newMod = {

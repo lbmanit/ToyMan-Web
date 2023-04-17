@@ -1,14 +1,8 @@
 import itemData from '../../../data/itemsData';
-import { useMemo, useState, useEffect } from 'react';
+import { useState } from 'react';
 function Collections() {
-  const [collections, setCollections] = useState([]);
-  useEffect(() => {
-    setCollections(itemData);
-  }, []);
-  const memoizedCollections = useMemo(() => {
-    return collections;
-  }, [collections]);
-  return memoizedCollections;
+  const [collections, setCollections] = useState(itemData);
+  return collections;
 }
 
 export default Collections;

@@ -6,7 +6,7 @@ function MainItem() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const items = JSON.parse(searchParams.get('toys'));
-  const mainItem = items.find((item) => (item.id = parseInt(id)));
+  const mainItem = items.find((item) => item.id === parseInt(id));
   return (
     <section>
       <article>{mainItem && <ItemDetail {...mainItem} />}</article>
