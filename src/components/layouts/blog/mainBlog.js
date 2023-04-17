@@ -5,11 +5,21 @@ import Blog from './blog';
 import BlogDetail from './blogDetail';
 import '../../../assets/css/blog.css';
 import Search from '../../Search';
+import Collections from '../items/collections';
 function MainBlog() {
+  const collections = Collections();
   const { id } = useParams();
   const location = useLocation();
+  let blogs = [];
   const searchParams = new URLSearchParams(location.search);
-  const blogs = JSON.parse(searchParams.get('blogs'));
+  const blogsParam = searchParams.get('blogs');
+  if (blogsParam) {
+    try {
+      blogs = JSON.parse(blogsParam);
+    } catch (error) {
+      console.error(error);
+    }
+  }
   const mainBlog = blogs.find((blog) => blog.id === parseInt(id));
   const [change, setChange] = useState(false);
   function handleChange() {
@@ -33,6 +43,7 @@ function MainBlog() {
         </Link>
       );
     });
+  console.log(blogs.concat(collections));
   return (
     <section className='left-active'>
       <div className='flex items-center nav-blog'>
@@ -52,7 +63,7 @@ function MainBlog() {
           <div>
             <h1 className='text-xl font-bold'>Search</h1>
             <div className='search-store text-base my-6 py-3 px-4'>
-              <Search products={blogs} />
+              <Search products={blogs.concat(collections)} />
             </div>
           </div>
           <div>

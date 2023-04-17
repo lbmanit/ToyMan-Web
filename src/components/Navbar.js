@@ -14,9 +14,6 @@ function Navbar() {
   };
 
   window.addEventListener('scroll', handleScroll);
-  function handleRefresh() {
-    window.location.reload();
-  }
   return (
     <nav
       className={`nav ${
@@ -24,7 +21,7 @@ function Navbar() {
       } m-auto nav-item flex justify-around items-center py-5`}
     >
       <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-        <Link to='/' onClick={handleRefresh}>
+        <Link to='/'>
           <img className='cursor-pointer' src={toymanLogo} alt='logo' />
         </Link>
       </LazyLoad>

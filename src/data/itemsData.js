@@ -13,7 +13,7 @@ export default [
   {
     id: 1680895651046,
     avatarUrl: img1,
-    title: 'Round new red toy',
+    title: 'round new red toy',
     price: 20,
     salePrice: 14,
     details: {
@@ -25,12 +25,13 @@ export default [
       isFavorite: true,
       rate: 3,
     },
+    tags: ['toy, new, red , round'],
     type: 'item',
   },
   {
     id: 1680895655587,
     avatarUrl: img2,
-    title: 'Baby bag red',
+    title: 'baby bag red',
     price: 15,
     salePrice: 9,
     details: {
@@ -42,12 +43,13 @@ export default [
       isFavorite: true,
       rate: 4,
     },
+    tags: ['bag, baby, red'],
     type: 'item',
   },
   {
     id: 1680895657409,
     avatarUrl: img3,
-    title: 'Hug me doll pink',
+    title: 'hug me doll pink',
     price: 30,
     salePrice: 22,
     details: {
@@ -59,29 +61,31 @@ export default [
       isFavorite: true,
       rate: 2,
     },
+    tags: ['doll, pink , hug'],
     type: 'item',
   },
   {
     id: 1680895657957,
     avatarUrl: img4,
-    title: 'Baby new red shoes',
+    title: 'baby new red shoes',
     price: 22,
     salePrice: 13,
     details: {
       describe:
         'Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.',
-      mod: '',
-      Availability: 'NEW',
+      mod: 'NEW',
+      Availability: '',
       Vendor: 'Vendor 8',
       isFavorite: false,
       rate: 3,
     },
+    tags: ['baby, new, red , shoes'],
     type: 'item',
   },
   {
     id: 1680895659421,
     avatarUrl: img5,
-    title: 'Animals pet green',
+    title: 'animals pet green',
     price: 8,
     salePrice: 6,
     details: {
@@ -93,12 +97,13 @@ export default [
       isFavorite: false,
       rate: 5,
     },
+    tags: ['animals, pet, green'],
     type: 'item',
   },
   {
     id: 1681117920540,
     avatarUrl: img6,
-    title: 'Baby gulps green',
+    title: 'baby gulps green',
     price: 7,
     salePrice: 5,
     details: {
@@ -110,6 +115,7 @@ export default [
       isFavorite: true,
       rate: 5,
     },
+    tags: ['baby, glups, green'],
     type: 'item',
   },
   // {
@@ -131,7 +137,7 @@ export default [
   {
     id: 1681117920209,
     avatarUrl: img8,
-    title: 'Baby sound box',
+    title: 'baby sound box',
     price: 12,
     salePrice: 8,
     details: {
@@ -143,12 +149,13 @@ export default [
       isFavorite: true,
       rate: 1,
     },
+    tags: ['baby, box, sound'],
     type: 'item',
   },
   {
     id: 1681117919813,
     avatarUrl: img9,
-    title: 'Fox baby pant pink',
+    title: 'fox baby pant pink',
     price: 16,
     salePrice: 12,
     details: {
@@ -160,12 +167,13 @@ export default [
       isFavorite: true,
       rate: 2,
     },
+    tags: ['fox, baby, pink'],
     type: 'item',
   },
   {
     id: 1681117919456,
     avatarUrl: img10,
-    title: 'Robot toy blue',
+    title: 'robot toy blue',
     price: 13,
     salePrice: 8,
     details: {
@@ -177,11 +185,13 @@ export default [
       isFavorite: true,
       rate: 4,
     },
+    tags: ['robot, toy, blue'],
+    type: 'item',
   },
   {
     id: 1681117915757,
     avatarUrl: img11,
-    title: 'White dog box',
+    title: 'white dog box',
     price: 15,
     salePrice: 11,
     details: {
@@ -193,6 +203,7 @@ export default [
       isFavorite: true,
       rate: 5,
     },
+    tags: ['white, dog, box'],
     type: 'item',
   },
 ];

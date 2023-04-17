@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import itemsData from '../../../../../data/itemsData';
+import React, { useState } from 'react';
+import Collections from '../../../items/collections';
 import Featured from './navTrends/featured';
 import BestSellers from './navTrends/bestSellers';
 import NewArrivals from './navTrends/newArrivals';
 import '../../../../../assets/css/main/trends.css';
 function Trends() {
-  const [Items, setItems] = useState([]);
-  useEffect(() => {
-    setItems(itemsData);
-  }, []);
+  const memoizedCollections = Collections();
   const [selectTab, setSelectTab] = useState('featured');
   const styleNav = {
     backgroundColor: '#e83e8c',
     color: '#fff',
-    transition: 'all linear 0.3s',
+    transition: 'all 0.3s linear',
   };
   const [style, setStyle] = useState({
     featured: styleNav,
@@ -83,9 +80,15 @@ function Trends() {
         </li>
       </ul>
       <div className='favorite-items flex flex-wrap'>
-        {selectTab === 'featured' && <Featured itemsData={Items} />}
-        {selectTab === 'bestSellers' && <BestSellers itemsData={Items} />}
-        {selectTab === 'newArrivals' && <NewArrivals itemsData={Items} />}
+        {selectTab === 'featured' && (
+          <Featured collections={memoizedCollections} />
+        )}
+        {selectTab === 'bestSellers' && (
+          <BestSellers collections={memoizedCollections} />
+        )}
+        {selectTab === 'newArrivals' && (
+          <NewArrivals collections={memoizedCollections} />
+        )}
       </div>
     </section>
   );

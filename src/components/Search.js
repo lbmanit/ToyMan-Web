@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import LazyLoad from 'react-lazyload';
-import Spinner from '../Spinner';
-
 function Search({ products }) {
   const [searchValue, setSearchValue] = useState('');
   const [searchProducts, setSearchProducts] = useState([]);
@@ -27,7 +24,7 @@ function Search({ products }) {
         };
       } else if (product.type === 'item') {
         return {
-          pathname: `/items/${product.id}`,
+          pathname: `/collections/${product.id}`,
           search: `?toys=${JSON.stringify(products)}`,
         };
       }
@@ -46,30 +43,31 @@ function Search({ products }) {
         onChange={handleChange}
       />
       {searchValue &&
-        searchProducts.map((product) => {
+        searchProducts.map((product, index) => {
           return (
             <Link
+              key={index}
               className='flex justify-between items-center my-6'
               to={handleLinkClick(product)}
             >
-              <LazyLoad
-                className='w-1/3'
-                height={50}
-                offset={50}
-                once
-                placeholder={<Spinner />}
-              >
-                <img
-                  className='w-full  rounded-xl'
-                  src={`${
-                    product.type === 'blog' ? product.image : product.avatarUrl
-                  }`}
-                  alt={`${
-                    product.type === 'blog' ? product.title : product.name
-                  }`}
-                />
-              </LazyLoad>
-              <h1 className='w-2/3 mx-4 text-lg font-bold'>{product.title}</h1>
+              <img
+                className='w-1/3  rounded-xl'
+                src={`${
+                  product.type === 'blog' ? product.image : product.avatarUrl
+                }`}
+                alt={`${product.title}`}
+              />
+              <div className='w-2/3 mx-4'>
+                <h1 className='text-lg font-bold'>{product.title}</h1>
+                {product.type === 'item' && (
+                  <h1 className='text-lg font-bold text-cyan'>
+                    $
+                    {product.details.mod === 'SALE'
+                      ? product.salePrice
+                      : product.price}
+                  </h1>
+                )}
+              </div>
             </Link>
           );
         })}

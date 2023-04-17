@@ -1,9 +1,9 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import { useState } from 'react';
-import Spinner from '../Spinner';
-import { Link } from 'react-router-dom';
+import Spinner from '../../../Spinner';
 function Item(props) {
+  const { avatarUrl, title, name, price, salePrice, details } = props;
   const [isShow, setIsShow] = useState(false);
   const [styleMod, setStyleMod] = useState({
     backgroundColor: '',
@@ -26,41 +26,40 @@ function Item(props) {
     };
   }
   return (
-    <Link
-      to='/toys'
+    <article
       key={props.id}
-      className='relative main-item left-active'
+      className='relative left-active'
       onMouseEnter={() => setIsShow(true)}
       onMouseLeave={() => setIsShow(false)}
     >
       <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-        <img className='rounded-2xl' src={props.avatarUrl} alt={props.name} />
+        <img className='rounded-2xl' src={avatarUrl} alt={name} />
       </LazyLoad>
-      <p className='product-name-action text-2xl mt-4'>{props.title}</p>
+      <p className='product-name-action text-2xl mt-4'>{title}</p>
       <p className='text-xl font-semibold my-2'>
         <span
           className={`${
-            props.details.mod === 'SALE'
+            details.mod === 'SALE'
               ? 'text-gray text-base line-through'
               : 'text-cyan'
           }`}
         >
           {' '}
-          $ {props.price}
+          $ {price}
         </span>{' '}
-        {props.details.mod === 'SALE' && (
-          <span className='text-cyan'>$ {props.salePrice}</span>
+        {details.mod === 'SALE' && (
+          <span className='text-cyan'>$ {salePrice}</span>
         )}
       </p>
       <h3 className='text-xl'>
-        {props.details.rate} / 5 <i className='text-yellow fa fa-star'></i>
+        {details.rate} / 5 <i className='text-yellow fa fa-star'></i>
       </h3>
-      {props.details.mod && (
+      {details.mod && (
         <h3
           className='absolute rounded-2xl text-white py-1 px-6 z-50'
           style={{ ...styleMod, ...newMod }}
         >
-          {props.details.mod}
+          {details.mod}
         </h3>
       )}
       {isShow && (
@@ -80,7 +79,7 @@ function Item(props) {
           </li>
         </ul>
       )}
-    </Link>
+    </article>
   );
 }
 
