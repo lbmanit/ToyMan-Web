@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import categoriesData from './categoriesData.js';
 import Category from './category.js';
 function Categories() {
-  const [categories, setCategories] = useState([]);
-  useEffect(() => {
-    setCategories(categoriesData);
-  }, []);
+  const [categories, setCategories] = useState(categoriesData);
   const newCategories = categories.map((category, index) => {
     return <Category key={index} {...category} />;
   });

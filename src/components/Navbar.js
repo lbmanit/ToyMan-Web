@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import toymanLogo from '../assets/images/logo/toymanlogo.jpeg';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../Spinner';
 import { Link } from 'react-router-dom';
+
 function Navbar() {
   const [isSticky, setSticky] = useState(false);
   const handleScroll = () => {
@@ -12,11 +13,14 @@ function Navbar() {
       setSticky(false);
     }
   };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
 
-  window.addEventListener('scroll', handleScroll);
-  function handleRefresh() {
-    window.location.reload();
-  }
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <nav
       className={`nav ${
@@ -24,7 +28,7 @@ function Navbar() {
       } m-auto nav-item flex justify-around items-center py-5`}
     >
       <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-        <Link to='/' onClick={handleRefresh}>
+        <Link to='/'>
           <img className='cursor-pointer' src={toymanLogo} alt='logo' />
         </Link>
       </LazyLoad>

@@ -5,17 +5,28 @@ import '../../../../../assets/css/main/animated.css';
 import Spinner from '../../../../../Spinner';
 function Animated() {
   const [animated, setAnimated] = useState([]);
+  const [hoverIndex, setHoverIndex] = useState(null);
   useEffect(() => {
     setAnimated(animatedData);
   }, []);
-  const animatedElement = animated.map((e) => {
+  const animatedElement = animated.map((e, index) => {
+    const styleHover = {
+      transform: hoverIndex === index ? 'scale(1.2)' : 'none',
+    };
     return (
       <article
         className='main-animated cursor-pointer relative m-4 overflow-hidden left-active'
         key={e.id}
+        onMouseOver={() => setHoverIndex(index)}
+        onMouseOut={() => setHoverIndex(null)}
       >
         <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
-          <img className='animated-img' src={e.url} alt={e.title} />
+          <img
+            className='animated-img'
+            src={e.url}
+            alt={e.title}
+            style={styleHover}
+          />
         </LazyLoad>
         <div
           className={`absolute z-10 flex flex-col items-start text-white top-1/4 ${

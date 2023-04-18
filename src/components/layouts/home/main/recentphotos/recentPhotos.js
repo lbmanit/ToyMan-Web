@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import recent_img1 from '../../../../../assets/images/recentPhotos/post5-copyright.webp';
 import recent_img2 from '../../../../../assets/images/recentPhotos/post9-copyright.webp';

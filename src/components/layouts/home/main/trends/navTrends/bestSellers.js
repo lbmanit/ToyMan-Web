@@ -1,11 +1,23 @@
 import React from 'react';
-import Item from '../item';
-function BestSellers(props) {
-  const bestSellers = props.itemsData
+import { Link } from 'react-router-dom';
+import Item from '../../../../items/item';
+function BestSellers({ collections }) {
+  const bestSellers = collections
     .filter((item) => item.details.mod === 'SALE')
     .slice(0, 6)
     .map((item, index) => {
-      return <Item key={index} {...item} />;
+      return (
+        <Link
+          className='main-item'
+          key={index}
+          to={{
+            pathname: `/collections/${item.id}`,
+            search: `?toys=${JSON.stringify(collections)}`,
+          }}
+        >
+          <Item {...item} />
+        </Link>
+      );
     });
   return <React.Fragment>{bestSellers}</React.Fragment>;
 }

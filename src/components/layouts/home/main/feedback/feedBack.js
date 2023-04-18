@@ -28,7 +28,7 @@ function FeedBack() {
       <article
         className={`${
           slideActive ? 'feedback-active' : ''
-        }feedback-users w-1/2 m-4 p-8`}
+        } feedback-users w-1/2 m-4 p-8`}
         key={user.id}
       >
         <div className='relative flex items-center'>

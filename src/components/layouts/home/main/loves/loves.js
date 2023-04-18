@@ -1,25 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import itemsData from '../../../../../data/itemsData';
-import Item from '../trends/item';
+import React, { useState } from 'react';
+import Item from '../../../items/item';
+import Collections from '../../../items/collections';
+import { Link } from 'react-router-dom';
 function Loves() {
-  const [items, setItems] = useState([]);
-  useEffect(() => {
-    setItems(itemsData);
-  }, []);
+  const memoizedCollections = Collections();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const loveItems = () => {
     const endIndex = currentIndex + 3;
-    return items.slice(currentIndex, endIndex).map((item, index) => {
-      return <Item key={index} {...item} />;
-    });
+    return memoizedCollections
+      .slice(currentIndex, endIndex)
+      .map((item, index) => {
+        return (
+          <Link
+            key={index}
+            className='flex main-item'
+            to={{
+              pathname: `collections/${item.id}`,
+              search: `?toys=${JSON.stringify(memoizedCollections)}`,
+            }}
+          >
+            <Item key={index} {...item} />
+          </Link>
+        );
+      });
   };
   const handlePrevClick = () => {
-    const newIndex = currentIndex === 0 ? items.length - 3 : currentIndex - 1;
+    const newIndex =
+      currentIndex === 0 ? memoizedCollections.length - 3 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
   const handleNextClick = () => {
-    const newIndex = currentIndex === items.length - 3 ? 0 : currentIndex + 1;
+    const newIndex =
+      currentIndex === memoizedCollections.length - 3 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
   return (
@@ -32,7 +45,7 @@ function Loves() {
         Customer Loves
       </h1>
       <h3 className='text-xl m-8 text-center text-cyan'>Popular Product</h3>
-      <div className='flex justify-between'>{loveItems()}</div>
+      <div className='flex'>{loveItems()}</div>
       {isShow && (
         <div className='cursor-pointer opacity-80'>
           <i
