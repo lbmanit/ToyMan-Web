@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import Collections from '../../../items/collections';
+import itemsData from '../../../../../data/itemsData';
 import Featured from './navTrends/featured';
 import BestSellers from './navTrends/bestSellers';
 import NewArrivals from './navTrends/newArrivals';
 import '../../../../../assets/css/main/trends.css';
 function Trends() {
-  const memoizedCollections = Collections();
+  const [collections, setCollections] = useState(itemsData);
   const [selectTab, setSelectTab] = useState('featured');
   const styleNav = {
     backgroundColor: '#e83e8c',
@@ -80,14 +80,12 @@ function Trends() {
         </li>
       </ul>
       <div className='favorite-items flex flex-wrap'>
-        {selectTab === 'featured' && (
-          <Featured collections={memoizedCollections} />
-        )}
+        {selectTab === 'featured' && <Featured collections={collections} />}
         {selectTab === 'bestSellers' && (
-          <BestSellers collections={memoizedCollections} />
+          <BestSellers collections={collections} />
         )}
         {selectTab === 'newArrivals' && (
-          <NewArrivals collections={memoizedCollections} />
+          <NewArrivals collections={collections} />
         )}
       </div>
     </section>

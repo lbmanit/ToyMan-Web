@@ -10,8 +10,8 @@ const Navbar = lazy(() => import('./components/Navbar'));
 const Footer = lazy(() => import('./components/footer'));
 const Blogs = lazy(() => import('./components/layouts/blog'));
 const MainBlog = lazy(() => import('./components/layouts/blog/mainBlog'));
-const ItemList = lazy(() => import('./components/layouts/shop/itemList'));
-const MainItem = lazy(() => import('./components/layouts/items/mainItem'));
+const Collections = lazy(() => import('./components/layouts/shop/collections'));
+const MainItem = lazy(() => import('./components/layouts/shop/mainItem'));
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -22,7 +22,7 @@ function App() {
           <Route path='*' element={<Page404 />} />
           <Route path='/news' element={<Blogs />} />
           <Route path='/news/:id' element={<MainBlog />} />
-          <Route path='/collections' element={<ItemList />} />
+          <Route path='/collections' element={<Collections />} />
           <Route path='/collections/:id' element={<MainItem />} />
         </Routes>
         <Footer />

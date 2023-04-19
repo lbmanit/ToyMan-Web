@@ -65,13 +65,13 @@ function ItemDetail(props) {
           <div className='input-item text-center'>
             <div className='flex items-center rounded-2xl'>
               <div className='text-xl flex justify-between py-2 px-4 my-4 input-count'>
-                <h1 className='cursor-pointer' onClick={handleDecrement}>
+                <button className='cursor-pointer' onClick={handleDecrement}>
                   -
-                </h1>
+                </button>
                 <input className='w-1/6' type='text' value={count} />
-                <h1 className='cursor-pointer' onClick={handleIncrement}>
+                <button className='cursor-pointer' onClick={handleIncrement}>
                   +
-                </h1>
+                </button>
               </div>
               <h1 className='cursor-pointer text-center text-xl add-item ml-8 p-2'>
                 ADD TO CART

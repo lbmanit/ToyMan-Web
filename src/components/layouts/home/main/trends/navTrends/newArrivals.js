@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Item from '../../../../items/item';
+import Item from '../../../../shop/item';
 function NewArrivals({ collections }) {
   const newArrivals = collections
     .filter((item) => item.details.mod === 'NEW')

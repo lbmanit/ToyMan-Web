@@ -1,38 +1,36 @@
 import React, { useState } from 'react';
-import Item from '../../../items/item';
-import Collections from '../../../items/collections';
+import Item from '../../../shop/item';
+import itemsData from '../../../../../data/itemsData';
 import { Link } from 'react-router-dom';
 function Loves() {
-  const memoizedCollections = Collections();
+  const [collections, setCollections] = useState(itemsData);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const loveItems = () => {
     const endIndex = currentIndex + 3;
-    return memoizedCollections
-      .slice(currentIndex, endIndex)
-      .map((item, index) => {
-        return (
-          <Link
-            key={index}
-            className='flex main-item'
-            to={{
-              pathname: `collections/${item.id}`,
-              search: `?toys=${JSON.stringify(memoizedCollections)}`,
-            }}
-          >
-            <Item key={index} {...item} />
-          </Link>
-        );
-      });
+    return collections.slice(currentIndex, endIndex).map((item, index) => {
+      return (
+        <Link
+          key={index}
+          className='flex main-item'
+          to={{
+            pathname: `collections/${item.id}`,
+            search: `?toys=${JSON.stringify(collections)}`,
+          }}
+        >
+          <Item key={index} {...item} />
+        </Link>
+      );
+    });
   };
   const handlePrevClick = () => {
     const newIndex =
-      currentIndex === 0 ? memoizedCollections.length - 3 : currentIndex - 1;
+      currentIndex === 0 ? collections.length - 3 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
   const handleNextClick = () => {
     const newIndex =
-      currentIndex === memoizedCollections.length - 3 ? 0 : currentIndex + 1;
+      currentIndex === collections.length - 3 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
   };
   return (

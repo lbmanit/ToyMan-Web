@@ -1,10 +1,10 @@
-import React from 'react';
-import Item from '../items/item';
+import React, { useState } from 'react';
+import Item from '../shop/item';
 import { Link } from 'react-router-dom';
-import Collections from '../items/collections';
+import itemsData from '../../../data/itemsData';
 import '../../../assets/css/item.css';
-function ItemList() {
-  const collections = Collections();
+function Collections() {
+  const [collections, setCollections] = useState(itemsData);
   const item = collections.map((item, index) => {
     return (
       <Link
@@ -34,4 +34,4 @@ function ItemList() {
     </section>
   );
 }
-export default ItemList;
+export default Collections;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Item from '../../../../items/item';
+import Item from '../../../../shop/item';
 function Featured({ collections }) {
   const featured = collections.slice(0, 6).map((item, index) => {
     return (
