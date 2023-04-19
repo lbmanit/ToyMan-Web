@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
+import { Link } from 'react-router-dom';
 import animatedData from './animatedData';
 import '../../../../../assets/css/main/animated.css';
 import Spinner from '../../../../../Spinner';
@@ -35,13 +36,14 @@ function Animated() {
         >
           <h3 className='text-lg my-4'>{e.title}</h3>
           <p className='text-2xl my-4 w-40'>{e.content}</p>
-          <button
+          <Link
             className={`animated-btn ${
               e.id === 1 ? 'animated-btn-left' : 'animated-btn-right'
             } text-lg my-4`}
+            to='/collections'
           >
             {e.btn}
-          </button>
+          </Link>
         </div>
       </article>
     );

@@ -6,15 +6,22 @@ function ItemDetail(props) {
   const { id, avatarUrl, title, price, salePrice, details } = props;
   const [count, setCount] = useState(1);
   const handleIncrement = () => {
-    setCount(count + 1);
+    setCount((prevCount) => prevCount + 1);
   };
+
   const handleDecrement = () => {
-    if (count === 0) {
-      setCount(0);
-    } else {
-      setCount(count - 1);
-    }
+    setCount((prevCount) => {
+      if (prevCount <= 1) {
+        return 1;
+      } else {
+        return prevCount - 1;
+      }
+    });
   };
+
+  function handleChange(event) {
+    setCount(parseInt(event.target.value));
+  }
   return (
     <React.Fragment>
       <div className='text-lg flex items-center font-bold nav-collections left-active'>
@@ -68,7 +75,7 @@ function ItemDetail(props) {
                 <button className='cursor-pointer' onClick={handleDecrement}>
                   -
                 </button>
-                <input className='w-1/6' type='text' value={count} />
+                <h1 onChange={handleChange}>{parseInt(count)}</h1>
                 <button className='cursor-pointer' onClick={handleIncrement}>
                   +
                 </button>

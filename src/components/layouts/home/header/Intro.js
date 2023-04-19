@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import greenAnimatedKid from '../../../../assets/images/headerImages/Green_Animated_Kids_Lessons_Facebook_Cover_1_e8f07e74-20b1-416e-8997-0cd8c9ada936.webp';
 import h1thmb from '../../../../assets/images/headerImages/h1thmb.webp';
 import animated from '../../../../assets/images/headerImages/thmb2d_836dbfe8-8883-4720-980e-39af19da7de5.webp';
@@ -26,9 +27,9 @@ function Intro() {
         </p>
         <p className='text-2xl mt-4 mb-8'>Flat 10% Off On Order Above $29.99</p>
         <div className='flex items-center text-2xl'>
-          <div className='animated my-6'>
+          <Link className='animated my-6' to='/collections'>
             SHOP NOW <i className='fa fa-hand-point-right'></i>
-          </div>
+          </Link>
           <div className='m-6 text-7xl'>
             <i className='fa fa-play-circle'></i>
           </div>

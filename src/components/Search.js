@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-function Search({ products }) {
+import itemsData from '../data/itemsData';
+import blogsData from '../data/blogsData';
+function Search(props) {
+  const products = itemsData.concat(blogsData);
   const [searchValue, setSearchValue] = useState('');
   const [searchProducts, setSearchProducts] = useState([]);
   const handleChange = (event) => {
@@ -14,7 +17,7 @@ function Search({ products }) {
       return hasTag || hasTitle;
     });
     setSearchProducts(results);
-  }, [products, searchValue]);
+  }, [searchValue]);
   const handleLinkClick = (product) => {
     if (searchValue) {
       if (product.type === 'blog') {
@@ -43,35 +46,46 @@ function Search({ products }) {
         value={searchValue}
         onChange={handleChange}
       />
-      {searchValue &&
-        searchProducts.map((product, index) => {
-          return (
-            <Link
-              key={index}
-              className='flex justify-between items-center my-6'
-              to={handleLinkClick(product)}
-            >
-              <img
-                className='w-1/3  rounded-xl'
-                src={`${
-                  product.type === 'blog' ? product.image : product.avatarUrl
-                }`}
-                alt={`${product.title}`}
-              />
-              <div className='w-2/3 mx-4'>
-                <h1 className='text-lg font-bold'>{product.title}</h1>
-                {product.type === 'item' && (
-                  <h1 className='text-lg font-bold text-cyan'>
-                    $
-                    {product.details.mod === 'SALE'
-                      ? product.salePrice
-                      : product.price}
-                  </h1>
-                )}
-              </div>
-            </Link>
-          );
-        })}
+      <div
+        className={`${searchValue ? 'list-item-search p-4' : ''}`}
+        onClick={props.handleDisplay}
+      >
+        {searchValue && <h1 className='font-bold m-4'>Products</h1>}
+        {searchValue && searchProducts.length === 0 && (
+          <p className='font-bold mx-4'>
+            Your search for "{searchValue}" did not yield any results.
+          </p>
+        )}
+        {searchValue &&
+          searchProducts.map((product, index) => {
+            return (
+              <Link
+                key={index}
+                className='flex justify-center items-center left-active my-5'
+                to={handleLinkClick(product)}
+              >
+                <img
+                  className='w-1/4 rounded-xl'
+                  src={`${
+                    product.type === 'blog' ? product.image : product.avatarUrl
+                  }`}
+                  alt={`${product.title}`}
+                />
+                <div className='w-2/3 mx-4'>
+                  <h1 className='text-lg font-bold'>{product.title}</h1>
+                  {product.type === 'item' && (
+                    <h1 className='text-lg font-bold text-cyan'>
+                      $
+                      {product.details.mod === 'SALE'
+                        ? product.salePrice
+                        : product.price}
+                    </h1>
+                  )}
+                </div>
+              </Link>
+            );
+          })}
+      </div>
     </div>
   );
 }

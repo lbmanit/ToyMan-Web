@@ -1,3 +1,15 @@
+.sale-mod {
+  background-color: #e83e8c;
+  top: 10px;
+  right: 12px;
+}
+
+.new-mod {
+  background-color: #17a2b8;
+  top: 10px;
+  left: 12px;
+}
+
 .item-collections {
   width: calc(100% / 3 -100px);
   margin: auto;
@@ -16,9 +28,6 @@
   border: 1px solid #eee;
   border-radius: 8px;
 }
-/* .input-count > input {
-  width: 50px;
-} */
 .input-count > input:focus {
   outline: none;
 }

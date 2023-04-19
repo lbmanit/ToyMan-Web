@@ -3,17 +3,14 @@ import { useLocation, useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Blog from './blog';
 import BlogDetail from './blogDetail';
-import itemsData from '../../../data/itemsData';
 import Search from '../../Search';
 import '../../../assets/css/blog.css';
 function MainBlog() {
   const { id } = useParams();
   const location = useLocation();
-  const [collections, setCollections] = useState(itemsData);
   let blogs = [];
   const searchParams = new URLSearchParams(location.search);
   const blogsParam = searchParams.get('blogs');
-  console.log(blogsParam);
   if (blogsParam) {
     try {
       blogs = JSON.parse(blogsParam);
@@ -21,7 +18,6 @@ function MainBlog() {
       console.error(error);
     }
   }
-  console.log(blogs);
   const mainBlog = blogs.find((blog) => blog.id === parseInt(id));
   const [change, setChange] = useState(false);
   function handleChange() {
@@ -66,7 +62,7 @@ function MainBlog() {
           <div>
             <h1 className='text-xl font-bold'>Search</h1>
             <div className='search-store text-base my-6 py-3 px-4'>
-              <Search products={blogs.concat(collections)} />
+              <Search />
             </div>
           </div>
           <div>

@@ -1,40 +1,28 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import itemsData from '../../../data/itemsData';
 import Spinner from '../../../Spinner';
 function Item(props) {
-  const { avatarUrl, title, name, price, salePrice, details } = props;
+  const { id, avatarUrl, title, price, salePrice, details } = props;
   const [isShow, setIsShow] = useState(false);
-  const styleMod = {
-    backgroundColor: '',
-    top: '',
-    right: '',
-    left: '',
-  };
-  let newMod = {};
-  if (props.details.mod === 'SALE') {
-    newMod = {
-      backgroundColor: '#e83e8c',
-      top: '10px',
-      right: '12px',
-    };
-  } else if (props.details.mod === 'NEW') {
-    newMod = {
-      backgroundColor: '#17a2b8',
-      top: '10px',
-      left: '12px',
-    };
-  }
   return (
     <article
-      key={props.id}
-      className='relative left-active'
+      className='relative left-active item-collections'
       onMouseEnter={() => setIsShow(true)}
       onMouseLeave={() => setIsShow(false)}
     >
-      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-        <img className='rounded-2xl' src={avatarUrl} alt={name} />
-      </LazyLoad>
+      <Link
+        to={{
+          pathname: `/collections/${id}`,
+          search: `?toys=${JSON.stringify(itemsData)}`,
+        }}
+      >
+        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+          <img className='rounded-2xl' src={avatarUrl} alt={title} />
+        </LazyLoad>
+      </Link>
       <p className='product-name-action text-2xl mt-4'>{title}</p>
       <p className='text-xl font-semibold my-2'>
         <span
@@ -56,8 +44,9 @@ function Item(props) {
       </h3>
       {details.mod && (
         <h3
-          className='absolute rounded-2xl text-white py-1 px-6 z-50'
-          style={{ ...styleMod, ...newMod }}
+          className={`absolute rounded-2xl text-white py-1 px-6 z-50 ${
+            details.mod === 'SALE' ? 'sale-mod' : 'new-mod'
+          }`}
         >
           {details.mod}
         </h3>

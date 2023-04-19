@@ -1,0 +1,76 @@
+.search-item {
+  position: absolute;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.9;
+  z-index: 999;
+  transition: opacity 0.5s linear;
+}
+
+.display-active {
+  animation: display-active 0.5s linear;
+}
+@keyframes display-active {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.hide-search {
+  animation: hide-active 0.5 linear;
+}
+@keyframes hide-active {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(100px);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+}
+.fa.fa-times-circle {
+  color: #fff;
+}
+.search-item-product,
+input {
+  background-color: initial;
+  color: #ddd;
+}
+input {
+  max-width: 100%;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+input:focus {
+  outline: none;
+}
+.search-item-product > .list-item-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5%;
+  height: 5%;
+}
+.list-item-search {
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 16px;
+  color: #000;
+}

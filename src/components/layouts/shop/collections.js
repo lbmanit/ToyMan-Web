@@ -1,23 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Item from '../shop/item';
 import { Link } from 'react-router-dom';
 import itemsData from '../../../data/itemsData';
 import '../../../assets/css/item.css';
 function Collections() {
-  const [collections, setCollections] = useState(itemsData);
-  const item = collections.map((item, index) => {
-    return (
-      <Link
-        className='item-collections'
-        key={index}
-        to={{
-          pathname: `/collections/${item.id}`,
-          search: `?toys=${JSON.stringify(collections)}`,
-        }}
-      >
-        <Item {...item} />
-      </Link>
-    );
+  const item = itemsData.map((item, index) => {
+    return <Item key={index} {...item} />;
   });
   return (
     <section className='left-active'>
