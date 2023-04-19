@@ -2,7 +2,6 @@ import React from 'react';
 import Item from '../shop/item';
 import { Link } from 'react-router-dom';
 import itemsData from '../../../data/itemsData';
-import '../../../assets/css/item.css';
 function Collections() {
   const item = itemsData.map((item, index) => {
     return <Item key={index} {...item} />;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Item from '../../../shop/item';
 import itemsData from '../../../../../data/itemsData';
-import { Link } from 'react-router-dom';
 function Loves() {
   const [collections, setCollections] = useState(itemsData);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -9,18 +8,7 @@ function Loves() {
   const loveItems = () => {
     const endIndex = currentIndex + 3;
     return collections.slice(currentIndex, endIndex).map((item, index) => {
-      return (
-        <Link
-          key={index}
-          className='flex main-item'
-          to={{
-            pathname: `collections/${item.id}`,
-            search: `?toys=${JSON.stringify(collections)}`,
-          }}
-        >
-          <Item key={index} {...item} />
-        </Link>
-      );
+      return <Item key={index} {...item} />;
     });
   };
   const handlePrevClick = () => {

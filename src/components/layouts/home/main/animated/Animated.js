@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import animatedData from './animatedData';
-import '../../../../../assets/css/main/animated.css';
 import Spinner from '../../../../../Spinner';
 function Animated() {
   const [animated, setAnimated] = useState([]);

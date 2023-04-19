@@ -3,7 +3,6 @@ import toymanLogo from '../assets/images/logo/toymanlogo.jpeg';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../Spinner';
 import Search from './Search';
-import '../assets/css/search.css';
 import { Link } from 'react-router-dom';
 
 function Navbar() {

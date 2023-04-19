@@ -2,7 +2,6 @@ import React, { useCallback, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../../../Spinner';
 import { Link } from 'react-router-dom';
-import '../../../assets/css/blog.css';
 function News({ blogs }) {
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);

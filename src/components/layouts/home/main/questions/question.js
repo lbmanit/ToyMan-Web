@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../../../../../assets/css/main/questions.css';
 
 function Question(props) {
   const [isShow, setIsShow] = useState(false);

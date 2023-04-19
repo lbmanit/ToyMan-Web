@@ -6,6 +6,9 @@
   * {
     font-family: monospace;
     text-transform: capitalize;
+    box-sizing: border-box;
+    text-shadow: 0px 1px 1px #eee;
+    transition: all 0.3s linear;
   }
 }
 @layer components {
@@ -16,12 +19,6 @@
     border: none;
   }
 }
-* {
-  box-sizing: border-box;
-  text-shadow: 0px 1px 1px #eee;
-  /* filter: drop-shadow(0px 0px 0.5px #fff); */
-  transition: all 0.3s linear;
-}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Manrope', 'Segoe UI',
@@ -30,7 +27,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

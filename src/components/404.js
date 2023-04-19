@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../assets/css/404.css';
 function Page404() {
   return (
     <section className='left-active'>

@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import Blog from './blog';
 import BlogDetail from './blogDetail';
 import Search from '../../Search';
-import '../../../assets/css/blog.css';
 function MainBlog() {
   const { id } = useParams();
   const location = useLocation();

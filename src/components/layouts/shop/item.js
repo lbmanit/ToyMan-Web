@@ -3,7 +3,6 @@ import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import itemsData from '../../../data/itemsData';
-import '../../../assets/css/item.css';
 import Spinner from '../../../Spinner';
 function Item(props) {
   const { id, avatarUrl, title, price, salePrice, details } = props;
@@ -29,7 +28,7 @@ function Item(props) {
   return (
     <React.Fragment>
       <article
-        className='relative left-active item-collections'
+        className='relative left-active item-collections overflow-hidden'
         onMouseEnter={() => setIsShow(true)}
         onMouseLeave={() => setIsShow(false)}
       >
@@ -90,7 +89,7 @@ function Item(props) {
         )}
       </article>
       {isDisplay && (
-        <div className='view-item flex justify-center'>
+        <div className='view-item flex justify-center overflow-hidden'>
           <div className='container mx-auto section-view-item flex p-8 mt-48'>
             <img className='opacity-100' src={avatarUrl} alt={title} />
             <div className='flex flex-col px-8'>
