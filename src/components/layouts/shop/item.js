@@ -97,7 +97,7 @@ function Item(props) {
         )}
       </article>
       {isDisplay && (
-        <div className='view-item flex justify-center jumpActive'>
+        <div className='view-item flex justify-center right-active'>
           <div className='container mx-auto section-view-item flex justify-between p-8'>
             <img className='opacity-100' src={avatarUrl} alt={title} />
             <div className='flex flex-col px-8'>
