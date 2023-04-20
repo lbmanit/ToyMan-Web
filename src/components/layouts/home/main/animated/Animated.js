@@ -47,7 +47,9 @@ function Animated() {
       </article>
     );
   });
-  return <section className='flex justify-center'>{animatedElement}</section>;
+  return (
+    <section className='flex justify-center my-8'>{animatedElement}</section>
+  );
 }
 
 export default Animated;
