@@ -67,8 +67,26 @@
   transform: translate(-50%, -50%);
   z-index: 999;
   opacity: 1;
+  border-radius: 16px;
 }
 
 .section-view-item > img {
   background-color: #a5a3a3;
+}
+
+.single-collection {
+  width: calc(100% / 4 - 100px);
+  margin: auto;
+  color: #f8f8f8;
+  border-radius: 16px;
+}
+.single-collection > img {
+  width: 60%;
+  margin: auto;
+}
+.single-collection:nth-child(odd) {
+  background-color: #4acdd5;
+}
+.single-collection:nth-child(even) {
+  background-color: #ff6799;
 }

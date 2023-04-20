@@ -6,7 +6,7 @@ import img5 from '../assets/images/items/9_483907f5-d09f-4823-9d27-5b450c462752_
 import img6 from '../assets/images/items/11_5e530394-9272-4151-9c11-76493207fcf3_large.webp';
 // import img7 from '../assets/images/items/10_037fbf0e-0846-428a-a2f8-1bd8e869fd03_x110@2x.avif';
 import img8 from '../assets/images/items/12_0a5200ad-0a21-41fe-b979-78d8644cfbad_large.webp';
-import img9 from '../assets/images/items/18_large.webp';
+// import img9 from '../assets/images/items/18_large.webp';
 import img10 from '../assets/images/items/1_large.webp';
 import img11 from '../assets/images/items/15_large.webp';
 export default [
@@ -24,6 +24,7 @@ export default [
       Vendor: 'Vendor 8',
       isFavorite: true,
       rate: 3,
+      productType: 1,
     },
     tags: ['toy, new, red , round'],
     type: 'item',
@@ -42,6 +43,7 @@ export default [
       Vendor: 'Vendor 8',
       isFavorite: true,
       rate: 4,
+      productType: 1,
     },
     tags: ['bag, baby, red'],
     type: 'item',
@@ -60,6 +62,7 @@ export default [
       Vendor: 'Vendor 8',
       isFavorite: true,
       rate: 2,
+      productType: 1,
     },
     tags: ['doll, pink , hug'],
     type: 'item',
@@ -78,6 +81,7 @@ export default [
       Vendor: 'Vendor 8',
       isFavorite: false,
       rate: 3,
+      productType: 2,
     },
     tags: ['baby, new, red , shoes'],
     type: 'item',
@@ -96,6 +100,7 @@ export default [
       Vendor: 'Vendor 8',
       isFavorite: false,
       rate: 5,
+      productType: 3,
     },
     tags: ['animals, pet, green'],
     type: 'item',
@@ -114,6 +119,7 @@ export default [
       Vendor: 'Vendor 11',
       isFavorite: true,
       rate: 5,
+      productType: 3,
     },
     tags: ['baby, glups, green'],
     type: 'item',
@@ -148,28 +154,29 @@ export default [
       Vendor: 'Vendor 1',
       isFavorite: true,
       rate: 1,
+      productType: 2,
     },
     tags: ['baby, box, sound'],
     type: 'item',
   },
-  {
-    id: 1681117919813,
-    avatarUrl: img9,
-    title: 'fox baby pant pink',
-    price: 16,
-    salePrice: 12,
-    details: {
-      describe:
-        ' Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia',
-      mod: '',
-      Availability: '',
-      Vendor: 'Vendor 1',
-      isFavorite: true,
-      rate: 2,
-    },
-    tags: ['fox, baby, pink'],
-    type: 'item',
-  },
+  // {
+  //   id: 1681117919813,
+  //   avatarUrl: img9,
+  //   title: 'fox baby pant pink',
+  //   price: 16,
+  //   salePrice: 12,
+  //   details: {
+  //     describe:
+  //       ' Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia',
+  //     mod: '',
+  //     Availability: '',
+  //     Vendor: 'Vendor 1',
+  //     isFavorite: true,
+  //     rate: 2,
+  //   },
+  //   tags: ['fox, baby, pink'],
+  //   type: 'item',
+  // },
   {
     id: 1681117919456,
     avatarUrl: img10,
@@ -184,6 +191,7 @@ export default [
       Vendor: 'Vendor 1',
       isFavorite: true,
       rate: 4,
+      productType: 2,
     },
     tags: ['robot, toy, blue'],
     type: 'item',
@@ -202,6 +210,7 @@ export default [
       Vendor: 'Vendor 9',
       isFavorite: true,
       rate: 5,
+      productType: 3,
     },
     tags: ['white, dog, box'],
     type: 'item',

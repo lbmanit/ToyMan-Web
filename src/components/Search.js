@@ -12,7 +12,7 @@ function Search(props) {
   };
   useEffect(() => {
     const results = products.filter((product) => {
-      const hasTag = product.tags && product.tags.includes(searchValue);
+      const hasTag = product.tags.includes(searchValue);
       const hasTitle = product.title.includes(searchValue);
       return hasTag || hasTitle;
     });
@@ -54,6 +54,11 @@ function Search(props) {
         {searchValue && searchProducts.length === 0 && (
           <p className='font-bold mx-4'>
             Your search for "{searchValue}" did not yield any results.
+          </p>
+        )}
+        {searchValue && searchProducts.length !== 0 && (
+          <p className='font-bold mx-4'>
+            Search: {searchProducts.length} results found for "{searchValue}"
           </p>
         )}
         {searchValue &&
