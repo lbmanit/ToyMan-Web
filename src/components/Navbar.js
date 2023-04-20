@@ -16,7 +16,12 @@ function Navbar() {
     }
   };
   function handleDisplay() {
+    setIsDisplay(true);
+    // document.body.style.overflow = 'hidden';
+  }
+  function handleHide() {
     setIsDisplay(false);
+    // document.body.style.overflow = 'auto';
   }
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -55,7 +60,7 @@ function Navbar() {
           </li>
         </ul>
         <ul className='flex text-xl text-grayDark'>
-          <li className='m-4 header-nav' onClick={() => setIsDisplay(true)}>
+          <li className='m-4 header-nav' onClick={handleDisplay}>
             <i className='fa fa-search'></i>
           </li>
           <li className='m-4 header-nav'>
@@ -72,12 +77,14 @@ function Navbar() {
             isDisplay ? 'display-active' : 'hide-active'
           } flex flex-col items-center p-16`}
         >
-          <i
-            className='text-4xl cursor-pointer fa fa-times-circle'
-            onClick={() => setIsDisplay(false)}
-          ></i>
-          <div className='search-item-product text-3xl flex py-4'>
-            <Search handleDisplay={handleDisplay} />
+          <div className='fixed'>
+            <i
+              className='text-4xl cursor-pointer fa fa-times-circle'
+              onClick={handleHide}
+            ></i>
+            <div className='search-item-product text-3xl flex py-4'>
+              <Search handleDisplay={() => setIsDisplay(false)} />
+            </div>
           </div>
         </section>
       )}

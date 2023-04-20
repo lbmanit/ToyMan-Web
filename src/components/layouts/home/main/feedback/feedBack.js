@@ -1,32 +1,38 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
-import feedBackData from './feedBackData';
+import feedBackData from '../../../../../data/feedBackData';
 import Spinner from '../../../../../Spinner';
 
 function FeedBack() {
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    setUsers(feedBackData);
-  }, []);
-  const [slideActive, setSlideActive] = useState(false);
+  const [users, setUsers] = useState(feedBackData);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [slideLeft, setSlideLeft] = useState(false);
+  const [slideRight, setSlideRight] = useState(false);
   const endIndex = currentSlide + 2;
   const nextSlide = () => {
-    setSlideActive(true);
     const newIndex = currentSlide === 0 ? users.length - 2 : currentSlide - 1;
     setCurrentSlide(newIndex);
+    setSlideLeft(false);
+    setSlideRight(true);
+    setTimeout(() => {
+      setSlideRight(false);
+    }, 500);
   };
 
   const prevSlide = () => {
-    setSlideActive(true);
     const newIndex = currentSlide === users.length - 2 ? 0 : currentSlide + 1;
     setCurrentSlide(newIndex);
+    setSlideLeft(true);
+    setSlideRight(false);
+    setTimeout(() => {
+      setSlideLeft(false);
+    }, 500);
   };
   const feedBackUsers = users.slice(currentSlide, endIndex).map((user) => {
     return (
       <article
-        className={`${
-          slideActive ? 'feedback-active' : ''
+        className={`${slideLeft ? 'left-active' : ''} ${
+          slideRight ? 'right-active' : ''
         } feedback-users w-1/2 m-4 p-8`}
         key={user.id}
       >

@@ -25,10 +25,18 @@ function Item(props) {
   function handleChange(event) {
     setCount(parseInt(event.target.value));
   }
+  function handleDisplay() {
+    setIsDisplay(true);
+    document.body.style.overflow = 'hidden';
+  }
+  function handleHide() {
+    setIsDisplay(false);
+    document.body.style.overflow = 'auto';
+  }
   return (
     <React.Fragment>
       <article
-        className='relative left-active item-collections overflow-hidden'
+        className='item-collections relative left-active overflow-hidden'
         onMouseEnter={() => setIsShow(true)}
         onMouseLeave={() => setIsShow(false)}
       >
@@ -77,7 +85,7 @@ function Item(props) {
             } absolute text-xl flex flex-col z-10 top-1/4 right-8`}
           >
             <li className='product-item-action  m-2 mt-4'>
-              <i className='fa fa-eye' onClick={() => setIsDisplay(true)}></i>
+              <i className='fa fa-eye' onClick={handleDisplay}></i>
             </li>
             <li className='product-item-action  m-2'>
               <i className='fa fa-heart'></i>
@@ -89,8 +97,8 @@ function Item(props) {
         )}
       </article>
       {isDisplay && (
-        <div className='view-item flex justify-center overflow-hidden'>
-          <div className='container mx-auto section-view-item flex p-8 mt-48'>
+        <div className='view-item flex justify-center'>
+          <div className='container mx-auto section-view-item flex justify-between p-8'>
             <img className='opacity-100' src={avatarUrl} alt={title} />
             <div className='flex flex-col px-8'>
               <div>
@@ -98,7 +106,7 @@ function Item(props) {
                   <h1 className='text-2xl font-bold'>{title}</h1>
                   <i
                     className='fa fa-times cursor-pointer text-2xl hover:text-cyan'
-                    onClick={() => setIsDisplay(false)}
+                    onClick={handleHide}
                   ></i>
                 </div>
                 <h1 className='text-xl font-semibold my-4'>

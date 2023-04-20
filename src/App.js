@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Spinner from './Spinner';
 import './assets/css/main/animated.css';
+import './assets/css/main/loves.css';
 import './assets/css/main/feedback.css';
 import './assets/css/main/questions.css';
 import './assets/css/main/recentphotos.css';

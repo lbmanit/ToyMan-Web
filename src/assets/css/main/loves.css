@@ -1,0 +1,45 @@
+.far.fa-arrow-alt-circle-up,
+.far.fa-arrow-alt-circle-down {
+  color: #ff6899;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.far.fa-arrow-alt-circle-up:hover,
+.far.fa-arrow-alt-circle-down:hover {
+  color: #4acdd5;
+}
+
+.far.fa-arrow-alt-circle-up {
+  animation: circle-up 0.5s linear;
+}
+@keyframes circle-up {
+  0% {
+    transform: translateY(-200%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-100%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.far.fa-arrow-alt-circle-down {
+  animation: circle-down 0.5s linear;
+}
+@keyframes circle-down {
+  0% {
+    transform: translateY(200%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(100%);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

@@ -1,5 +1,5 @@
-import avatar_user1 from '../../../../../assets/images/feedback/review1_100x.avif';
-import avatar_user2 from '../../../../../assets/images/feedback/review2_1_100x.avif';
+import avatar_user1 from '../assets/images/feedback/review1_100x.avif';
+import avatar_user2 from '../assets/images/feedback/review2_1_100x.avif';
 export default [
   {
     id: 1,
