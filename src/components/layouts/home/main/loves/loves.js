@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PreviewItem from '../../../shop/preview-item/preview-item';
-import itemsData from '../../../../../data/itemsData';
+import itemsData from '../../../../../data/items-data';
 function Loves() {
   const [collections, setCollections] = useState(itemsData);
   const [currentIndex, setCurrentIndex] = useState(0);

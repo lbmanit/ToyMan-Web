@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useContext } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Spinner from './Spinner';
 import './assets/css/main/animated.css';

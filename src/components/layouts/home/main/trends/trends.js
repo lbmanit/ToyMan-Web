@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import itemsData from '../../../../../data/itemsData';
+import itemsData from '../../../../../data/items-data';
 import Featured from './navTrends/featured';
-import BestSellers from './navTrends/bestSellers';
-import NewArrivals from './navTrends/newArrivals';
+import BestSellers from './navTrends/best-sellers';
+import NewArrivals from './navTrends/new-arrivals';
 function Trends() {
   const [collections, setCollections] = useState(itemsData);
   const [selectTab, setSelectTab] = useState('featured');

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import itemsData from '../../data/itemsData';
-import blogsData from '../../data/blogsData';
+import itemsData from '../../data/items-data';
+import blogsData from '../../data/blogs-data';
+import { encode } from 'base-64';
 function Search(props) {
   const products = itemsData.concat(blogsData);
   const [searchValue, setSearchValue] = useState('');
@@ -23,12 +24,12 @@ function Search(props) {
       if (product.type === 'blog') {
         return {
           pathname: `/news/${product.id}`,
-          search: `?blogs=${JSON.stringify(blogsData)}`,
+          search: `?blogs=${encode(JSON.stringify(blogsData))}`,
         };
       } else if (product.type === 'item') {
         return {
           pathname: `/collections/${product.id}`,
-          search: `?toys=${JSON.stringify(itemsData)}`,
+          search: `?toys=${encode(JSON.stringify(itemsData))}`,
         };
       }
     } else {

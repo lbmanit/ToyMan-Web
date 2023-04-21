@@ -5,6 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Search from '../Search';
 import RelatedBlogs from './related-blogs';
+import { decode } from 'base-64';
 function DetailBlog() {
   const [change, setChange] = useState(false);
   const { id } = useParams();
@@ -14,7 +15,7 @@ function DetailBlog() {
   const blogsParam = searchParams.get('blogs');
   if (blogsParam) {
     try {
-      blogs = JSON.parse(blogsParam);
+      blogs = JSON.parse(decode(blogsParam));
     } catch (error) {
       console.error(error);
     }

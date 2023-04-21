@@ -1,19 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../Spinner';
 import { Link, useLocation, useParams } from 'react-router-dom';
+import { decode } from 'base-64';
+import Spinner from '../../../Spinner';
+import { CartContext } from '../../context/cart-context';
 function DetailItem() {
+  const { cartItems, setCartItems } = useContext(CartContext);
   const { id } = useParams();
   const [count, setCount] = useState(1);
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const items = JSON.parse(searchParams.get('toys'));
+  const items = JSON.parse(decode(searchParams.get('toys')));
   const mainItem = items.find((item) => item.id === parseInt(id));
   const { avatarUrl, title, price, salePrice, details } = mainItem;
+  useEffect(() => {
+    window.localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+  const handleAddToCart = (mainItem, quantity) => {
+    const finalPrice =
+      mainItem.details.mod === 'SALE' ? mainItem.salePrice : mainItem.price;
+    const existingItem = cartItems.find(
+      (cartItem) => cartItem.id === mainItem.id
+    );
+    if (existingItem) {
+      setCartItems(
+        cartItems.map((cartItem) =>
+          cartItem.id === mainItem.id
+            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+            : cartItem
+        )
+      );
+    } else {
+      setCartItems([
+        ...cartItems,
+        {
+          id: mainItem.id,
+          title: mainItem.title,
+          price: finalPrice,
+          total: total,
+          quantity,
+        },
+      ]);
+    }
+  };
+  console.log(cartItems);
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
   };
-
   const handleDecrement = () => {
     setCount((prevCount) => {
       if (prevCount <= 1) {
@@ -85,15 +118,20 @@ function DetailItem() {
                   +
                 </button>
               </div>
-              <h1 className='cursor-pointer text-center text-xl add-item ml-8 p-2'>
+              <button
+                className='cursor-pointer text-center text-xl add-item ml-8 p-2'
+                onClick={() => handleAddToCart(mainItem, count)}
+              >
                 ADD TO CART
-              </h1>
+              </button>
             </div>
-            <h1 className='text-xl text-center p-2 buy-item'>Buy it now</h1>
+            <button className='text-xl text-center p-2 buy-item'>
+              Buy it now
+            </button>
           </div>
           <div className='cursor-pointer flex items-center text-lg my-4'>
             <i className='fa fa-heart'></i>
-            <h1 className='mx-2'>Add to wishlist</h1>
+            <button className='mx-2'>Add to wishlist</button>
           </div>
         </div>
       </article>

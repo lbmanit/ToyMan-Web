@@ -1,8 +1,9 @@
 import React, { useState, useCallback } from 'react';
-import blogsData from '../../../data/blogsData';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
+import blogsData from '../../../data/blogs-data';
 import Spinner from '../../../Spinner';
+import { encode } from 'base-64';
 function BlogList() {
   const [blogs, setBlogs] = useState(blogsData);
   const [countPage, setCountPage] = useState(1);
@@ -21,7 +22,7 @@ function BlogList() {
         className='blog p-4 cursor-pointer'
         to={{
           pathname: `/news/${blog.id}`,
-          search: `?blogs=${JSON.stringify(blogs)}`,
+          search: `?blogs=${encode(JSON.stringify(blogsData))}`,
         }}
       >
         <article

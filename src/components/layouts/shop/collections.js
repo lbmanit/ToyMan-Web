@@ -1,9 +1,8 @@
-import React, { useState, useCallback } from 'react';
-import PreviewItem from './preview-item/preview-item';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import itemsData from '../../../data/itemsData';
-import singleCollection from '../../../data/singleCollection';
-import { useEffect } from 'react';
+import PreviewItem from './preview-item/preview-item';
+import itemsData from '../../../data/items-data';
+import singleCollection from '../../../data/single-collection';
 function Collections() {
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -67,7 +66,7 @@ function Collections() {
       setSelectedTypes(newSelectedTypes);
     }
   }
-  const item = slicedItems.map((item, index) => {
+  const items = slicedItems.map((item, index) => {
     return <PreviewItem key={index} {...item} />;
   });
   const singleBlock = singleCollection.map((single) => {
@@ -141,7 +140,7 @@ function Collections() {
               slideRight ? 'right-active' : ''
             }`}
           >
-            {item}
+            {items}
           </div>
           <div className='flex justify-center items-center m-8'>
             <i

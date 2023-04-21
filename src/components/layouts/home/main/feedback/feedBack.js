@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
-import feedBackData from '../../../../../data/feedBackData';
+import feedBackData from '../../../../../data/feedback-data';
 import Spinner from '../../../../../Spinner';
 
 function FeedBack() {

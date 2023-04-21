@@ -3,10 +3,10 @@ import LazyLoad from 'react-lazyload';
 import Spinner from '../../../../Spinner';
 const Categories = lazy(() => import('./category/categories'));
 const Items = lazy(() => import('./trends/trends'));
-const Animated = lazy(() => import('./animated/Animated'));
-const FeedBack = lazy(() => import('./feedback/feedBack'));
+const Animated = lazy(() => import('./animated/animated'));
+const FeedBack = lazy(() => import('./feedback/feedback'));
 const Loves = lazy(() => import('./loves/loves'));
-const RecentPhotos = lazy(() => import('./recentphotos/recentPhotos'));
+const RecentPhotos = lazy(() => import('./recentphotos/recent-photos'));
 const Questions = lazy(() => import('./questions/questions'));
 const Sponsors = lazy(() => import('./sponsors/sponsors'));
 function Main() {

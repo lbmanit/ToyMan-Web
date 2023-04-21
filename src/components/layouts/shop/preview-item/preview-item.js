@@ -2,7 +2,8 @@ import React from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import itemsData from '../../../../data/itemsData';
+import { encode } from 'base-64';
+import itemsData from '../../../../data/items-data';
 import ProductActionItem from './product-action-item';
 import ViewItem from './view-item';
 import Spinner from '../../../../Spinner';
@@ -45,7 +46,7 @@ function PreviewItem(props) {
         <Link
           to={{
             pathname: `/collections/${id}`,
-            search: `?toys=${JSON.stringify(itemsData)}`,
+            search: `?toys=${encode(JSON.stringify(itemsData))}`,
           }}
         >
           <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
