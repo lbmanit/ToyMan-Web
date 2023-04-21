@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import itemsData from '../data/itemsData';
-import blogsData from '../data/blogsData';
+import itemsData from '../../data/itemsData';
+import blogsData from '../../data/blogsData';
+import { encode } from 'base-64';
 function Search(props) {
   const products = itemsData.concat(blogsData);
   const [searchValue, setSearchValue] = useState('');

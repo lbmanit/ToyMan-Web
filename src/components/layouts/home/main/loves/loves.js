@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Item from '../../../shop/item';
+import PreviewItem from '../../../shop/preview-item/preview-item';
 import itemsData from '../../../../../data/itemsData';
 function Loves() {
   const [collections, setCollections] = useState(itemsData);
@@ -10,7 +10,7 @@ function Loves() {
   const loveItems = () => {
     const endIndex = currentIndex + 3;
     return collections.slice(currentIndex, endIndex).map((item, index) => {
-      return <Item key={index} {...item} />;
+      return <PreviewItem key={index} {...item} />;
     });
   };
   const handlePrevClick = () => {

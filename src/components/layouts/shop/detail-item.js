@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../../../Spinner';
-import { Link } from 'react-router-dom';
-function ItemDetail(props) {
-  const { id, avatarUrl, title, price, salePrice, details } = props;
+import { Link, useLocation, useParams } from 'react-router-dom';
+function DetailItem() {
+  const { id } = useParams();
   const [count, setCount] = useState(1);
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const items = JSON.parse(searchParams.get('toys'));
+  const mainItem = items.find((item) => item.id === parseInt(id));
+  const { avatarUrl, title, price, salePrice, details } = mainItem;
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -96,4 +101,4 @@ function ItemDetail(props) {
   );
 }
 
-export default ItemDetail;
+export default DetailItem;

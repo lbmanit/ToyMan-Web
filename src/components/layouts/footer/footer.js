@@ -1,8 +1,8 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../Spinner';
-import logo from '../assets/images/logo/toymanlogo.jpeg';
-import payments from '../assets/images/payments/payments_large_25c93ac6-988d-4e66-b116-eab60a12eced_large.png';
+import Spinner from '../../../Spinner';
+import logo from '../../../assets/images/logo/toymanlogo.jpeg';
+import payments from '../../../assets/images/payments/payments_large_25c93ac6-988d-4e66-b116-eab60a12eced_large.png';
 function Footer() {
   return (
     <footer>

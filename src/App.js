@@ -15,13 +15,13 @@ import './assets/css/footer.css';
 import './assets/css/item.css';
 import './assets/css/search.css';
 const Home = lazy(() => import('./components/layouts/home'));
-const Page404 = lazy(() => import('./components/404'));
-const Navbar = lazy(() => import('./components/Navbar'));
-const Footer = lazy(() => import('./components/footer'));
-const Blogs = lazy(() => import('./components/layouts/blog'));
-const MainBlog = lazy(() => import('./components/layouts/blog/mainBlog'));
+const Page404 = lazy(() => import('./components/layouts/404'));
+const Navbar = lazy(() => import('./components/layouts/navbar/Navbar'));
+const Footer = lazy(() => import('./components/layouts/footer/footer'));
+const BlogList = lazy(() => import('./components/layouts/blog/blog-list'));
+const DetailBlog = lazy(() => import('./components/layouts/blog/detail-blog'));
 const Collections = lazy(() => import('./components/layouts/shop/collections'));
-const MainItem = lazy(() => import('./components/layouts/shop/mainItem'));
+const DetailItem = lazy(() => import('./components/layouts/shop/detail-item'));
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -30,10 +30,10 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<Page404 />} />
-          <Route path='/news' element={<Blogs />} />
-          <Route path='/news/:id' element={<MainBlog />} />
+          <Route path='/news' element={<BlogList />} />
+          <Route path='/news/:id' element={<DetailBlog />} />
           <Route path='/collections' element={<Collections />} />
-          <Route path='/collections/:id' element={<MainItem />} />
+          <Route path='/collections/:id' element={<DetailItem />} />
         </Routes>
         <Footer />
       </BrowserRouter>

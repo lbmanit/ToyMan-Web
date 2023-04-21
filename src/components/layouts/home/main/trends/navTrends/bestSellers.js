@@ -1,11 +1,11 @@
 import React from 'react';
-import Item from '../../../../shop/item';
+import PreviewItem from '../../../../shop/preview-item/preview-item';
 function BestSellers({ collections }) {
   const bestSellers = collections
     .filter((item) => item.details.mod === 'SALE')
     .slice(0, 6)
     .map((item, index) => {
-      return <Item key={index} {...item} />;
+      return <PreviewItem key={index} {...item} />;
     });
   return <React.Fragment>{bestSellers}</React.Fragment>;
 }

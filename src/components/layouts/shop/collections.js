@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import Item from '../shop/item';
+import PreviewItem from './preview-item/preview-item';
 import { Link } from 'react-router-dom';
 import itemsData from '../../../data/itemsData';
 import singleCollection from '../../../data/singleCollection';
@@ -68,7 +68,7 @@ function Collections() {
     }
   }
   const item = slicedItems.map((item, index) => {
-    return <Item key={index} {...item} />;
+    return <PreviewItem key={index} {...item} />;
   });
   const singleBlock = singleCollection.map((single) => {
     return (

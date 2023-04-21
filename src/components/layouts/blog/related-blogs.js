@@ -1,7 +1,7 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../../../Spinner';
-function Blog(props) {
+function RelatedBlogs(props) {
   const { image, title, dateUpLoad, handleChange } = props;
   return (
     <article className='recent-blog flex items-center' onClick={handleChange}>
@@ -22,4 +22,4 @@ function Blog(props) {
   );
 }
 
-export default Blog;
+export default RelatedBlogs;
