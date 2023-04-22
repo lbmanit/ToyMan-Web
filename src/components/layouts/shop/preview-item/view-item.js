@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../../context/cart-context';
 
 function ViewItem(props) {
-  console.log();
+  const { handleAddToCart } = useContext(CartContext);
   const {
     item,
     count,
@@ -53,9 +54,12 @@ function ViewItem(props) {
                   +
                 </button>
               </div>
-              <h1 className='cursor-pointer text-center text-xl add-item ml-8 p-2'>
+              <button
+                className='cursor-pointer text-center text-xl add-item ml-8 p-2'
+                onClick={() => handleAddToCart(item, count)}
+              >
                 ADD TO CART
-              </h1>
+              </button>
             </div>
           </div>
         </div>

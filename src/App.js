@@ -10,6 +10,7 @@ import './assets/css/main/trends.css';
 import './assets/css/404.css';
 import './assets/css/animation.css';
 import './assets/css/blog.css';
+import './assets/css/cart.css';
 import './assets/css/header.css';
 import './assets/css/footer.css';
 import './assets/css/item.css';

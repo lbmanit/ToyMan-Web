@@ -82,7 +82,11 @@ function PreviewItem(props) {
           </h3>
         )}
         {isShow && (
-          <ProductActionItem isShow={isShow} handleDisplay={handleDisplay} />
+          <ProductActionItem
+            item={props}
+            isShow={isShow}
+            handleDisplay={handleDisplay}
+          />
         )}
       </article>
       {isDisplay && (

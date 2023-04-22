@@ -5,7 +5,7 @@ import { decode } from 'base-64';
 import Spinner from '../../../Spinner';
 import { CartContext } from '../../context/cart-context';
 function DetailItem() {
-  const { cartItems, setCartItems } = useContext(CartContext);
+  const { handleAddToCart } = useContext(CartContext);
   const { id } = useParams();
   const [count, setCount] = useState(1);
   const location = useLocation();
@@ -13,41 +13,6 @@ function DetailItem() {
   const items = JSON.parse(decode(searchParams.get('toys')));
   const mainItem = items.find((item) => item.id === parseInt(id));
   const { avatarUrl, title, price, salePrice, details } = mainItem;
-  const handleAddToCart = (mainItem, quantity) => {
-    const finalPrice =
-      mainItem.details.mod === 'SALE' ? mainItem.salePrice : mainItem.price;
-    const existingItem = cartItems.find(
-      (cartItem) => cartItem.id === mainItem.id
-    );
-    if (existingItem) {
-      const total = cartItems.reduce((acc, item) => {
-        return acc + item.quantity * item.price;
-      }, 0);
-      setCartItems(
-        cartItems.map((cartItem) =>
-          cartItem.id === mainItem.id
-            ? {
-                ...cartItem,
-                quantity: cartItem.quantity + quantity,
-                total: cartItem.price * quantity + total,
-              }
-            : cartItem
-        )
-      );
-    } else {
-      setCartItems([
-        ...cartItems,
-        {
-          id: mainItem.id,
-          title: mainItem.title,
-          price: finalPrice,
-          total: finalPrice * quantity,
-          quantity,
-        },
-      ]);
-    }
-  };
-  console.log(cartItems);
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
   };
