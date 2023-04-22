@@ -37,7 +37,7 @@ function CheckCart(props) {
         </div>
         {isShowRemove && (
           <i
-            className='absolute top-1/3 left-4 fa fa-times cursor-pointer text-grayDark hover:text-cyan jumpActive'
+            className='absolute top-2 left-2 remove fa fa-times cursor-pointer text-grayDark jumpActive'
             onClick={() => removeCartItem(item.id)}
           ></i>
         )}

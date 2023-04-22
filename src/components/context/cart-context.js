@@ -10,6 +10,13 @@ export const CartProvider = ({ children }) => {
   const totalPrice = useMemo(() => {
     return cartItems.reduce((total, item) => total + parseInt(item.total), 0);
   }, [cartItems]);
+
+  const amount = useMemo(() => {
+    return cartItems.reduce(
+      (amount, item) => amount + parseInt(item.quantity),
+      0
+    );
+  }, [cartItems]);
   const handleAddToCart = (item, quantity) => {
     const finalPrice =
       item.details.mod === 'SALE' ? item.salePrice : item.price;
@@ -76,6 +83,7 @@ export const CartProvider = ({ children }) => {
         setCartItems,
         handleAddToCart,
         totalPrice,
+        amount,
         removeCartItem,
       }}
     >
