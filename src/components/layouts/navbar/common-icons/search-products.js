@@ -1,16 +1,16 @@
 import React from 'react';
 import Search from '../../Search';
 function SearchProducts(props) {
-  const { handleDisplay } = props;
+  const { handleDisplaySearch } = props;
   return (
     <section className='search-item flex flex-col items-center p-16 right-active'>
       <div className='fixed flex flex-col justify-center items-center'>
         <i
           className='text-4xl cursor-pointer fa fa-times-circle'
-          onClick={handleDisplay}
+          onClick={handleDisplaySearch}
         ></i>
         <div className='search-item-product text-3xl flex py-4'>
-          <Search handleDisplay={handleDisplay} />
+          <Search handleDisplaySearch={handleDisplaySearch} />
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import { decode } from 'base-64';
@@ -13,9 +13,6 @@ function DetailItem() {
   const items = JSON.parse(decode(searchParams.get('toys')));
   const mainItem = items.find((item) => item.id === parseInt(id));
   const { avatarUrl, title, price, salePrice, details } = mainItem;
-  useEffect(() => {
-    window.localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  }, [cartItems]);
   const handleAddToCart = (mainItem, quantity) => {
     const finalPrice =
       mainItem.details.mod === 'SALE' ? mainItem.salePrice : mainItem.price;
@@ -23,10 +20,17 @@ function DetailItem() {
       (cartItem) => cartItem.id === mainItem.id
     );
     if (existingItem) {
+      const total = cartItems.reduce((acc, item) => {
+        return acc + item.quantity * item.price;
+      }, 0);
       setCartItems(
         cartItems.map((cartItem) =>
           cartItem.id === mainItem.id
-            ? { ...cartItem, quantity: cartItem.quantity + quantity }
+            ? {
+                ...cartItem,
+                quantity: cartItem.quantity + quantity,
+                total: cartItem.price * quantity + total,
+              }
             : cartItem
         )
       );
@@ -37,7 +41,7 @@ function DetailItem() {
           id: mainItem.id,
           title: mainItem.title,
           price: finalPrice,
-          total: total,
+          total: finalPrice * quantity,
           quantity,
         },
       ]);

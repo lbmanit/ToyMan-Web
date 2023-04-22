@@ -5,11 +5,13 @@ import toymanLogo from '../../../assets/images/logo/toymanlogo.jpeg';
 import Spinner from '../../../Spinner';
 import Icons from './common-icons/icons';
 import SearchProducts from './common-icons/search-products';
+import CheckCart from './common-icons/check-cart';
 import Pages from './pages/pages';
 
 function Navbar() {
   const [isSticky, setSticky] = useState(false);
-  const [isDisplay, setIsDisplay] = useState(false);
+  const [isDisplaySearch, setIsDisplaySearch] = useState(false);
+  const [isDisplayCart, setIsDisplayCart] = useState(false);
   const handleScroll = () => {
     if (window.pageYOffset > 200) {
       setSticky(true);
@@ -37,10 +39,16 @@ function Navbar() {
           </Link>
         </LazyLoad>
         <Pages />
-        <Icons handleDisplay={() => setIsDisplay(true)} />
+        <Icons
+          handleDisplaySearch={() => setIsDisplaySearch(true)}
+          handleDisplayCart={() => setIsDisplayCart(true)}
+        />
       </nav>
-      {isDisplay && (
-        <SearchProducts handleDisplay={() => setIsDisplay(false)} />
+      {isDisplaySearch && (
+        <SearchProducts handleDisplaySearch={() => setIsDisplaySearch(false)} />
+      )}
+      {isDisplayCart && (
+        <CheckCart handleDisplayCart={() => setIsDisplayCart(false)} />
       )}
     </React.Fragment>
   );
