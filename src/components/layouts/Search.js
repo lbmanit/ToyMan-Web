@@ -69,6 +69,7 @@ function Search(props) {
                 key={index}
                 className='flex justify-center items-center left-active my-5'
                 to={handleLinkClick(product)}
+                onClick={props.handleDisplaySearch}
               >
                 <img
                   className='w-1/4 rounded-xl'

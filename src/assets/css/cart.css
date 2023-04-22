@@ -9,3 +9,8 @@
   z-index: 999;
   transition: opacity 0.5s linear;
 }
+
+.list-cart-items {
+  display: flex;
+  flex-direction: column;
+}

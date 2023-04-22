@@ -7,6 +7,9 @@ export const CartProvider = ({ children }) => {
   useEffect(() => {
     window.localStorage.setItem('cartItems', encode(JSON.stringify(cartItems)));
   }, [cartItems]);
+  const totalPrice = useMemo(() => {
+    return cartItems.reduce((total, item) => total + parseInt(item.total), 0);
+  }, [cartItems]);
   const handleAddToCart = (item, quantity) => {
     const finalPrice =
       item.details.mod === 'SALE' ? item.salePrice : item.price;
@@ -46,7 +49,11 @@ export const CartProvider = ({ children }) => {
         .map((item) => {
           if (item.id === id) {
             if (item.quantity > 1) {
-              return { ...item, quantity: parseInt(item.quantity) - 1 };
+              return {
+                ...item,
+                quantity: parseInt(item.quantity) - 1,
+                total: parseInt(item.total) - parseInt(item.price),
+              };
             } else {
               return null;
             }
@@ -61,11 +68,6 @@ export const CartProvider = ({ children }) => {
       );
       return newCartItem;
     });
-  }, []);
-  const totalPrice = useMemo(() => {
-    cartItems.reduce((total, item) => {
-      return total + item.total;
-    }, 0);
   }, []);
   return (
     <CartContext.Provider

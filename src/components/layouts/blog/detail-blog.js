@@ -5,7 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Search from '../Search';
 import RelatedBlogs from './related-blogs';
-import { decode } from 'base-64';
+import { encode, decode } from 'base-64';
 function DetailBlog() {
   const [change, setChange] = useState(false);
   const { id } = useParams();
@@ -33,7 +33,7 @@ function DetailBlog() {
           className='flex justify-between items-center my-6'
           to={{
             pathname: `/news/${blog.id}`,
-            search: `?blogs=${JSON.stringify(blogs)}`,
+            search: `?blogs=${encode(JSON.stringify(blogs))}`,
           }}
         >
           <RelatedBlogs {...blog} handleChange={handleChange} />

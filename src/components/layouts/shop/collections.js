@@ -69,9 +69,9 @@ function Collections() {
   const items = slicedItems.map((item, index) => {
     return <PreviewItem key={index} {...item} />;
   });
-  const singleBlock = singleCollection.map((single) => {
+  const singleBlock = singleCollection.map((single, index) => {
     return (
-      <article className='single-collection p-8'>
+      <article key={index} className='single-collection p-8'>
         <img src={single.image} alt={single.title} />
         <h1 className='font-bold text-center text-xl top-2/3 mt-4'>
           {single.title}
