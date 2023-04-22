@@ -61,7 +61,9 @@ input {
 input:focus {
   outline: none;
 }
-.search-item-product > .list-item-search {
+.list-item-search {
+  height: 50vh;
+  overflow-y: scroll;
 }
 .list-item-search {
   margin-top: 20px;

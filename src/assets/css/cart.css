@@ -11,11 +11,8 @@
 }
 
 .list-cart-items {
-  /* position: sticky; */
-  display: list-item;
-  flex-direction: column;
+  height: 50vh;
   overflow-y: scroll;
-  overscroll-behavior-y: auto;
 }
 
 .cart-items-count {

@@ -58,7 +58,7 @@ function CheckCart(props) {
           <p className='text-xl my-4'>Your cart is empty right now!</p>
         )}
         {cartItem.length !== 0 && (
-          <div className='list-cart-items'>{cartItem}</div>
+          <div className='list-cart-items flex flex-col'>{cartItem}</div>
         )}
         {cartItem.length !== 0 && (
           <div className='w-full flex justify-between items-center text-xl my-4 py-4 border-y-2 border-t-gray border-b-gray'>
