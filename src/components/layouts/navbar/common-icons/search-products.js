@@ -3,7 +3,7 @@ import Search from '../../Search';
 function SearchProducts(props) {
   const { handleDisplaySearch } = props;
   return (
-    <section className='search-item flex flex-col items-center p-16 right-active'>
+    <section className='search-item flex flex-col items-center p-16 downActive'>
       <div className='fixed flex flex-col justify-center items-center'>
         <i
           className='text-4xl cursor-pointer fa fa-times-circle'

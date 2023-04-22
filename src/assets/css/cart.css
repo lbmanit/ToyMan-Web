@@ -6,7 +6,7 @@
   right: 0;
   width: 25%;
   height: 100%;
-  z-index: 999;
+  z-index: 910;
   transition: opacity 0.5s linear;
 }
 
@@ -27,7 +27,7 @@
   border-radius: 50%;
   top: -50%;
   left: 55%;
-  z-index: 999;
+  z-index: 910;
 }
 
 .cart-items-count:hover {

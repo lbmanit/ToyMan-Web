@@ -15,6 +15,8 @@ import './assets/css/header.css';
 import './assets/css/footer.css';
 import './assets/css/item.css';
 import './assets/css/search.css';
+import './assets/css/size-guide.css';
+import './assets/css/shipping.css';
 const Home = lazy(() => import('./components/layouts/home'));
 const Page404 = lazy(() => import('./components/layouts/404'));
 const Navbar = lazy(() => import('./components/layouts/navbar/Navbar'));

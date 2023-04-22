@@ -4,6 +4,8 @@ import { Link, useLocation, useParams } from 'react-router-dom';
 import { decode } from 'base-64';
 import Spinner from '../../../Spinner';
 import { CartContext } from '../../context/cart-context';
+import SizeGuide from './size-guide';
+import Shipping from './shipping';
 function DetailItem() {
   const { handleAddToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -13,6 +15,8 @@ function DetailItem() {
   const items = JSON.parse(decode(searchParams.get('toys')));
   const mainItem = items.find((item) => item.id === parseInt(id));
   const { avatarUrl, title, price, salePrice, details } = mainItem;
+  const [isDisplaySize, setIsDisplaySize] = useState(false);
+  const [isDisplayShipping, setIsDisplayShipping] = useState(false);
   const handleIncrement = () => {
     setCount((prevCount) => prevCount + 1);
   };
@@ -65,15 +69,17 @@ function DetailItem() {
           <div className='flex text-base cursor-pointer'>
             <div className='flex justify-between items-center mr-4'>
               <i className='fas fa-ruler-horizontal mr-2'></i>
-              <h1>Size Guide</h1>
+              <button onClick={() => setIsDisplaySize(true)}>Size Guide</button>
             </div>
             <div className='flex justify-between items-center mx-4'>
               <i className='fa fa-plane mr-2'></i>
-              <h1>Shipping</h1>
+              <button onClick={() => setIsDisplayShipping(true)}>
+                Shipping
+              </button>
             </div>
             <div className='flex justify-between items-center mx-4'>
               <i className='fa fa-question-circle mr-2'></i>
-              <h1>Ask About This Product</h1>
+              <button>Ask About This Product</button>
             </div>
           </div>
           <div className='input-item text-center'>
@@ -104,6 +110,28 @@ function DetailItem() {
           </div>
         </div>
       </article>
+      {isDisplaySize && (
+        <section className='fixed size-guide flex justify-center items-center downActive'>
+          <div className='p-8 font-black rounded-lg'>
+            <i
+              className='fa fa-times cursor-pointer flex justify-center items-center ml-auto mb-4 p-2'
+              onClick={() => setIsDisplaySize(false)}
+            ></i>
+            <SizeGuide />
+          </div>
+        </section>
+      )}
+      {isDisplayShipping && (
+        <section className='fixed shipping flex justify-center items-center downActive'>
+          <div className='p-8 font-black bg-white rounded-lg'>
+            <i
+              className='fa fa-times cursor-pointer flex justify-center items-center ml-auto mb-4 p-2'
+              onClick={() => setIsDisplayShipping(false)}
+            ></i>
+            <Shipping />
+          </div>
+        </section>
+      )}
     </React.Fragment>
   );
 }
