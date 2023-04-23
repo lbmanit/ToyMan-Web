@@ -90,3 +90,20 @@
 .single-collection:nth-child(even) {
   background-color: #ff6799;
 }
+
+.promotion.fa.fa-play {
+  cursor: pointer;
+  font-size: large;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background-color: #fff;
+  border: 1px solid #fff;
+  color: #4acdd5;
+}
+
+.promotion.fa.fa-play:hover {
+  background-color: unset;
+  border: 1px solid #17a2b8;
+  transform: scale(1.1);
+}

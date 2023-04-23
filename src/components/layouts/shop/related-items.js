@@ -38,7 +38,7 @@ function RelatedItems(props) {
   };
   return (
     <section
-      className='container m-auto jumpActive'
+      className='container m-auto jumpActive mb-16'
       onMouseEnter={() => setIsShow(true)}
       onMouseLeave={() => setIsShow(false)}
     >

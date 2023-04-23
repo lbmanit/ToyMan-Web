@@ -9,6 +9,7 @@ import Shipping from './shipping';
 import Reassurance from './reassurance';
 import Description from './description';
 import RelatedItems from './related-items';
+import PromotionVideo from './promotion-video';
 function DetailItem() {
   const { handleAddToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -121,6 +122,7 @@ function DetailItem() {
         </div>
       </article>
       <Description />
+      <PromotionVideo />
       <RelatedItems id={id} />
       {isDisplaySize && (
         <section className='fixed size-guide flex justify-center items-center downActive'>
