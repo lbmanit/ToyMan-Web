@@ -78,7 +78,7 @@ function Trends() {
           <h1>New Arrivals</h1>
         </li>
       </ul>
-      <div className='favorite-items flex flex-wrap'>
+      <div className='favorite-items flex flex-wrap my-8'>
         {selectTab === 'featured' && <Featured collections={collections} />}
         {selectTab === 'bestSellers' && (
           <BestSellers collections={collections} />
