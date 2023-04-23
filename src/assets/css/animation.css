@@ -53,7 +53,7 @@
   }
 }
 .downActive {
-  animation: downActive 0.5s linear;
+  animation: downActive 0.4s linear;
 }
 @keyframes downActive {
   0% {

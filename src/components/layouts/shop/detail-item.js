@@ -6,6 +6,9 @@ import Spinner from '../../../Spinner';
 import { CartContext } from '../../context/cart-context';
 import SizeGuide from './size-guide';
 import Shipping from './shipping';
+import Reassurance from './reassurance';
+import Description from './description';
+import RelatedItems from './related-items';
 function DetailItem() {
   const { handleAddToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -56,9 +59,15 @@ function DetailItem() {
         </LazyLoad>
         <div className='w-1/2 px-8'>
           <h1 className='text-4xl font-medium'>{title}</h1>
-          <div className='text-cyan text-2xl my-2'>
-            <h2>{details.mod === 'SALE' ? salePrice : ''}</h2>
-            <h2>$ {price}</h2>
+          <div className={'text-cyan text-2xl my-2 flex items-center'}>
+            <h2
+              className={`${
+                details.mod === 'SALE' ? 'text-gray text-base line-through' : ''
+              } mr-8`}
+            >
+              $ {price}
+            </h2>
+            <h2>{details.mod === 'SALE' ? `$ ${salePrice}` : ''}</h2>
           </div>
           <h3 className='text-xl'>
             {details.rate} / 5 <i className='fa fa-star text-yellow'></i>
@@ -82,7 +91,7 @@ function DetailItem() {
               <button>Ask About This Product</button>
             </div>
           </div>
-          <div className='input-item text-center'>
+          <div className='input-item text-center my-2'>
             <div className='flex items-center rounded-2xl'>
               <div className='text-xl flex justify-between py-2 px-4 my-4 input-count'>
                 <button className='cursor-pointer' onClick={handleDecrement}>
@@ -100,16 +109,19 @@ function DetailItem() {
                 ADD TO CART
               </button>
             </div>
-            <button className='text-xl text-center p-2 buy-item'>
+            <button className='text-xl text-center p-2 my-2 buy-item'>
               Buy it now
             </button>
           </div>
           <div className='cursor-pointer flex items-center text-lg my-4'>
             <i className='fa fa-heart'></i>
-            <button className='mx-2'>Add to wishlist</button>
+            <button className='mx-2 my-4'>Add to wishlist</button>
           </div>
+          <Reassurance />
         </div>
       </article>
+      <Description />
+      <RelatedItems id={id} />
       {isDisplaySize && (
         <section className='fixed size-guide flex justify-center items-center downActive'>
           <div className='p-8 font-black rounded-lg'>
