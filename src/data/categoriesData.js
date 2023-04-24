@@ -1,9 +1,9 @@
-import category_img1 from '../../../../../assets/images/children/category_img1.jpeg';
-import category_img2 from '../../../../../assets/images/children/category_img2.jpeg';
-import category_img3 from '../../../../../assets/images/children/category_img3.jpeg';
-import category_img4 from '../../../../../assets/images/children/category_img4.jpeg';
-import category_img5 from '../../../../../assets/images/children/category_img5.jpeg';
-import category_img6 from '../../../../../assets/images/children/category_img6.jpeg';
+import category_img1 from '../assets/images/children/category_img1.jpeg';
+import category_img2 from '../assets/images/children/category_img2.jpeg';
+import category_img3 from '../assets/images/children/category_img3.jpeg';
+import category_img4 from '../assets/images/children/category_img4.jpeg';
+import category_img5 from '../assets/images/children/category_img5.jpeg';
+import category_img6 from '../assets/images/children/category_img6.jpeg';
 
 export default [
   {

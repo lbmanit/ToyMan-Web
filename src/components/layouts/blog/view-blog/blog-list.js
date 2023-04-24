@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
-import blogsData from '../../../data/blogs-data';
-import Spinner from '../../../Spinner';
+import blogsData from '../../../../data/blogs-data';
+import Spinner from '../../../../app/Spinner';
 import { encode } from 'base-64';
 function BlogList() {
   const [blogs, setBlogs] = useState(blogsData);

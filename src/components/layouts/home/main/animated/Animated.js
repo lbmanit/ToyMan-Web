@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
-import animatedData from './animatedData';
-import Spinner from '../../../../../Spinner';
+import animatedData from '../../../../../data/animatedData';
+import Spinner from '../../../../../app/Spinner';
 function Animated() {
   const [animated, setAnimated] = useState([]);
   const [hoverIndex, setHoverIndex] = useState(null);

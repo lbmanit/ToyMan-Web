@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import toymanLogo from '../../../assets/images/logo/toymanlogo.jpeg';
-import Spinner from '../../../Spinner';
 import Icons from './common-icons/icons';
 import SearchProducts from './common-icons/search-products';
 import CheckCart from './common-icons/check-cart';
 import Pages from './pages/pages';
+import Spinner from '../../../app/Spinner';
 
 function Navbar() {
   const [isSticky, setSticky] = useState(false);

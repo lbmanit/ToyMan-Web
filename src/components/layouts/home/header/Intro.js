@@ -4,7 +4,7 @@ import greenAnimatedKid from '../../../../assets/images/headerImages/Green_Anima
 import h1thmb from '../../../../assets/images/headerImages/h1thmb.webp';
 import animated from '../../../../assets/images/headerImages/thmb2d_836dbfe8-8883-4720-980e-39af19da7de5.webp';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../../Spinner';
+import Spinner from '../../../../app/Spinner';
 function Intro() {
   const backgroundIntro = {
     backgroundImage: `url(${greenAnimatedKid})`,

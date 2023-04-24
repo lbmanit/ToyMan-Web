@@ -6,7 +6,7 @@ import { encode } from 'base-64';
 import itemsData from '../../../../data/items-data';
 import ProductActionItem from './product-action-item';
 import ViewItem from './view-item';
-import Spinner from '../../../../Spinner';
+import Spinner from '../../../../app/Spinner';
 function PreviewItem(props) {
   const { id, avatarUrl, title, price, salePrice, details } = props;
   const [isShow, setIsShow] = useState(false);

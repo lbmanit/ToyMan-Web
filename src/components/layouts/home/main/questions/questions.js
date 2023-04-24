@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import Question from './question';
-import url from '../questions/questionData.JSON';
+import url from '../questions/question-data.JSON';
 import image from '../../../../../assets/images/questions/toys_party.webp';
-import Spinner from '../../../../../Spinner';
+import Spinner from '../../../../../app/Spinner';
 function Questions() {
   const [questions, setQuestions] = useState([]);
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import itemsData from '../../../data/items-data';
-import PreviewItem from './preview-item/preview-item';
+import itemsData from '../../../../data/items-data';
+import PreviewItem from '../preview-item/preview-item';
 import { useState } from 'react';
 function RelatedItems(props) {
   const { id } = props;

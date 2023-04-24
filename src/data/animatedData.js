@@ -1,5 +1,5 @@
-import img1 from '../../../../../assets/images/animated/home4-banner-02_389f97e8-9d15-431a-abf3-8f72e0508721.webp';
-import img2 from '../../../../../assets/images/animated/Untitled-2.webp';
+import img1 from '../assets/images/animated/home4-banner-02_389f97e8-9d15-431a-abf3-8f72e0508721.webp';
+import img2 from '../assets/images/animated/Untitled-2.webp';
 export default [
   {
     id: 1,

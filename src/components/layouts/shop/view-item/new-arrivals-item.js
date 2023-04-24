@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import itemsData from '../../../data/items-data';
-import PreviewItem from './preview-item/preview-item';
+import itemsData from '../../../../data/items-data';
+import PreviewItem from '../preview-item/preview-item';
 function NewArrivalsItem() {
   const [items, setItems] = useState(itemsData);
   const [currentIndex, setCurrentIndex] = useState(0);

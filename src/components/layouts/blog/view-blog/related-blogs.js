@@ -1,6 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../Spinner';
+import Spinner from '../../../../app/Spinner';
 function RelatedBlogs(props) {
   const { image, title, dateUpLoad, handleChange } = props;
   return (

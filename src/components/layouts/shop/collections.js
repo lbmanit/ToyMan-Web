@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PreviewItem from './preview-item/preview-item';
 import itemsData from '../../../data/items-data';
 import singleCollection from '../../../data/single-collection';
-import NewArrivalsItem from './new-arrivals-item';
+import NewArrivalsItem from './view-item/new-arrivals-item';
 function Collections() {
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);

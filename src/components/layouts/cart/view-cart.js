@@ -71,7 +71,7 @@ function ViewCart() {
                     Delivery Date
                   </h1>
                   <div className='flex mt-8'>
-                    <label className='w-1/3' htmlFor='delivery-date'>
+                    <label htmlFor='delivery-date'>
                       Pick a delivery date:{' '}
                     </label>
                     <input

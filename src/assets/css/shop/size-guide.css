@@ -19,9 +19,8 @@
   border: 1px solid #000;
   border-radius: 50%;
 }
-.size-title tr,
-.size-content td,
-.size-content th {
+.size-title,
+.size-content {
   border: 1px solid #ddd;
   padding: 8px;
 }

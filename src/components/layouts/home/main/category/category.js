@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../../../Spinner';
+import Spinner from '../../../../../app/Spinner';
 function Category(props) {
   const { image, modalContent } = props;
   Category.propTypes = {

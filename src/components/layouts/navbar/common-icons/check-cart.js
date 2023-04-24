@@ -5,8 +5,7 @@ import { Link } from 'react-router-dom';
 function CheckCart(props) {
   const { handleDisplayCart } = props;
   const [isShowRemove, setIsShowRemove] = useState(false);
-  const { cartItems, setCartItems, removeCartItem, totalPrice } =
-    useContext(CartContext);
+  const { cartItems, removeCartItem, totalPrice } = useContext(CartContext);
   const cartItem = cartItems.map((item, index) => {
     return (
       <article

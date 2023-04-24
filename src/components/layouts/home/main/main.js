@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../../Spinner';
+import Spinner from '../../../../app/Spinner';
 const Categories = lazy(() => import('./category/categories'));
 const Items = lazy(() => import('./trends/trends'));
 const Animated = lazy(() => import('./animated/animated'));
