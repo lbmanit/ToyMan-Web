@@ -2,6 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart-context';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
+import Spinner from '../../../app/Spinner';
 function ViewCart() {
   const { cartItems, setCartItems, removeCartItem, totalPrice } =
     useContext(CartContext);
@@ -9,7 +11,9 @@ function ViewCart() {
     return (
       <tr className='border' key={index}>
         <td className='w-1/6 p-4'>
-          <img src={item.avatarUrl} alt={item.title} />
+          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+            <img src={item.avatarUrl} alt={item.title} />
+          </LazyLoad>
         </td>
         <td className='border'>{item.title}</td>
         <td className='border'>$ {item.price}</td>
@@ -98,7 +102,7 @@ function ViewCart() {
                   ></textarea>
                 </div>
               </div>
-              <div className='w-2/3 h-1/3 border border-gray p-4 ml-12  bg-darkLight'>
+              <div className='w-2/3 h-1/2 border border-gray p-4 ml-12 mb-8 bg-darkLight'>
                 <h1 className='font-bold'>Cart Totals</h1>
                 <div className='bg-white border border-gray flex justify-start mt-8 mb-4'>
                   <h1 className='w-1/2 border-r border-r-gray px-4 py-2'>
@@ -106,9 +110,12 @@ function ViewCart() {
                   </h1>
                   <h1 className='w-1/2  px-4 py-2'>$ {totalPrice}</h1>
                 </div>
-                <button className='border my-4 py-4 px-12 rounded-3xl bg-cyan text-white hover:bg-pink'>
-                  PROCEED TO CHECKOUT
-                </button>
+                <Link
+                  className='border py-4 px-12 rounded-3xl bg-cyan text-white hover:bg-pink'
+                  to='/checkouts'
+                >
+                  <button>PROCEED TO CHECKOUT</button>
+                </Link>
               </div>
             </div>
           </div>

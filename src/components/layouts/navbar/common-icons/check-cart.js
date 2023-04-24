@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { CartContext } from '../../../context/cart-context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
+import Spinner from '../../../../app/Spinner';
 function CheckCart(props) {
   const { handleDisplayCart } = props;
   const [isShowRemove, setIsShowRemove] = useState(false);
@@ -15,11 +17,15 @@ function CheckCart(props) {
         key={index}
       >
         <div className='flex items-center mt-8'>
-          <img
+          <LazyLoad
             className='w-1/4 cursor-pointer'
-            src={item.avatarUrl}
-            alt={item.title}
-          />
+            height={563}
+            offset={100}
+            once
+            placeholder={<Spinner />}
+          >
+            <img src={item.avatarUrl} alt={item.title} />
+          </LazyLoad>
           <div className='px-4'>
             <h1 className='cursor-pointer text-xl font-bold hover:text-cyan'>
               {item.title}

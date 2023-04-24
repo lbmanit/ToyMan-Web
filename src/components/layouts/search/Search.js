@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import itemsData from '../../../data/items-data';
 import blogsData from '../../../data/blogs-data';
 import { encode } from 'base-64';
+import LazyLoad from 'react-lazyload';
+import Spinner from '../../../app/Spinner';
 function Search(props) {
   const products = itemsData.concat(blogsData);
   const [searchValue, setSearchValue] = useState('');
@@ -82,13 +84,22 @@ function Search(props) {
                 to={handleLinkClick(product)}
                 onClick={props.handleDisplaySearch}
               >
-                <img
+                <LazyLoad
                   className='w-1/4 rounded-xl'
-                  src={`${
-                    product.type === 'blog' ? product.image : product.avatarUrl
-                  }`}
-                  alt={`${product.title}`}
-                />
+                  height={563}
+                  offset={100}
+                  once
+                  placeholder={<Spinner />}
+                >
+                  <img
+                    src={`${
+                      product.type === 'blog'
+                        ? product.image
+                        : product.avatarUrl
+                    }`}
+                    alt={`${product.title}`}
+                  />
+                </LazyLoad>
                 <div className='w-2/3 mx-4'>
                   <h1 className='text-lg font-bold'>{product.title}</h1>
                   {product.type === 'item' && (
