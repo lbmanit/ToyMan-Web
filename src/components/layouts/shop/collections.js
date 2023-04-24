@@ -10,6 +10,11 @@ function Collections() {
   const [slideLeft, setSlideLeft] = useState(false);
   const [slideRight, setSlideRight] = useState(false);
   const [selectedTypes, setSelectedTypes] = useState([]);
+  const [changeType, setChangeType] = useState(false);
+  function animationChangeType() {
+    setChangeType(true);
+    setTimeout(() => setChangeType(false), 500);
+  }
   const itemsInPage = 3;
   const filteredItems = itemsData.filter((item) =>
     selectedTypes.length === 0
@@ -91,7 +96,11 @@ function Collections() {
           <h1 className='text-pink'>Collections</h1>
         </div>
       </div>
-      <div className='container m-auto flex my-16'>
+      <div
+        className={`${
+          changeType ? 'left-active' : ''
+        } container m-auto flex my-16`}
+      >
         <div>
           <h1 className='text-xl font-bold border-b-2 border-solid border-gray'>
             Product Type
@@ -104,6 +113,7 @@ function Collections() {
                   id='type1'
                   value={1}
                   onChange={handleChangeType}
+                  onClick={animationChangeType}
                 />
                 <h1 className=' w-36 text-base font-bold'>Type 1</h1>
               </div>
@@ -116,6 +126,7 @@ function Collections() {
                   id='type2'
                   value={2}
                   onChange={handleChangeType}
+                  onClick={animationChangeType}
                 />
                 <h1 className=' w-36 text-base font-bold'>Type 2</h1>
               </div>
@@ -128,6 +139,7 @@ function Collections() {
                   id='type3'
                   value={3}
                   onChange={handleChangeType}
+                  onClick={animationChangeType}
                 />
                 <h1 className=' w-36 text-base font-bold'>Type 3</h1>
               </div>

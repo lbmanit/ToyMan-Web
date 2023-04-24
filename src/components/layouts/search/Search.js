@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
-import itemsData from '../../data/items-data';
-import blogsData from '../../data/blogs-data';
+import itemsData from '../../../data/items-data';
+import blogsData from '../../../data/blogs-data';
 import { encode } from 'base-64';
 function Search(props) {
   const products = itemsData.concat(blogsData);
@@ -40,13 +40,24 @@ function Search(props) {
   };
   return (
     <div className='left-active'>
-      <input
-        className='search-store-input'
-        type='text'
-        placeholder='Search our store...'
-        value={searchValue}
-        onChange={handleChange}
-      />
+      <div className='flex'>
+        <input
+          className='search-store-input'
+          type='text'
+          placeholder='Search our store...'
+          value={searchValue}
+          onChange={handleChange}
+        />
+        <Link
+          to={{
+            pathname: `/Search/${searchValue}`,
+            search: `?search=${encode(JSON.stringify(products))}`,
+          }}
+          className='-ml-8 cursor-pointer hover:text-cyan'
+        >
+          <i className='fa fa-search'></i>
+        </Link>
+      </div>
       <div
         className={`${searchValue ? 'list-item-search p-4' : ''}`}
         onClick={props.handleDisplay}

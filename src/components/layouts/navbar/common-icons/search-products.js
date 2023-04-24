@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from '../../Search';
+import Search from '../../search/Search';
 function SearchProducts(props) {
   const { handleDisplaySearch } = props;
   return (

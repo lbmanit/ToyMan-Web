@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useContext } from 'react';
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Spinner from './Spinner';
 import './assets/css/main/animated.css';
@@ -25,6 +25,7 @@ const BlogList = lazy(() => import('./components/layouts/blog/blog-list'));
 const DetailBlog = lazy(() => import('./components/layouts/blog/detail-blog'));
 const Collections = lazy(() => import('./components/layouts/shop/collections'));
 const DetailItem = lazy(() => import('./components/layouts/shop/detail-item'));
+const ViewCart = lazy(() => import('./components/layouts/cart/view-cart'));
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -37,6 +38,7 @@ function App() {
           <Route path='/news/:id' element={<DetailBlog />} />
           <Route path='/collections' element={<Collections />} />
           <Route path='/collections/:id' element={<DetailItem />} />
+          <Route path='/cart' element={<ViewCart />} />
         </Routes>
         <Footer />
       </BrowserRouter>

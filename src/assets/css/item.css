@@ -50,7 +50,7 @@
 }
 
 .view-item {
-  position: absolute;
+  position: fixed;
   background-color: #000;
   top: 0;
   left: 0;

@@ -1,15 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { decode } from 'base-64';
+import React, { useState } from 'react';
 import { CartContext } from '../../../context/cart-context';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 function CheckCart(props) {
   const { handleDisplayCart } = props;
   const [isShowRemove, setIsShowRemove] = useState(false);
   const { cartItems, setCartItems, removeCartItem, totalPrice } =
     useContext(CartContext);
-  useEffect(() => {
-    JSON.parse(decode(window.localStorage.getItem('cartItems')));
-  }, [cartItems]);
   const cartItem = cartItems.map((item, index) => {
     return (
       <article
@@ -37,7 +34,7 @@ function CheckCart(props) {
         </div>
         {isShowRemove && (
           <i
-            className='absolute top-2 left-2 remove fa fa-times cursor-pointer text-grayDark jumpActive'
+            className='absolute top-1/3 left-2 remove fa fa-times cursor-pointer text-grayDark jumpActive'
             onClick={() => removeCartItem(item.id)}
           ></i>
         )}
@@ -66,8 +63,15 @@ function CheckCart(props) {
             <h1 className='ml-auto'>$ {totalPrice}</h1>
           </div>
         )}
-        {cartItem.length !== 0 && (
+        {/* {cartItem.length !== 0 && (
           <button onClick={() => setCartItems([])}>Remove All</button>
+        )} */}
+        {cartItems.length !== 0 && (
+          <Link className='w-full' to='/cart' onClick={handleDisplayCart}>
+            <button className='w-full text-2xl my-4 py-4 px-12 rounded-3xl border border-gray hover:text-white hover:bg-cyan'>
+              View Cart
+            </button>
+          </Link>
         )}
       </div>
     </section>

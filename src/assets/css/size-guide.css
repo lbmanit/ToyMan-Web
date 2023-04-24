@@ -19,14 +19,14 @@
   border: 1px solid #000;
   border-radius: 50%;
 }
-tr,
-td,
-th {
+.size-title tr,
+.size-content td,
+.size-content th {
   border: 1px solid #ddd;
   padding: 8px;
 }
 
-th {
+.size-content th {
   background-color: #000;
   color: #fff;
 }

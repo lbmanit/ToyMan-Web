@@ -3,105 +3,107 @@ import React from 'react';
 function SizeGuide() {
   return (
     <table className='text-xl'>
-      <tr>
-        <th>INTERNATIONAL</th>
-        <th>XS</th>
-        <th>S</th>
-        <th>M</th>
-        <th>L</th>
-        <th>XL</th>
-        <th>XXL</th>
-        <th>XXXL</th>
+      <tr className='size-title'>
+        <th className='size-content'>INTERNATIONAL</th>
+        <th className='size-content'>XS</th>
+        <th className='size-content'>S</th>
+        <th className='size-content'>M</th>
+        <th className='size-content' h>
+          L
+        </th>
+        <th className='size-content'>XL</th>
+        <th className='size-content'>XXL</th>
+        <th className='size-content'>XXXL</th>
       </tr>
-      <tr>
-        <td>EUROPE</td>
-        <td>32</td>
-        <td>34</td>
-        <td>36</td>
-        <td>38</td>
-        <td>40</td>
-        <td>42</td>
-        <td>44</td>
+      <tr className='size-title'>
+        <td className='size-content'>EUROPE</td>
+        <td className='size-content'>32</td>
+        <td className='size-content'>34</td>
+        <td className='size-content'>36</td>
+        <td className='size-content'>38</td>
+        <td className='size-content'>40</td>
+        <td className='size-content'>42</td>
+        <td className='size-content'>44</td>
       </tr>
-      <tr>
-        <td>US</td>
-        <td>0</td>
-        <td>2</td>
-        <td>4</td>
-        <td>6</td>
-        <td>8</td>
-        <td>10</td>
-        <td>12</td>
+      <tr className='size-title'>
+        <td className='size-content'>US</td>
+        <td className='size-content'>0</td>
+        <td className='size-content'>2</td>
+        <td className='size-content'>4</td>
+        <td className='size-content'>6</td>
+        <td className='size-content'>8</td>
+        <td className='size-content'>10</td>
+        <td className='size-content'>12</td>
       </tr>
-      <tr>
-        <td>CHEST FIT (INCHES)</td>
-        <td>28"</td>
-        <td>30"</td>
-        <td>32"</td>
-        <td>34"</td>
-        <td>36"</td>
-        <td>38"</td>
-        <td>40"</td>
+      <tr className='size-title'>
+        <td className='size-content'>CHEST FIT (INCHES)</td>
+        <td className='size-content'>28"</td>
+        <td className='size-content'>30"</td>
+        <td className='size-content'>32"</td>
+        <td className='size-content'>34"</td>
+        <td className='size-content'>36"</td>
+        <td className='size-content'>38"</td>
+        <td className='size-content'>40"</td>
       </tr>
-      <tr>
-        <td>CHEST FIT (CM)</td>
-        <td>716</td>
-        <td>76</td>
-        <td>81</td>
-        <td>86</td>
-        <td>91.5</td>
-        <td>96.5</td>
-        <td>101.1</td>
+      <tr className='size-title'>
+        <td className='size-content'>CHEST FIT (CM)</td>
+        <td className='size-content'>716</td>
+        <td className='size-content'>76</td>
+        <td className='size-content'>81</td>
+        <td className='size-content'>86</td>
+        <td className='size-content'>91.5</td>
+        <td className='size-content'>96.5</td>
+        <td className='size-content'>101.1</td>
       </tr>
-      <tr>
-        <td>WAIST FIR (INCHES)</td>
-        <td>21"</td>
-        <td>23"</td>
-        <td>25"</td>
-        <td>27"</td>
-        <td>29"</td>
-        <td>31"</td>
-        <td>33"</td>
+      <tr className='size-title'>
+        <td className='size-content'>WAIST FIR (INCHES)</td>
+        <td className='size-content'>21"</td>
+        <td className='size-content'>23"</td>
+        <td className='size-content'>25"</td>
+        <td className='size-content'>27"</td>
+        <td className='size-content'>29"</td>
+        <td className='size-content'>31"</td>
+        <td className='size-content'>33"</td>
       </tr>
-      <tr>
-        <td>WAIST FIR (CM)</td>
-        <td>53.5</td>
-        <td>58.5</td>
-        <td>63.5</td>
-        <td>68.5</td>
-        <td>74</td>
-        <td>79</td>
-        <td>84</td>
+      <tr className='size-title'>
+        <td className='size-content'>WAIST FIR (CM)</td>
+        <td className='size-content'>53.5</td>
+        <td className='size-content'>58.5</td>
+        <td className='size-content'>63.5</td>
+        <td className='size-content'>68.5</td>
+        <td className='size-content'>74</td>
+        <td className='size-content'>79</td>
+        <td className='size-content'>84</td>
       </tr>
-      <tr>
-        <td>HIPS FIR (INCHES)</td>
-        <td>33"</td>
-        <td>34"</td>
-        <td>36"</td>
-        <td>38"</td>
-        <td>40"</td>
-        <td>42"</td>
-        <td>44"</td>
+      <tr className='size-title'>
+        <td className='size-content'>HIPS FIR (INCHES)</td>
+        <td className='size-content'>33"</td>
+        <td className='size-content'>34"</td>
+        <td className='size-content'>36"</td>
+        <td className='size-content'>38"</td>
+        <td className='size-content'>40"</td>
+        <td className='size-content'>42"</td>
+        <td className='size-content'>44"</td>
       </tr>
-      <tr>
-        <td>HIPS FIR (CM)</td>
-        <td>81.5</td>
-        <td>86.5</td>
-        <td>91.5</td>
-        <td>96.5</td>
-        <td>101</td>
-        <td>106.5</td>
-        <td>111.5</td>
+      <tr className='size-title'>
+        <td className='size-content'>HIPS FIR (CM)</td>
+        <td className='size-content'>81.5</td>
+        <td className='size-content'>86.5</td>
+        <td className='size-content'>91.5</td>
+        <td className='size-content'>96.5</td>
+        <td className='size-content'>101</td>
+        <td className='size-content'>106.5</td>
+        <td className='size-content'>111.5</td>
       </tr>
-      <tr>
-        <td>SKORT LENGTHS (SM)</td>
-        <td>36.5</td>
-        <td>38</td>
-        <td>39.5</td>
-        <td>41</td>
-        <td>42.5</td>
-        <td>44</td>
-        <td>45.5</td>
+      <tr className='size-title'>
+        <td className='size-content'>SKORT LENGTHS (SM)</td>
+        <td className='size-content'>36.5</td>
+        <td className='size-content'>38</td>
+        <td className='size-content'>39.5</td>
+        <td className='size-content'>41</td>
+        <td className='size-content'>42.5</td>
+        <td className='size-content'>44</td>
+        <td className='size-content'>45.5</td>
       </tr>
     </table>
   );
