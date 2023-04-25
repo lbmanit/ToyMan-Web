@@ -2,9 +2,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import RefundPolicy from './content-info/refund-policy';
 function FormPayCart() {
   const [countryData, setCountryData] = useState([]);
+  const [displayRefund, setDisplayRefund] = useState(false);
+  const [displayPrivacy, setDisplayPrivacy] = useState(false);
+  const [displayTerms, setDisplayTerms] = useState(false);
+  const [displayContact, setDisplayContact] = useState(false);
 
   useEffect(() => {
     async function fetchCountryData() {
@@ -83,9 +87,7 @@ function FormPayCart() {
               onChange={handleForm}
               required
             />
-            <label htmlFor='checkEmail' name='checkEmail'>
-              Email me with news and offers
-            </label>
+            <label htmlFor='checkEmail'>Email me with news and offers</label>
           </div>
         </div>
 
@@ -176,6 +178,15 @@ function FormPayCart() {
         </div>
         <button onClick={handleSubmit}>Submit</button>
       </form>
+      <div>
+        <button onClick={() => setDisplayRefund(true)}>Refund Policy</button>
+        <button>Privacy policy</button>
+        <button>Terms of service</button>
+        <button>Contact information</button>
+      </div>
+      {displayRefund && (
+        <RefundPolicy displayRefund={() => setDisplayRefund(false)} />
+      )}
     </div>
   );
 }
