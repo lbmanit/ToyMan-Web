@@ -1,27 +1,20 @@
 import React from 'react';
-import { useEffect } from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import RefundPolicy from './content-info/refund-policy';
+import PrivacyPolicy from './content-info/privacy-policy';
+import TermsService from './content-info/terms-service';
+import ContactInfo from './content-info/contact-info';
+import { CountryData } from '../../../fetch/country-data';
+import { useContext } from 'react';
+import { CartContext } from '../../../context/cart-context';
 function FormPayCart() {
-  const [countryData, setCountryData] = useState([]);
+  const { setCartItems } = useContext(CartContext);
+  const { data } = CountryData();
   const [displayRefund, setDisplayRefund] = useState(false);
   const [displayPrivacy, setDisplayPrivacy] = useState(false);
   const [displayTerms, setDisplayTerms] = useState(false);
   const [displayContact, setDisplayContact] = useState(false);
-
-  useEffect(() => {
-    async function fetchCountryData() {
-      try {
-        const res = await fetch('https://restcountries.com/v2/all');
-        const data = await res.json();
-        setCountryData(data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchCountryData();
-  }, []);
   const [formData, setFormData] = useState({
     email: '',
     checkEmail: false,
@@ -35,7 +28,6 @@ function FormPayCart() {
   function handleForm(event) {
     event.preventDefault();
     const { name, type, value, checked } = event.target;
-    console.log(checked);
     setFormData((prevForm) => {
       return {
         ...prevForm,
@@ -43,10 +35,9 @@ function FormPayCart() {
       };
     });
   }
-  function handleSubmit(event) {
-    event.preventDefault();
-    console.log(formData);
-  }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  // }
   return (
     <div>
       <div className='flex items-center'>
@@ -56,11 +47,7 @@ function FormPayCart() {
         <i className='fas fa-angle-right m-2'></i>
         <h1>information</h1>
       </div>
-      <form
-        className='border-b-2 border-gray my-8'
-        method='POST'
-        onSubmit={handleSubmit}
-      >
+      <form className='border-b-2 border-gray my-8' method='POST'>
         <div className='font-base'>
           <div>
             <label className='text-xl font-bold' htmlFor='email'>
@@ -102,7 +89,7 @@ function FormPayCart() {
             required
           >
             <option>Select a country</option>
-            {countryData.map((country) => {
+            {data.map((country) => {
               return (
                 <option key={country.alpha2Code} value={country.name}>
                   {country.name}
@@ -172,20 +159,54 @@ function FormPayCart() {
             <i className='fas fa-angle-left'></i>
             <h1 className='mx-4'>Return to cart</h1>
           </Link>
-          <Link className='continue-shipping text-base px-3 py-6'>
-            <h1>Continue to shipping</h1>
+          <Link
+            className='continue-shipping text-base px-3 py-6'
+            to='/complete'
+          >
+            <button onClick={() => setCartItems([])}>
+              Continue to shipping
+            </button>
           </Link>
         </div>
-        <button onClick={handleSubmit}>Submit</button>
+        {/* <button onClick={handleSubmit}>Submit</button> */}
       </form>
-      <div>
-        <button onClick={() => setDisplayRefund(true)}>Refund Policy</button>
-        <button>Privacy policy</button>
-        <button>Terms of service</button>
-        <button>Contact information</button>
+      <div className='flex justify-start items-center mb-8'>
+        <button
+          className='mr-4 btn-content-info'
+          onClick={() => setDisplayRefund(true)}
+        >
+          Refund Policy
+        </button>
+        <button
+          className='mr-4 btn-content-info'
+          onClick={() => setDisplayPrivacy(true)}
+        >
+          Privacy policy
+        </button>
+        <button
+          className='mr-4 btn-content-info'
+          onClick={() => setDisplayTerms(true)}
+        >
+          Terms of service
+        </button>
+        <button
+          className='mr-4 btn-content-info'
+          onClick={() => setDisplayContact(true)}
+        >
+          Contact information
+        </button>
       </div>
       {displayRefund && (
         <RefundPolicy displayRefund={() => setDisplayRefund(false)} />
+      )}
+      {displayPrivacy && (
+        <PrivacyPolicy displayPrivacy={() => setDisplayPrivacy(false)} />
+      )}
+      {displayTerms && (
+        <TermsService displayTerms={() => setDisplayTerms(false)} />
+      )}
+      {displayContact && (
+        <ContactInfo displayContact={() => setDisplayContact(false)} />
       )}
     </div>
   );

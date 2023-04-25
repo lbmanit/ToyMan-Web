@@ -13,7 +13,9 @@ function Page404() {
         </div>
       </div>
       <div className='flex flex-col items-center page-404 justify-center'>
-        <h1 className='text-6xl font-extrabold mt-6 mb-2'>Oops! Error 404</h1>
+        <h1 className='text-6xl font-extrabold mt-6 mb-2'>
+          Oops! Error 404 <i className='fas fa-dizzy'></i>
+        </h1>
         <p className='text-xl m-4'>
           Sorry, But the page you are looking for doesn't exist!
         </p>

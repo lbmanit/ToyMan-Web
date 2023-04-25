@@ -33,6 +33,9 @@ const Collections = lazy(() =>
 const DetailItem = lazy(() => import('../components/layouts/shop/detail-item'));
 const ViewCart = lazy(() => import('../components/layouts/cart/view-cart'));
 const PayCart = lazy(() => import('../components/layouts/cart/pay/pay-cart'));
+const CompletePay = lazy(() =>
+  import('../components/layouts/cart/pay/complete-pay')
+);
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -47,6 +50,7 @@ function App() {
           <Route path='/collections/:id' element={<DetailItem />} />
           <Route path='/cart' element={<ViewCart />} />
           <Route path='/checkouts' element={<PayCart />} />
+          <Route path='/complete' element={<CompletePay />} />
         </Routes>
         <Footer />
       </BrowserRouter>
