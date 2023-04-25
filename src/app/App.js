@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Spinner from './Spinner';
+import '../assets/css/input.css';
 import '../assets/css/homepage/animated.css';
 import '../assets/css/homepage/loves.css';
 import '../assets/css/homepage/feedback.css';
