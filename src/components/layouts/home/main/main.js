@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { lazy } from 'react';
 import LazyLoad from 'react-lazyload';
 import Spinner from '../../../../app/Spinner';
 const Categories = lazy(() => import('./category/categories'));
@@ -11,34 +11,34 @@ const Questions = lazy(() => import('./questions/questions'));
 const Sponsors = lazy(() => import('./sponsors/sponsors'));
 function Main() {
   return (
-    <Suspense fallback={<Spinner />}>
-      <main>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
-          <Categories />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <Items />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <Animated />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <FeedBack />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <Loves />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <RecentPhotos />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <Questions />
-        </LazyLoad>
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <Sponsors />
-        </LazyLoad>
-      </main>
-    </Suspense>
+    // <Suspense fallback={<Spinner />}>
+    <main>
+      <LazyLoad height={400} offset={100} once placeholder={<Spinner />}>
+        <Categories />
+      </LazyLoad>
+      <LazyLoad height={1200} offset={100} once placeholder={<Spinner />}>
+        <Items />
+      </LazyLoad>
+      <LazyLoad height={350} offset={100} once placeholder={<Spinner />}>
+        <Animated />
+      </LazyLoad>
+      <LazyLoad height={450} offset={100} once placeholder={<Spinner />}>
+        <FeedBack />
+      </LazyLoad>
+      <LazyLoad height={600} offset={100} once placeholder={<Spinner />}>
+        <Loves />
+      </LazyLoad>
+      <LazyLoad height={600} offset={100} once placeholder={<Spinner />}>
+        <RecentPhotos />
+      </LazyLoad>
+      <LazyLoad height={700} offset={100} once placeholder={<Spinner />}>
+        <Questions />
+      </LazyLoad>
+      <LazyLoad height={100} offset={100} once placeholder={<Spinner />}>
+        <Sponsors />
+      </LazyLoad>
+    </main>
+    // </Suspense>
   );
 }
 

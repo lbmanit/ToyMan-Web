@@ -1,9 +1,9 @@
 import { encode, decode } from 'base-64';
-import React from 'react';
+import React, { lazy } from 'react';
 import { Link, useLocation, useParams } from 'react-router-dom';
 import itemsData from '../../../data/items-data';
 import blogsData from '../../../data/blogs-data';
-import Search from '../../modules/Search';
+const Search = lazy(() => import('../../modules/Search'));
 function SearchPage() {
   // const {handleDisplaySearch} = props
   const { search } = useParams();

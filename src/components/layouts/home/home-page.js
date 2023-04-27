@@ -1,14 +1,13 @@
-import React, { lazy, Suspense } from 'react';
-import Spinner from '../../../app/Spinner';
+import React, { lazy } from 'react';
+// import Spinner from '../../../app/Spinner';
+// import LazyLoad from 'react-lazyload';
 const Header = lazy(() => import('./header/header'));
 const Main = lazy(() => import('./main/main'));
 function Home() {
   return (
     <React.Fragment>
       <Header />
-      <Suspense fallback={<Spinner />}>
-        <Main />
-      </Suspense>
+      <Main />
     </React.Fragment>
   );
 }

@@ -10,24 +10,19 @@ function RecentPhotos() {
   const [recentPhotos, setRecentPhotos] = useState(photos);
   const memoizedPhotos = recentPhotos.map((imgUrl, index) => {
     return (
-      <LazyLoad
-        key={index}
-        className='w-1/4 m-6 overflow-hidden'
-        height={563}
-        offset={100}
-        once
-        placeholder={<Spinner />}
-      >
+      <div key={index} className='w-1/4 m-6 overflow-hidden'>
         <img className='recent-photos' src={imgUrl} alt={index} />
-      </LazyLoad>
+      </div>
     );
   });
   return (
-    <section className='text-center container m-auto left-active'>
-      <h1 className='text-3xl mt-24'>Recent Photos</h1>
-      <h3 className='text-xl text-cyan m-8'>Check Gallery</h3>
-      <div className='flex items-center'>{memoizedPhotos}</div>
-    </section>
+    <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+      <section className='text-center container m-auto left-active'>
+        <h1 className='text-3xl mt-24'>Recent Photos</h1>
+        <h3 className='text-xl text-cyan m-8'>Check Gallery</h3>
+        <div className='flex items-center'>{memoizedPhotos}</div>
+      </section>
+    </LazyLoad>
   );
 }
 

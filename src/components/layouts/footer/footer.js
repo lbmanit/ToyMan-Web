@@ -8,7 +8,7 @@ function Footer() {
     <footer>
       <section className='flex justify-around items-center p-8 active'>
         <div>
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+          <LazyLoad height={75} offset={100} once placeholder={<Spinner />}>
             <img className='my-2' src={logo} alt='toy-logo' />
           </LazyLoad>
           <p className='w-2/3 text-lg my-2'>
@@ -88,7 +88,7 @@ function Footer() {
       <section className='copyright'>
         <div className='container m-auto flex justify-between items-center py-6'>
           <p>Copyright Toyman | Built with Toyman by Tran Manh Quan</p>
-          <LazyLoad height={563} offset={100} once>
+          <LazyLoad height={50} offset={100} once>
             <img src={payments} alt='payments' />
           </LazyLoad>
         </div>
