@@ -1,6 +1,7 @@
 import React from 'react';
-import Intro from './Intro';
 import { Link } from 'react-router-dom';
+import { lazy } from 'react';
+const Intro = lazy(() => import('./Intro'));
 function Header() {
   return (
     <header>
