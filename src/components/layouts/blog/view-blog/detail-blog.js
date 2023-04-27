@@ -73,9 +73,9 @@ function DetailBlog() {
           </div>
         </aside>
         <article className={`w-3/4 ${change ? 'left-active' : ''}`}>
-          <LazyLoad height={200} offset={0} once placeholder={<Spinner />}>
-            <img src={image} alt={title} />
-          </LazyLoad>
+          {/* <LazyLoad height={200} offset={100} once placeholder={<Spinner />}> */}
+          <img src={image} alt={title} />
+          {/* </LazyLoad> */}
           <h1 className='text-3xl my-8'>{title}</h1>
           <h1 className='blog-detail-date text-lg -mt-4 mb-4'>
             {dateUpLoad} \ {author}
@@ -87,7 +87,7 @@ function DetailBlog() {
             <LazyLoad
               className='mr-4 my-8'
               height={200}
-              offset={0}
+              offset={100}
               once
               placeholder={<Spinner />}
             >
@@ -100,7 +100,7 @@ function DetailBlog() {
             <LazyLoad
               className='ml-4  my-8'
               height={563}
-              offset={50}
+              offset={100}
               once
               placeholder={<Spinner />}
             >

@@ -20,7 +20,7 @@ function Animated() {
         onMouseOver={() => setHoverIndex(index)}
         onMouseOut={() => setHoverIndex(null)}
       >
-        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
           <img
             className='animated-img'
             src={e.url}
