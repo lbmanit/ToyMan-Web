@@ -57,6 +57,7 @@ function Search(props) {
             search: `?search=${encode(JSON.stringify(products))}`,
           }}
           className='-ml-8 cursor-pointer hover:text-cyan'
+          onClick={props.handleDisplaySearch}
         >
           <i className='fa fa-search'></i>
         </Link>

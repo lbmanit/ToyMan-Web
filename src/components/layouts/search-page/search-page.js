@@ -5,6 +5,7 @@ import itemsData from '../../../data/items-data';
 import blogsData from '../../../data/blogs-data';
 import Search from '../../modules/Search';
 function SearchPage() {
+  // const {handleDisplaySearch} = props
   const { search } = useParams();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -94,7 +95,15 @@ function SearchPage() {
           <Search />
         </div>
       </div>
-      <div className='p-16'>{product}</div>
+      <div className='p-16'>
+        {product.length !== 0 ? (
+          product
+        ) : (
+          <p className='text-2xl text-center m-12 font-bold'>
+            Not found for "{search}"
+          </p>
+        )}
+      </div>
     </section>
   );
 }
