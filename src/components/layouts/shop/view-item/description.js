@@ -29,7 +29,7 @@ function Description() {
     }
   }
   return (
-    <section className='container m-auto border border-gray rounded-md p-4'>
+    <section className='container m-auto border border-gray rounded-md p-4 left-active'>
       <div className='text-xl mb-8'>
         <button
           className='hover:text-cyan hover:border-b hover:border-b-cyan hover:border-solid font-bold'

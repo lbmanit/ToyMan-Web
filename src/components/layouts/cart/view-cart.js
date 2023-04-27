@@ -112,7 +112,7 @@ function ViewCart() {
                 </div>
                 <Link
                   className='border py-4 px-12 rounded-3xl bg-cyan text-white hover:bg-pink'
-                  to='/checkouts'
+                  to='/cart/checkouts'
                 >
                   <button>PROCEED TO CHECKOUT</button>
                 </Link>

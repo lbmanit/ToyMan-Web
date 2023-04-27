@@ -20,7 +20,7 @@ import '../assets/css/shop/size-guide.css';
 import '../assets/css/shop/shipping.css';
 const Home = lazy(() => import('../components/layouts/home/home-page'));
 const Page404 = lazy(() => import('../components/layouts/404'));
-const Navbar = lazy(() => import('../components/layouts/navbar/navbar'));
+const Navbar = lazy(() => import('../components/router/navbar'));
 const Footer = lazy(() => import('../components/layouts/footer/footer'));
 const BlogList = lazy(() =>
   import('../components/layouts/blog/view-blog/blog-list')
@@ -33,9 +33,9 @@ const Collections = lazy(() =>
 );
 const DetailItem = lazy(() => import('../components/layouts/shop/detail-item'));
 const ViewCart = lazy(() => import('../components/layouts/cart/view-cart'));
-const PayCart = lazy(() => import('../components/layouts/cart/pay/pay-cart'));
+const PayCart = lazy(() => import('../components/modules/pay/pay-cart'));
 const CompletePay = lazy(() =>
-  import('../components/layouts/cart/pay/complete-pay')
+  import('../components/modules/pay/complete-pay')
 );
 function App() {
   return (
@@ -50,8 +50,8 @@ function App() {
           <Route path='/collections' element={<Collections />} />
           <Route path='/collections/:id' element={<DetailItem />} />
           <Route path='/cart' element={<ViewCart />} />
-          <Route path='/checkouts' element={<PayCart />} />
-          <Route path='/complete' element={<CompletePay />} />
+          <Route path='/cart/checkouts' element={<PayCart />} />
+          <Route path='/cart/checkouts/complete' element={<CompletePay />} />
         </Routes>
         <Footer />
       </BrowserRouter>

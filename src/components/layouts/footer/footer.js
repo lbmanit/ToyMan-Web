@@ -88,7 +88,9 @@ function Footer() {
       <section className='copyright'>
         <div className='container m-auto flex justify-between items-center py-6'>
           <p>Copyright Toyman | Built with Toyman by Tran Manh Quan</p>
-          <img src={payments} alt='payments' />
+          <LazyLoad height={563} offset={100} once>
+            <img src={payments} alt='payments' />
+          </LazyLoad>
         </div>
       </section>
     </footer>

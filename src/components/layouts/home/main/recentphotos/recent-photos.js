@@ -14,7 +14,7 @@ function RecentPhotos() {
         key={index}
         className='w-1/4 m-6 overflow-hidden'
         height={563}
-        offset={50}
+        offset={75}
         once
         placeholder={<Spinner />}
       >

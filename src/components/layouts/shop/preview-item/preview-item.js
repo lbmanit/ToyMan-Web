@@ -39,7 +39,7 @@ function PreviewItem(props) {
   return (
     <React.Fragment>
       <article
-        className='item-collections relative left-active overflow-hidden'
+        className='item-collections relative right-active overflow-hidden'
         onMouseEnter={() => setIsShow(true)}
         onMouseLeave={() => setIsShow(false)}
       >

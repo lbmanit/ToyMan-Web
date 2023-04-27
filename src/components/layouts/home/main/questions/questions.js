@@ -29,7 +29,7 @@ function Questions() {
       </h3>
       <div className='flex justify-between'>
         <div className='relative py-4 w-1/2'>
-          <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+          <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
             <img className='animated-question-img' src={image} alt={image} />
           </LazyLoad>
           <div className='absolute'></div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import BlogList from './blog-list';
+// import LazyLoad from 'react-lazyload';
+// import Spinner from '../../../app/Spinner';
 function News() {
   return (
     <section className='left-active'>

@@ -3,7 +3,7 @@ import vb_img from '../../../../assets/images/children/vb.webp';
 function PromotionVideo() {
   return (
     <section
-      className='container m-auto py-32 my-16 rounded-md'
+      className='container m-auto py-32 my-16 rounded-md right-active'
       style={{
         backgroundImage: `url(${vb_img})`,
         backgroundRepeat: 'no-repeat',

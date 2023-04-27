@@ -37,7 +37,7 @@ function FeedBack() {
         key={user.id}
       >
         <div className='relative flex items-center'>
-          <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+          <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
             <img src={user.avatarUser} alt={user.name} />
           </LazyLoad>
           <div className='m-4'>

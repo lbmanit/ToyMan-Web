@@ -14,25 +14,25 @@ function Main() {
     <Suspense fallback={<Spinner />}>
       <main>
         <Categories />
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <Items />
         </LazyLoad>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <Animated />
         </LazyLoad>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <FeedBack />
         </LazyLoad>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <Loves />
         </LazyLoad>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <RecentPhotos />
         </LazyLoad>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <Questions />
         </LazyLoad>
-        <LazyLoad height={563} offset={50} once placeholder={<Spinner />}>
+        <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
           <Sponsors />
         </LazyLoad>
       </main>

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/cart-context';
 import RefundPolicy from './content-info/refund-policy';
 import PrivacyPolicy from './content-info/privacy-policy';
 import TermsService from './content-info/terms-service';
 import ContactInfo from './content-info/contact-info';
-import { CountryData } from '../../../fetch/country-data';
-import { useContext } from 'react';
-import { CartContext } from '../../../context/cart-context';
+import { CountryData } from '../../fetch/country-data';
 function FormPayCart() {
   const { setCartItems } = useContext(CartContext);
   const { data } = CountryData();
@@ -161,7 +161,7 @@ function FormPayCart() {
           </Link>
           <Link
             className='continue-shipping text-base px-3 py-6'
-            to='/complete'
+            to='/cart/checkouts/complete'
           >
             <button onClick={() => setCartItems([])}>
               Continue to shipping

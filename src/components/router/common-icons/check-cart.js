@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { CartContext } from '../../../context/cart-context';
+import { CartContext } from '../../context/cart-context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../../app/Spinner';
+import Spinner from '../../../app/Spinner';
 function CheckCart(props) {
   const { handleDisplayCart } = props;
   const [isShowRemove, setIsShowRemove] = useState(false);

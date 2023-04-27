@@ -29,19 +29,19 @@ function BlogList() {
           onMouseOver={() => setHoverIndex(index)}
           onMouseOut={() => setHoverIndex(null)}
         >
-          <div className='relative'>
-            <LazyLoad
+          <div className='relative img-wrapper'>
+            {/* <LazyLoad
               className='img-wrapper'
               height={563}
-              offset={100}
+              offset={25}
               once
               placeholder={<Spinner />}
-            >
-              <img style={styleImg} src={blog.image} alt={blog.title} />
-              <h2 className='date-blog absolute top-full z-50x px-4 py-1 -mt-6 text-base'>
-                {blog.dateUpLoad}
-              </h2>
-            </LazyLoad>
+            > */}
+            <img style={styleImg} src={blog.image} alt={blog.title} />
+            <h2 className='date-blog absolute top-full z-50x px-4 py-1 -mt-6 text-base'>
+              {blog.dateUpLoad}
+            </h2>
+            {/* </LazyLoad> */}
           </div>
           <h1 className='text-xl font-bold mt-8 mb-4 hover:text-cyan cursor-pointer'>
             {blog.title}

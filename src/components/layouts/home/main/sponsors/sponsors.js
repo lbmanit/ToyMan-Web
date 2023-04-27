@@ -16,7 +16,7 @@ function Sponsors() {
       <LazyLoad
         className='flex justify-between my-16'
         height={563}
-        offset={50}
+        offset={75}
         once
         placeholder={<Spinner />}
       >

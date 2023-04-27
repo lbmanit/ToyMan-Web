@@ -9,7 +9,6 @@ import Reassurance from './view-item/reassurance';
 import Description from './view-item/description';
 import RelatedItems from './view-item/related-items';
 import PromotionVideo from './view-item/promotion-video';
-import Spinner from '../../../app/Spinner';
 function DetailItem() {
   const { handleAddToCart } = useContext(CartContext);
   const { id } = useParams();
@@ -49,15 +48,15 @@ function DetailItem() {
         </div>
       </div>
       <article className='container m-auto flex my-16 left-active'>
-        <LazyLoad
+        {/* <LazyLoad
           className='w-1/2'
           height={563}
           offset={100}
           once
           placeholder={<Spinner />}
-        >
-          <img className='w-full' src={avatarUrl} alt={title} />
-        </LazyLoad>
+        > */}
+        <img className='w-1/2' src={avatarUrl} alt={title} />
+        {/* </LazyLoad> */}
         <div className='w-1/2 px-8'>
           <h1 className='text-4xl font-medium'>{title}</h1>
           <div className={'text-cyan text-2xl my-2 flex items-center'}>
@@ -121,9 +120,15 @@ function DetailItem() {
           <Reassurance />
         </div>
       </article>
-      <Description />
-      <PromotionVideo />
-      <RelatedItems id={id} />
+      <LazyLoad height={563} offset={75} once>
+        <Description />
+      </LazyLoad>
+      <LazyLoad height={563} offset={75} once>
+        <PromotionVideo />
+      </LazyLoad>
+      <LazyLoad height={563} offset={75} once>
+        <RelatedItems id={id} />
+      </LazyLoad>
       {isDisplaySize && (
         <section className='fixed size-guide flex justify-center items-center downActive'>
           <div className='p-8 font-black rounded-lg'>

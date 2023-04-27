@@ -1,10 +1,10 @@
 import React from 'react';
-import { useContext } from 'react';
-import { CartContext } from '../../../context/cart-context';
-import FormPayCart from './form-pay-cart';
-import Page404 from '../../404';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../../app/Spinner';
+import { useContext } from 'react';
+import { CartContext } from '../../context/cart-context';
+import FormPayCart from './form-pay-cart';
+import Page404 from '../../layouts/404';
+import Spinner from '../../../app/Spinner';
 function PayCart() {
   const { cartItems, totalPrice } = useContext(CartContext);
   const cartList = cartItems.map((item, index) => {

@@ -3,7 +3,7 @@ import LazyLoad from 'react-lazyload';
 import { useLocation, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Spinner from '../../../../app/Spinner';
-import Search from '../../search/Search';
+import Search from '../../../modules/Search';
 import RelatedBlogs from './related-blogs';
 import { encode, decode } from 'base-64';
 function DetailBlog() {
