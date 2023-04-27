@@ -13,7 +13,7 @@ function ProductActionItem(props) {
       <li className='product-item-action  m-2 mt-4'>
         <i className='fa fa-eye' onClick={handleDisplay}></i>
       </li>
-      <li className='product-item-action  m-2'>
+      <li className='product-item-action m-2'>
         <i className='fa fa-heart'></i>
       </li>
       <li className='product-item-action m-2 mb-4'>

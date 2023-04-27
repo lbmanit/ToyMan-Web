@@ -1,25 +1,25 @@
 import React from 'react';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart-context';
 import FormPayCart from './form-pay-cart';
 import Page404 from '../../layouts/404';
-import Spinner from '../../../app/Spinner';
+// import Spinner from '../../../app/Spinner';
 function PayCart() {
   const { cartItems, totalPrice } = useContext(CartContext);
   const cartList = cartItems.map((item, index) => {
     return (
-      <article key={index} className='flex justify-start items-center'>
+      <article key={index} className='flex justify-start items-center my-4'>
         <div className='relative w-1/6 bg-darkLight  rounded-lg'>
-          <LazyLoad
+          {/* <LazyLoad
             className='rounded-lg'
             height={563}
             offset={100}
             once
             placeholder={<Spinner />}
-          >
-            <img className='rounded-lg' src={item.avatarUrl} alt={item.title} />
-          </LazyLoad>
+          > */}
+          <img className='rounded-lg' src={item.avatarUrl} alt={item.title} />
+          {/* </LazyLoad> */}
           <h1 className='absolute -top-2 -right-2  flex items-center justify-center rounded-full bg-gray text-white w-5 h-5'>
             {item.quantity}
           </h1>

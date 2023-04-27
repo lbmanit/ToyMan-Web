@@ -22,6 +22,7 @@ const Home = lazy(() => import('../components/layouts/home/home-page'));
 const Page404 = lazy(() => import('../components/layouts/404'));
 const Navbar = lazy(() => import('../components/router/navbar'));
 const Footer = lazy(() => import('../components/layouts/footer/footer'));
+const ScrollPage = lazy(() => import('../components/layouts/scroll'));
 const SearchPage = lazy(() =>
   import('../components/layouts/search-page/search-page')
 );
@@ -58,6 +59,7 @@ function App() {
           <Route path='/cart/checkouts/complete' element={<CompletePay />} />
         </Routes>
         <Footer />
+        <ScrollPage />
       </BrowserRouter>
     </Suspense>
   );

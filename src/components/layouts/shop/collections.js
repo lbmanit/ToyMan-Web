@@ -18,6 +18,16 @@ function Collections() {
     setTimeout(() => setChangeType(false), 500);
   }
   const itemsInPage = 3;
+  function handleArrangeItems(event) {
+    const { value } = event.target;
+    if (value === 'min') {
+      itemsData.sort((a, b) => a.price - b.price);
+    } else if (value === 'max') {
+      itemsData.sort((a, b) => b.price - a.price);
+    } else {
+      return itemsData;
+    }
+  }
   const filteredItems = itemsData.filter((item) =>
     selectedTypes.length === 0
       ? true
@@ -26,7 +36,6 @@ function Collections() {
   const countFilteredItems = filteredItems.length;
   const endIndex = currentIndex + itemsInPage;
   const slicedItems = filteredItems.slice(currentIndex, endIndex);
-
   const handleIncrement = useCallback(() => {
     if (countPage >= Math.ceil(countFilteredItems / itemsInPage)) {
       return;
@@ -101,55 +110,89 @@ function Collections() {
       <div
         className={`${
           changeType ? 'left-active' : ''
-        } container m-auto flex my-16`}
+        } container m-auto flex my-12`}
       >
-        <div>
-          <h1 className='text-xl font-bold border-b-2 border-solid border-gray'>
-            Product Type
-          </h1>
-          <div className='flex flex-col justify-start items-center my-8 mr-8'>
-            <div className='flex justify-center items-center'>
-              <div className='flex justify-between items-center'>
+        <div className='w-1/4'>
+          <div>
+            <h1 className='text-xl font-bold border-b border-solid border-gray'>
+              Product Type
+            </h1>
+            <div className='flex flex-col justify-start items-center my-8'>
+              <h1 className='border-dotted border border-gray rounded-3xl px-4 py-1 mr-auto mb-8'>
+                {selectedTypes.length} selected
+              </h1>
+              <div className='w-full flex justify-center items-center'>
                 <input
+                  className='w-1/4'
                   type='checkbox'
                   id='type1'
                   value={1}
                   onChange={handleChangeType}
                   onClick={animationChangeType}
                 />
-                <h1 className=' w-36 text-base font-bold'>Type 1</h1>
+                <h1 className='w-1/2 text-base font-bold'>Type 1</h1>
+                <h1 className='w-1/4'>{`(${slicedItems.length})`}</h1>
               </div>
-              <h1>{`(${slicedItems.length})`}</h1>
-            </div>
-            <div className='flex justify-center items-center'>
-              <div className='flex justify-between items-center'>
+              <div className='w-full flex justify-center items-center'>
                 <input
+                  className='w-1/4'
                   type='checkbox'
                   id='type2'
                   value={2}
                   onChange={handleChangeType}
                   onClick={animationChangeType}
                 />
-                <h1 className=' w-36 text-base font-bold'>Type 2</h1>
+                <h1 className='w-1/2 text-base font-bold'>Type 2</h1>
+                <h1 className='w-1/4'>{`(${slicedItems.length})`}</h1>
               </div>
-              <h1>{`(${slicedItems.length})`}</h1>
-            </div>
-            <div className='flex items-center'>
-              <div className='flex items-center'>
+              <div className='w-full flex  justify-center items-center'>
                 <input
+                  className='w-1/4'
                   type='checkbox'
                   id='type3'
                   value={3}
                   onChange={handleChangeType}
                   onClick={animationChangeType}
                 />
-                <h1 className=' w-36 text-base font-bold'>Type 3</h1>
+                <h1 className='w-1/2 text-base font-bold'>Type 3</h1>
+                <h1 className='w-1/4'>{`(${slicedItems.length})`}</h1>
               </div>
-              <h1>{`(${slicedItems.length})`}</h1>
+            </div>
+          </div>
+          <div>
+            <h1 className='text-xl font-bold border-b border-solid border-gray'>
+              Price
+            </h1>
+            <div className='w-full flex justify-start items-center my-1'>
+              <input
+                className='w-1/4'
+                type='checkbox'
+                id='min'
+                name='min'
+                value='min'
+                onChange={handleArrangeItems}
+                onClick={animationChangeType}
+              />
+              <h1 className='w-3/4 text-base font-bold'>Low to high</h1>
+            </div>
+            <div className='w-full flex justify-start items-center'>
+              <input
+                className='w-1/4'
+                type='checkbox'
+                id='max'
+                name='max'
+                value='max'
+                onChange={handleArrangeItems}
+                onClick={animationChangeType}
+              />
+              <h1 className='w-3/4 text-base font-bold'>High to low</h1>
             </div>
           </div>
         </div>
         <div>
+          <p className='text-xl text-center font-bold mb-8'>
+            Showing {filteredItems.length} of {itemsData.length} result
+          </p>
           <div
             className={`m-auto flex ${slideLeft ? 'left-active' : ''} ${
               slideRight ? 'right-active' : ''

@@ -82,16 +82,16 @@ header {
 }
 
 .next-intro {
-  animation: NextIntro 1s linear;
+  animation: NextIntro 0.5s linear;
 }
 
 @keyframes NextIntro {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-200%);
     opacity: 0;
   }
   50% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
     opacity: 0.6;
   }
   100% {
@@ -99,15 +99,15 @@ header {
   }
 }
 .prev-intro {
-  animation: PrevIntro 1.2s linear;
+  animation: PrevIntro 0.5s linear;
 }
 @keyframes PrevIntro {
   0% {
-    transform: translateX(250%);
+    transform: translateX(200%);
     opacity: 0;
   }
   50% {
-    transform: translateX(125%);
+    transform: translateX(100%);
     opacity: 0.6;
   }
   100% {

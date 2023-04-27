@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
+import { lazy } from 'react';
 import toymanLogo from '../../assets/images/logo/toymanlogo.jpeg';
 import Icons from './common-icons/icons';
-import SearchProducts from './common-icons/search-products';
-import CheckCart from './common-icons/check-cart';
 import Pages from './pages/pages';
-import Spinner from '../../app/Spinner';
-
+const CheckCart = lazy(() => import('./common-icons/check-cart'));
+const SearchProducts = lazy(() => import('./common-icons/search-products'));
 function Navbar() {
   const [isSticky, setSticky] = useState(false);
   const [isDisplaySearch, setIsDisplaySearch] = useState(false);
@@ -33,11 +31,11 @@ function Navbar() {
           isSticky ? 'sticky' : ''
         } m-auto nav-item flex justify-around items-center py-5`}
       >
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-          <Link to='/'>
-            <img className='cursor-pointer' src={toymanLogo} alt='logo' />
-          </Link>
-        </LazyLoad>
+        {/* <LazyLoad height={563} offset={100} once placeholder={<Spinner />}> */}
+        <Link to='/' target='_top'>
+          <img className='cursor-pointer' src={toymanLogo} alt='logo' />
+        </Link>
+        {/* </LazyLoad> */}
         <Pages />
         <Icons
           handleDisplaySearch={() => setIsDisplaySearch(true)}

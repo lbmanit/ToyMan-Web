@@ -1,3 +1,20 @@
+.product-action {
+  background-color: #fff;
+  padding: 4px 2px;
+  width: 50px;
+  text-align: center;
+  border-radius: 30px;
+  box-shadow: 4px 4px 5px 1px #eee;
+}
+.product-name-action:hover {
+  color: #17a2b8;
+}
+.product-item-action {
+  cursor: pointer;
+}
+.product-item-action:hover {
+  color: #17a2b8;
+}
 .sale-mod {
   background-color: #e83e8c;
   top: 10px;

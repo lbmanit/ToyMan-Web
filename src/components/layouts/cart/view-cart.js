@@ -2,8 +2,8 @@ import React from 'react';
 import { useContext } from 'react';
 import { CartContext } from '../../context/cart-context';
 import { Link } from 'react-router-dom';
-import LazyLoad from 'react-lazyload';
-import Spinner from '../../../app/Spinner';
+// import LazyLoad from 'react-lazyload';
+// import Spinner from '../../../app/Spinner';
 function ViewCart() {
   const { cartItems, setCartItems, removeCartItem, totalPrice } =
     useContext(CartContext);
@@ -11,9 +11,9 @@ function ViewCart() {
     return (
       <tr className='border' key={index}>
         <td className='w-1/6 p-4'>
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-            <img src={item.avatarUrl} alt={item.title} />
-          </LazyLoad>
+          {/* <LazyLoad height={563} offset={100} once placeholder={<Spinner />}> */}
+          <img src={item.avatarUrl} alt={item.title} />
+          {/* </LazyLoad> */}
         </td>
         <td className='border'>{item.title}</td>
         <td className='border'>$ {item.price}</td>

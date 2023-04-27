@@ -18,6 +18,21 @@
     margin: 40px;
     border: none;
   }
+  .fa.fa-angle-double-up {
+    position: fixed;
+    cursor: pointer;
+    background-color: #4acdd5;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    bottom: 10%;
+    right: 3%;
+    z-index: 800;
+  }
 }
 body {
   margin: 0;
