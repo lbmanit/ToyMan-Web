@@ -40,6 +40,7 @@ function Search(props) {
       };
     }
   };
+  console.log(searchValue);
   return (
     <div className='left-active'>
       <div className='flex'>
@@ -52,7 +53,7 @@ function Search(props) {
         />
         <Link
           to={{
-            pathname: `/Search/${searchValue}`,
+            pathname: `/search/${searchValue}`,
             search: `?search=${encode(JSON.stringify(products))}`,
           }}
           className='-ml-8 cursor-pointer hover:text-cyan'

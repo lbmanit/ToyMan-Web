@@ -22,6 +22,9 @@ const Home = lazy(() => import('../components/layouts/home/home-page'));
 const Page404 = lazy(() => import('../components/layouts/404'));
 const Navbar = lazy(() => import('../components/router/navbar'));
 const Footer = lazy(() => import('../components/layouts/footer/footer'));
+const SearchPage = lazy(() =>
+  import('../components/layouts/search-page/search-page')
+);
 const BlogList = lazy(() =>
   import('../components/layouts/blog/view-blog/blog-list')
 );
@@ -45,6 +48,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='*' element={<Page404 />} />
+          <Route path='/search/:search' element={<SearchPage />} />
           <Route path='/news' element={<BlogList />} />
           <Route path='/news/:id' element={<DetailBlog />} />
           <Route path='/collections' element={<Collections />} />

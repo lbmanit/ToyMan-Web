@@ -1,8 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import blogsData from '../../../../data/blogs-data';
-import Spinner from '../../../../app/Spinner';
+// import Spinner from '../../../../app/Spinner';
 import { encode } from 'base-64';
 function BlogList() {
   const [blogs, setBlogs] = useState(blogsData);
@@ -38,7 +38,7 @@ function BlogList() {
               placeholder={<Spinner />}
             > */}
             <img style={styleImg} src={blog.image} alt={blog.title} />
-            <h2 className='date-blog absolute top-full z-50x px-4 py-1 -mt-6 text-base'>
+            <h2 className='date-blog absolute top-full px-4 py-1 ml-2 -mt-10 text-base'>
               {blog.dateUpLoad}
             </h2>
             {/* </LazyLoad> */}
