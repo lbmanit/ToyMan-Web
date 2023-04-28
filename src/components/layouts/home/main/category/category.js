@@ -9,14 +9,14 @@ function Category(props) {
     modalContent: PropTypes.string.isRequired,
   };
   return (
-    <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
-      <article className='m-6'>
+    <article className='m-6'>
+      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
         <img src={image} alt={modalContent} />
-        <h1 className='text-center text-xl font-semibold my-6 cursor-pointer hover:text-cyan'>
-          {modalContent}
-        </h1>
-      </article>
-    </LazyLoad>
+      </LazyLoad>
+      <h1 className='text-center text-xl font-semibold my-6 cursor-pointer hover:text-cyan'>
+        {modalContent}
+      </h1>
+    </article>
   );
 }
 export default Category;

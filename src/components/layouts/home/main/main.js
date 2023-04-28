@@ -16,7 +16,7 @@ function Main() {
       <LazyLoad height={400} offset={100} once placeholder={<Spinner />}>
         <Categories />
       </LazyLoad>
-      <LazyLoad height={1200} offset={75} once placeholder={<Spinner />}>
+      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
         <Trends />
       </LazyLoad>
       <LazyLoad height={350} offset={100} once placeholder={<Spinner />}>
@@ -25,13 +25,13 @@ function Main() {
       <LazyLoad height={450} offset={75} once placeholder={<Spinner />}>
         <FeedBack />
       </LazyLoad>
-      <LazyLoad height={600} offset={100} once placeholder={<Spinner />}>
+      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
         <Loves />
       </LazyLoad>
-      <LazyLoad height={600} offset={100} once placeholder={<Spinner />}>
+      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
         <RecentPhotos />
       </LazyLoad>
-      <LazyLoad height={700} offset={75} once placeholder={<Spinner />}>
+      <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
         <Questions />
       </LazyLoad>
       <LazyLoad height={100} offset={100} once placeholder={<Spinner />}>
