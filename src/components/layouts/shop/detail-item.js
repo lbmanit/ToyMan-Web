@@ -91,7 +91,7 @@ function DetailItem() {
               <button>Ask About This Product</button>
             </div>
           </div>
-          <div className='input-item text-center my-2'>
+          <div className='input-item text-center my-8'>
             <div className='flex items-center rounded-2xl'>
               <div className='text-xl flex justify-between py-2 px-4 my-4 input-count'>
                 <button className='cursor-pointer' onClick={handleDecrement}>
@@ -103,15 +103,15 @@ function DetailItem() {
                 </button>
               </div>
               <button
-                className='cursor-pointer text-center text-xl add-item ml-8 p-2'
+                className='cursor-pointer text-center text-xl add-item ml-8 p-2 hover:bg-pink'
                 onClick={() => handleAddToCart(mainItem, count)}
               >
                 ADD TO CART
               </button>
             </div>
-            <button className='text-xl text-center p-2 my-2 buy-item'>
+            {/* <button className='text-xl text-center p-2 my-2 buy-item'>
               Buy it now
-            </button>
+            </button> */}
           </div>
           <div className='cursor-pointer flex items-center text-lg my-4'>
             <i className='fa fa-heart'></i>
