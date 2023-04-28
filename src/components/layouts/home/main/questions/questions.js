@@ -3,7 +3,6 @@ import LazyLoad from 'react-lazyload';
 import Question from './question';
 import url from '../questions/question-data.JSON';
 import image from '../../../../../assets/images/questions/toys_party.webp';
-import Spinner from '../../../../../app/Spinner';
 function Questions() {
   const [questions, setQuestions] = useState([]);
   useEffect(() => {
@@ -29,7 +28,7 @@ function Questions() {
       </h3>
       <div className='flex justify-between'>
         <div className='relative py-4 w-1/2'>
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+          <LazyLoad height={563} offset={100} once>
             <img className='animated-question-img' src={image} alt={image} />
           </LazyLoad>
           <div className='absolute'></div>

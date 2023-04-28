@@ -6,7 +6,7 @@ import Spinner from '../../../../app/Spinner';
 const Intro = lazy(() => import('./Intro'));
 function Header() {
   return (
-    <LazyLoad height={1000} offset={100} once placeholder={<Spinner />}>
+    <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
       <header>
         <div className='bg-light'>
           <p className='text-cyan text-center text-base py-6'>

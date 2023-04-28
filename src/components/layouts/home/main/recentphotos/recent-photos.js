@@ -11,7 +11,9 @@ function RecentPhotos() {
   const memoizedPhotos = recentPhotos.map((imgUrl, index) => {
     return (
       <div key={index} className='w-1/4 m-6 overflow-hidden'>
-        <img className='recent-photos' src={imgUrl} alt={index} />
+        <LazyLoad height={563} offset={100} once>
+          <img className='recent-photos' src={imgUrl} alt={index} />
+        </LazyLoad>
       </div>
     );
   });
