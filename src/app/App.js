@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import Spinner from './Spinner';
 import '../assets/css/input.css';
 import '../assets/css/homepage/animated.css';
@@ -42,6 +42,7 @@ const PayCart = lazy(() => import('../components/modules/pay/pay-cart'));
 const CompletePay = lazy(() =>
   import('../components/modules/pay/complete-pay')
 );
+const Contact = lazy(() => import('../components/layouts/contact/contact'));
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -58,6 +59,7 @@ function App() {
           <Route path='/cart' element={<ViewCart />} />
           <Route path='/cart/checkouts' element={<PayCart />} />
           <Route path='/cart/checkouts/complete' element={<CompletePay />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
         <Footer />
         <ScrollPage />

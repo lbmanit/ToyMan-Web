@@ -32,12 +32,13 @@ function FormPayCart() {
       return {
         ...prevForm,
         [name]: type === 'checkbox' ? checked : value,
+        id: new Date().getTime(),
       };
     });
   }
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  // }
+  function handleSubmitPay(event) {
+    // event.preventDefault();
+  }
   return (
     <div>
       <div className='flex items-center'>
@@ -47,7 +48,11 @@ function FormPayCart() {
         <i className='fas fa-angle-right m-2'></i>
         <h1>information</h1>
       </div>
-      <form className='border-b-2 border-gray my-8' method='POST'>
+      <form
+        className='border-b-2 border-gray my-8'
+        method='POST'
+        onSubmit={handleSubmitPay}
+      >
         <div className='font-base'>
           <div>
             <label className='text-xl font-bold' htmlFor='email'>
@@ -57,10 +62,10 @@ function FormPayCart() {
               className='form-input-value'
               type='email'
               name='email'
-              checked
               placeholder='Email'
               onChange={handleForm}
               value={formData.email}
+              checked
               required
             />
           </div>
@@ -86,6 +91,7 @@ function FormPayCart() {
             id='region'
             value={formData.region}
             onChange={handleForm}
+            checked
             required
           >
             <option>Select a country</option>
@@ -116,6 +122,7 @@ function FormPayCart() {
             placeholder='Last Name'
             value={formData.lastName}
             onChange={handleForm}
+            checked
             required
           />
           <input
@@ -125,6 +132,7 @@ function FormPayCart() {
             placeholder='Address'
             value={formData.address}
             onChange={handleForm}
+            checked
             required
           />
           <input
@@ -134,6 +142,7 @@ function FormPayCart() {
             placeholder='City'
             value={formData.city}
             onChange={handleForm}
+            checked
             required
           />
           <div className='flex justify-start items-center mr-auto w-1/2'>
