@@ -55,8 +55,8 @@
   border-radius: 16px;
 }
 
-.fa.fa-angle-left,
-.fa.fa-angle-right {
+.fa.fa-angle-left.product,
+.fa.fa-angle-right.product {
   cursor: pointer;
   background-color: #f8f8f8;
   color: #a4a3a3;
@@ -68,8 +68,8 @@
   border-radius: 50%;
 }
 
-.fa.fa-angle-left:hover,
-.fa.fa-angle-right:hover {
+.fa.fa-angle-left.product:hover,
+.fa.fa-angle-right.product:hover {
   color: #fff;
   background-color: #4acdd5;
 }

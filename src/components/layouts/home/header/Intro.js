@@ -45,13 +45,13 @@ function Intro() {
       <div>
         <i
           className={`absolute z-20 cursor-pointer text-cyan bottom-6 right-1/2 mx-4 ${
-            change ? 'far fa-check-circle' : 'far fa-circle'
+            change ? 'fa fa-check-circle' : 'fa fa-circle'
           }`}
           onClick={() => setChange(true)}
         ></i>
         <i
           className={`absolute z-20 cursor-pointer text-cyan bottom-6 left-1/2 mx-4 ${
-            change ? 'far fa-circle' : 'far fa-check-circle'
+            change ? 'fa fa-circle' : 'fa fa-check-circle'
           }`}
           onClick={() => setChange(false)}
         ></i>

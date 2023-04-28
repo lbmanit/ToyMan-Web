@@ -77,7 +77,7 @@ function DetailItem() {
           <p className='text-base my-4'>{details.describe}</p>
           <div className='flex text-base cursor-pointer'>
             <div className='flex justify-between items-center mr-4'>
-              <i className='fas fa-ruler-horizontal mr-2'></i>
+              <i className='fa fa-paw mr-2'></i>
               <button onClick={() => setIsDisplaySize(true)}>Size Guide</button>
             </div>
             <div className='flex justify-between items-center mx-4'>

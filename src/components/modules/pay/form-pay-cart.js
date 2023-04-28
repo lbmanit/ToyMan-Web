@@ -45,7 +45,7 @@ function FormPayCart() {
         <Link className='return-cart' to='cart'>
           Cart
         </Link>
-        <i className='fas fa-angle-right m-2'></i>
+        <i className='fa fa-angle-right m-2'></i>
         <h1>information</h1>
       </div>
       <form

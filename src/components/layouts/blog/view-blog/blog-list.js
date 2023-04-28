@@ -94,12 +94,12 @@ function BlogList() {
       </div>
       <div className='flex justify-center items-center mb-8'>
         <i
-          className={`fa fa-angle-left text-3xl mx-4`}
+          className={`fa fa-angle-left product text-3xl mx-4`}
           onClick={handleDecrement}
         ></i>
         <h1 className='bg-cyan text-white text-xl count-page'>{countPage}</h1>
         <i
-          className={`fa fa-angle-right text-3xl mx-4`}
+          className={`fa fa-angle-right product text-3xl mx-4`}
           onClick={handleIncrement}
         ></i>
       </div>

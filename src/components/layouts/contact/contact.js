@@ -48,21 +48,21 @@ function Contact() {
             simply random text. It has roots in a piece of classical.
           </p>
           <div className='flex justify-start items-center my-8'>
-            <i className='text-2xl bg-cyan text-white rounded-full w-12 h-12 flex justify-center items-center p-4 fas fa-map-marker-alt'></i>
+            <i className='text-2xl bg-cyan text-white rounded-full w-12 h-12 flex justify-center items-center p-4 fa fa-map-marker'></i>
             <div className='mx-4'>
               <h1 className='font-bold text-2xl'>Headquarter</h1>
               <h1 className='text-base'>Ha Noi, Viet Nam</h1>
             </div>
           </div>
           <div className='flex justify-start items-center my-8'>
-            <i className='text-2xl bg-cyan text-white rounded-full w-12 h-12 flex justify-center items-center p-4 fas fa-mobile-alt'></i>
+            <i className='text-3xl bg-cyan text-white rounded-full w-12 h-12 flex justify-center items-center p-4 fa fa-mobile'></i>
             <div className='mx-4'>
               <h1 className='font-bold text-2xl'>Phone Number</h1>
               <h1 className='text-base'>033 411 5449</h1>
             </div>
           </div>
           <div className='flex justify-start items-center my-8'>
-            <i className='text-2xl bg-cyan text-white rounded-full w-12 h-12 flex justify-center items-center p-4 fas fa-envelope'></i>
+            <i className='text-2xl bg-cyan text-white rounded-full w-12 h-12 flex justify-center items-center p-4 fa fa-envelope'></i>
             <div className='mx-4'>
               <h1 className='font-bold text-2xl'>Email Us</h1>
               <h1 className='text-base'>quan0168591059@gmail.com</h1>
