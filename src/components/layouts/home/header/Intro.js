@@ -28,7 +28,7 @@ function Intro() {
         <p className='text-2xl mt-4 mb-8'>Flat 10% Off On Order Above $29.99</p>
         <div className='flex items-center text-2xl'>
           <Link className='animated my-6' to='/collections'>
-            SHOP NOW <i className='fa fa-hand-point-right'></i>
+            SHOP NOW <i className='	fa fa-hand-o-right'></i>
           </Link>
           <div className='m-6 text-7xl'>
             <i className='fa fa-play-circle'></i>
