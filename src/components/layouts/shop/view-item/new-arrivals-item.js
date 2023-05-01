@@ -54,11 +54,11 @@ function NewArrivalsItem() {
         {isShow && (
           <div className='cursor-pointer opacity-80 flex flex-col justify-center items-center'>
             <i
-              className='text-5xl far fa-arrow-alt-circle-up mb-8'
+              className='text-5xl text-pink hover:text-cyan fa fa-arrow-circle-left mb-8 left-active'
               onClick={handlePrevClick}
             ></i>
             <i
-              className='text-5xl far fa-arrow-alt-circle-down'
+              className='text-5xl text-pink hover:text-cyan fa fa-arrow-circle-right right-active'
               onClick={handleNextClick}
             ></i>
           </div>
