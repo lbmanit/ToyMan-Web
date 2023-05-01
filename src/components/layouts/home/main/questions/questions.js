@@ -21,23 +21,19 @@ function Questions() {
     return <Question key={index} {...question} />;
   });
   return (
-    <LazyLoad offset={100} once>
-      <section className='container m-auto right-active'>
-        <h1 className='text-center text-3xl mt-24'>
-          Frequently Asked Questions
-        </h1>
-        <h3 className='text-center text-xl text-cyan m-8'>
-          Find your answer from here
-        </h3>
-        <div className='flex justify-between'>
-          <div className='relative py-4 w-1/2'>
-            <img className='animated-question-img' src={image} alt={image} />
-            <div className='absolute'></div>
-          </div>
-          <div className='w-1/2'>{newQuestion}</div>
+    <section className='container m-auto right-active'>
+      <h1 className='text-center text-3xl mt-24'>Frequently Asked Questions</h1>
+      <h3 className='text-center text-xl text-cyan m-8'>
+        Find your answer from here
+      </h3>
+      <div className='flex justify-between'>
+        <div className='relative py-4 w-1/2'>
+          <img className='animated-question-img' src={image} alt={image} />
+          <div className='absolute'></div>
         </div>
-      </section>
-    </LazyLoad>
+        <div className='w-1/2'>{newQuestion}</div>
+      </div>
+    </section>
   );
 }
 export default Questions;

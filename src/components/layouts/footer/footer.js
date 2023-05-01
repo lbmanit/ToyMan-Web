@@ -5,7 +5,7 @@ import logo from '../../../assets/images/logo/toymanlogo.jpeg';
 import payments from '../../../assets/images/payments/payments_large_25c93ac6-988d-4e66-b116-eab60a12eced_large.png';
 function Footer() {
   return (
-    <LazyLoad offset={100} once>
+    <LazyLoad height={100} once placeholder={<Spinner />}>
       <footer>
         <section className='flex justify-around items-center p-8 active'>
           <div className='w-1/2'>

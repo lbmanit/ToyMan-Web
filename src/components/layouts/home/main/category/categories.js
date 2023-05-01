@@ -9,15 +9,13 @@ function Categories() {
     return <Category key={index} {...category} />;
   });
   return (
-    <LazyLoad offset={100} once placeholder={<Spinner />}>
-      <div className='category-title container mx-auto mt-16 right-active'>
-        <h1 className='text-center text-3xl font-semibold'>Shop By Age</h1>
-        <h3 className='text-center text-cyan text-xl mt-4 mb-8'>
-          Our Collections
-        </h3>
-        <div className='flex justify-around items-center'>{newCategories}</div>
-      </div>
-    </LazyLoad>
+    <div className='category-title container mx-auto mt-16 right-active'>
+      <h1 className='text-center text-3xl font-semibold'>Shop By Age</h1>
+      <h3 className='text-center text-cyan text-xl mt-4 mb-8'>
+        Our Collections
+      </h3>
+      <div className='flex justify-around items-center'>{newCategories}</div>
+    </div>
   );
 }
 

@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-// import LazyLoad from 'react-lazyload';
+import LazyLoad from 'react-lazyload';
 import blogsData from '../../../../data/blogs-data';
 // import Spinner from '../../../../app/Spinner';
 import { encode } from 'base-64';
@@ -30,18 +30,12 @@ function BlogList() {
           onMouseOut={() => setHoverIndex(null)}
         >
           <div className='relative img-wrapper'>
-            {/* <LazyLoad
-              className='img-wrapper'
-              height={563}
-              offset={25}
-              once
-              placeholder={<Spinner />}
-            > */}
-            <img style={styleImg} src={blog.image} alt={blog.title} />
+            <LazyLoad className='img-wrapper' offset={100} once>
+              <img style={styleImg} src={blog.image} alt={blog.title} />
+            </LazyLoad>
             <h2 className='date-blog absolute top-full px-4 py-1 ml-2 -mt-10 text-base'>
               {blog.dateUpLoad}
             </h2>
-            {/* </LazyLoad> */}
           </div>
           <h1 className='text-xl font-bold mt-8 mb-4 hover:text-cyan cursor-pointer'>
             {blog.title}

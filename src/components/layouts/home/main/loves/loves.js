@@ -35,39 +35,37 @@ function Loves() {
     }, 500);
   };
   return (
-    <LazyLoad offset={100} once>
-      <section
-        className='container m-auto jumpActive'
-        onMouseEnter={() => setIsShow(true)}
-        onMouseLeave={() => setIsShow(false)}
-      >
-        <h1 className='text-3xl mt-16 text-center font-semibold'>
-          Customer Loves
-        </h1>
-        <h3 className='text-xl m-8 text-center text-cyan'>Popular Product</h3>
-        <div className='flex'>
-          <div
-            className={`flex ${slideLeft ? 'left-active' : ''} ${
-              slideRight ? 'right-active' : ''
-            }`}
-          >
-            {loveItems()}
-          </div>
-          {isShow && (
-            <div className='cursor-pointer opacity-80 flex flex-col justify-center items-center'>
-              <i
-                className='text-5xl text-pink fa fa-arrow-circle-up mb-8'
-                onClick={handlePrevClick}
-              ></i>
-              <i
-                className='text-5xl text-pink fa fa-arrow-circle-down'
-                onClick={handleNextClick}
-              ></i>
-            </div>
-          )}
+    <section
+      className='container m-auto jumpActive'
+      onMouseEnter={() => setIsShow(true)}
+      onMouseLeave={() => setIsShow(false)}
+    >
+      <h1 className='text-3xl mt-16 text-center font-semibold'>
+        Customer Loves
+      </h1>
+      <h3 className='text-xl m-8 text-center text-cyan'>Popular Product</h3>
+      <div className='flex'>
+        <div
+          className={`flex ${slideLeft ? 'left-active' : ''} ${
+            slideRight ? 'right-active' : ''
+          }`}
+        >
+          {loveItems()}
         </div>
-      </section>
-    </LazyLoad>
+        {isShow && (
+          <div className='cursor-pointer opacity-80 flex flex-col justify-center items-center'>
+            <i
+              className='text-5xl text-pink fa fa-arrow-circle-up mb-8'
+              onClick={handlePrevClick}
+            ></i>
+            <i
+              className='text-5xl text-pink fa fa-arrow-circle-down'
+              onClick={handleNextClick}
+            ></i>
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
 
