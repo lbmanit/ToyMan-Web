@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { lazy } from 'react';
-// import LazyLoad from 'react-lazyload';
-// import Spinner from '../../../../app/Spinner';
-const Intro = lazy(() => import('./Intro'));
+import Intro from './Intro';
 function Header() {
   return (
     <header>
@@ -13,7 +10,6 @@ function Header() {
           <Link
             className='hover:text-pink transition-colors underline'
             to='/collections'
-            // style={{ textDecoration: 'underline' }}
           >
             Summer Collection
           </Link>

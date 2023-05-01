@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import LazyLoad from 'react-lazyload';
 import Spinner from './Spinner';
 const Home = lazy(() => import('../components/layouts/home/home-page'));
 const Page404 = lazy(() => import('../components/layouts/404'));

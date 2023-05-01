@@ -49,7 +49,7 @@ function PreviewItem(props) {
             search: `?toys=${encode(JSON.stringify(itemsData))}`,
           }}
         >
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+          <LazyLoad offset={100} once placeholder={<Spinner />}>
             <img className='rounded-2xl' src={avatarUrl} alt={title} />
           </LazyLoad>
         </Link>

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { lazy } from 'react';
 import toymanLogo from '../../assets/images/logo/toymanlogo.jpeg';
 import Icons from './common-icons/icons';
 import Pages from './pages/pages';
-const CheckCart = lazy(() => import('./common-icons/check-cart'));
-const SearchProducts = lazy(() => import('./common-icons/search-products'));
-const WishList = lazy(() => import('./common-icons/wish-list'));
+import CheckCart from './common-icons/check-cart';
+import SearchProducts from './common-icons/search-products';
+import WishList from './common-icons/wish-list';
 function Navbar() {
   const [isSticky, setSticky] = useState(false);
   const [isDisplaySearch, setIsDisplaySearch] = useState(false);

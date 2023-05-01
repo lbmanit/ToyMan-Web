@@ -9,8 +9,10 @@ import Reassurance from './view-item/reassurance';
 import Description from './view-item/description';
 import RelatedItems from './view-item/related-items';
 import PromotionVideo from './view-item/promotion-video';
+import { WishContext } from '../../context/wish-context';
 function DetailItem() {
   const { handleAddToCart } = useContext(CartContext);
+  const { addToWishList } = useContext(WishContext);
   const { id } = useParams();
   const [count, setCount] = useState(1);
   const location = useLocation();
@@ -48,15 +50,9 @@ function DetailItem() {
         </div>
       </div>
       <article className='container m-auto flex my-16 left-active'>
-        {/* <LazyLoad
-          className='w-1/2'
-          height={563}
-          offset={100}
-          once
-          placeholder={<Spinner />}
-        > */}
-        <img className='w-1/2' src={avatarUrl} alt={title} />
-        {/* </LazyLoad> */}
+        <LazyLoad className='w-1/2' offset={100} once>
+          <img src={avatarUrl} alt={title} />
+        </LazyLoad>
         <div className='w-1/2 px-8'>
           <h1 className='text-4xl font-medium'>{title}</h1>
           <div className={'text-cyan text-2xl my-2 flex items-center'}>
@@ -109,24 +105,26 @@ function DetailItem() {
                 ADD TO CART
               </button>
             </div>
-            {/* <button className='text-xl text-center p-2 my-2 buy-item'>
-              Buy it now
-            </button> */}
           </div>
           <div className='cursor-pointer flex items-center text-lg my-4'>
             <i className='fa fa-heart'></i>
-            <button className='mx-2 my-4'>Add to wishlist</button>
+            <button
+              className='mx-2 my-4'
+              onClick={() => addToWishList(mainItem)}
+            >
+              Add to wishlist
+            </button>
           </div>
           <Reassurance />
         </div>
       </article>
-      <LazyLoad height={563} offset={75} once>
+      <LazyLoad offset={100} once>
         <Description />
       </LazyLoad>
-      <LazyLoad height={563} offset={75} once>
+      <LazyLoad offset={100} once>
         <PromotionVideo />
       </LazyLoad>
-      <LazyLoad height={563} offset={75} once>
+      <LazyLoad offset={100} once>
         <RelatedItems id={id} />
       </LazyLoad>
       {isDisplaySize && (

@@ -216,7 +216,7 @@ function Collections() {
         </div>
       </div>
       <div className='container m-auto flex'>{singleBlock}</div>
-      <LazyLoad height={563} offset={75} once placeholder={<Spinner />}>
+      <LazyLoad offset={100} once placeholder={<Spinner />}>
         <NewArrivalsItem />
       </LazyLoad>
     </section>
