@@ -18,7 +18,7 @@ function CheckCart(props) {
         key={index}
       >
         <div className='flex items-center mt-8'>
-          <LazyLoad className='w-1/4' height={200} offset={50} once>
+          <LazyLoad className='w-1/4' height={100} offset={50} once>
             <img src={item.avatarUrl} alt={item.title} />
           </LazyLoad>
           <div className='px-4'>
