@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer>
       <section className='flex justify-around items-center p-8 active'>
-        <div>
+        <div className='w-1/2'>
           <LazyLoad height={75} offset={100} once placeholder={<Spinner />}>
             <img className='my-2' src={logo} alt='toy-logo' />
           </LazyLoad>
@@ -28,61 +28,63 @@ function Footer() {
             (033) 411 5449
           </h3>
         </div>
-        <div>
-          <h1 className='text-lg font-semibold my-4'>Quick Links</h1>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>Help Center</h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>
-            Redeem Voucher
-          </h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>Contact Us</h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>
-            Policies & Rules
-          </h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>
-            Check Offer List
-          </h3>
-        </div>
-        <div>
-          <h1 className='text-lg font-semibold my-4'>Information</h1>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>
-            Product Support
-          </h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>Checkout</h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>
-            License Policy
-          </h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>Affiliate</h3>
-          <h3 className='my-2 hover:text-cyan cursor-pointer'>About Us</h3>
-        </div>
-        <div className='flex flex-col justify-between'>
-          <h1 className='text-lg font-semibold my-4'>Follow Us On</h1>
-          <a
-            className='hover:text-cyan cursor-pointer m-1'
-            href='https://www.facebook.com/quanber1003'
-            target='_blank'
-          >
-            <i className='fa fa-facebook-official'></i> Facebook
-          </a>
-          <a
-            className='hover:text-cyan cursor-pointer  m-1'
-            href='https://twitter.com/ber1xD'
-            target='_blank'
-          >
-            <i className='fa fa-twitter'></i> Twitter
-          </a>
-          <a
-            className='hover:text-cyan cursor-pointer  m-1'
-            href='https://www.instagram.com/quanber123/'
-            target='_blank'
-          >
-            <i className='fa fa-instagram'></i> Instagram
-          </a>
-          <a href='#' className='hover:text-cyan cursor-pointer  m-1'>
-            <i className='fa fa-youtube'></i> Youtube
-          </a>
-          <a href='#' className='hover:text-cyan cursor-pointer  m-1'>
-            <i className='fa fa-pinterest'></i> Pinterest
-          </a>
+        <div className='w-1/2 flex justify-between'>
+          <div>
+            <h1 className='text-lg font-semibold my-4'>Quick Links</h1>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>Help Center</h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>
+              Redeem Voucher
+            </h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>Contact Us</h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>
+              Policies & Rules
+            </h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>
+              Check Offer List
+            </h3>
+          </div>
+          <div>
+            <h1 className='text-lg font-semibold my-4'>Information</h1>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>
+              Product Support
+            </h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>Checkout</h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>
+              License Policy
+            </h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>Affiliate</h3>
+            <h3 className='my-2 hover:text-cyan cursor-pointer'>About Us</h3>
+          </div>
+          <div className='flex flex-col justify-between'>
+            <h1 className='text-lg font-semibold my-4'>Follow Us On</h1>
+            <a
+              className='hover:text-cyan cursor-pointer m-1'
+              href='https://www.facebook.com/quanber1003'
+              target='_blank'
+            >
+              <i className='fa fa-facebook-official'></i> Facebook
+            </a>
+            <a
+              className='hover:text-cyan cursor-pointer  m-1'
+              href='https://twitter.com/ber1xD'
+              target='_blank'
+            >
+              <i className='fa fa-twitter'></i> Twitter
+            </a>
+            <a
+              className='hover:text-cyan cursor-pointer  m-1'
+              href='https://www.instagram.com/quanber123/'
+              target='_blank'
+            >
+              <i className='fa fa-instagram'></i> Instagram
+            </a>
+            <a href='#' className='hover:text-cyan cursor-pointer  m-1'>
+              <i className='fa fa-youtube'></i> Youtube
+            </a>
+            <a href='#' className='hover:text-cyan cursor-pointer  m-1'>
+              <i className='fa fa-pinterest'></i> Pinterest
+            </a>
+          </div>
         </div>
       </section>
       <section className='copyright'>
