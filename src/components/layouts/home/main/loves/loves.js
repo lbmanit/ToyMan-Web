@@ -54,11 +54,11 @@ function Loves() {
         {isShow && (
           <div className='cursor-pointer opacity-80 flex flex-col justify-center items-center'>
             <i
-              className='text-5xl far fa-arrow-alt-circle-up mb-8'
+              className='text-5xl text-pink fa fa-arrow-circle-up mb-8'
               onClick={handlePrevClick}
             ></i>
             <i
-              className='text-5xl far fa-arrow-alt-circle-down'
+              className='text-5xl text-pink fa fa-arrow-circle-down'
               onClick={handleNextClick}
             ></i>
           </div>

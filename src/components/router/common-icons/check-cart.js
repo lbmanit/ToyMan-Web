@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CartContext } from '../../context/cart-context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazyload';
 // import LazyLoad from 'react-lazyload';
 // import Spinner from '../../../app/Spinner';
 function CheckCart(props) {
@@ -17,7 +18,9 @@ function CheckCart(props) {
         key={index}
       >
         <div className='flex items-center mt-8'>
-          <img className='w-1/4' src={item.avatarUrl} alt={item.title} />
+          <LazyLoad height={200} offset={50} once>
+            <img className='w-1/4' src={item.avatarUrl} alt={item.title} />
+          </LazyLoad>
           <div className='px-4'>
             <h1 className='cursor-pointer text-xl font-bold hover:text-cyan'>
               {item.title}

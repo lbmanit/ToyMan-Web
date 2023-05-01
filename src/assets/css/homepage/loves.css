@@ -1,15 +1,9 @@
-.far.fa-arrow-alt-circle-up,
-.far.fa-arrow-alt-circle-down {
-  color: #ff6899;
-  border-radius: 50%;
-  overflow: hidden;
-}
-.far.fa-arrow-alt-circle-up:hover,
-.far.fa-arrow-alt-circle-down:hover {
+.fa.fa-arrow-circle-up:hover,
+.fa.fa-arrow-circle-down:hover {
   color: #4acdd5;
 }
 
-.far.fa-arrow-alt-circle-up {
+.fa.fa-arrow-circle-up {
   animation: circle-up 0.5s linear;
 }
 @keyframes circle-up {
@@ -26,7 +20,7 @@
     opacity: 1;
   }
 }
-.far.fa-arrow-alt-circle-down {
+.fa.fa-arrow-circle-down {
   animation: circle-down 0.5s linear;
 }
 @keyframes circle-down {

@@ -36,9 +36,6 @@ function FormPayCart() {
       };
     });
   }
-  function handleSubmitPay(event) {
-    // event.preventDefault();
-  }
   return (
     <div>
       <div className='flex items-center'>
@@ -48,11 +45,7 @@ function FormPayCart() {
         <i className='fa fa-angle-right m-2'></i>
         <h1>information</h1>
       </div>
-      <form
-        className='border-b-2 border-gray my-8'
-        method='POST'
-        onSubmit={handleSubmitPay}
-      >
+      <form className='border-b-2 border-gray my-8' method='POST'>
         <div className='font-base'>
           <div>
             <label className='text-xl font-bold' htmlFor='email'>
@@ -165,7 +158,7 @@ function FormPayCart() {
             className='return-cart flex justify-between items-center'
             to='/cart'
           >
-            <i className='fas fa-angle-left'></i>
+            <i className='fa fa-angle-left'></i>
             <h1 className='mx-4'>Return to cart</h1>
           </Link>
           <Link
@@ -177,7 +170,6 @@ function FormPayCart() {
             </button>
           </Link>
         </div>
-        {/* <button onClick={handleSubmit}>Submit</button> */}
       </form>
       <div className='flex justify-start items-center mb-8'>
         <button
