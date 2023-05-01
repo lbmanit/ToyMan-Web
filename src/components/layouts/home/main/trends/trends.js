@@ -45,7 +45,7 @@ function Trends() {
     }
   }
   return (
-    <section>
+    <section className='container m-auto'>
       <h1 className='trends-title text-3xl text-center font-semibold mt-8'>
         We Love Trends
       </h1>

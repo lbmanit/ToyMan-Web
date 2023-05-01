@@ -11,7 +11,7 @@ function Home() {
         <LazyLoad height={100} once placeholder={<Spinner />}>
           <Header />
         </LazyLoad>
-        <LazyLoad height={563} once placeholder={<Spinner />}>
+        <LazyLoad height={100} once placeholder={<Spinner />}>
           <Main />
         </LazyLoad>
       </React.Fragment>
