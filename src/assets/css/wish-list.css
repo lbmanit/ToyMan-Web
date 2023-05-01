@@ -1,0 +1,11 @@
+.wish-list {
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 1px 1px 5px #000;
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100%;
+  z-index: 920;
+  transition: opacity 0.5s linear;
+}

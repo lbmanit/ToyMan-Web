@@ -17,15 +17,7 @@ function CheckCart(props) {
         key={index}
       >
         <div className='flex items-center mt-8'>
-          {/* <LazyLoad
-            className='w-1/4 cursor-pointer'
-            height={563}
-            offset={100}
-            once
-            placeholder={<Spinner />}
-          > */}
           <img className='w-1/4' src={item.avatarUrl} alt={item.title} />
-          {/* </LazyLoad> */}
           <div className='px-4'>
             <h1 className='cursor-pointer text-xl font-bold hover:text-cyan'>
               {item.title}
@@ -68,9 +60,6 @@ function CheckCart(props) {
             <h1 className='ml-auto'>$ {totalPrice}</h1>
           </div>
         )}
-        {/* {cartItem.length !== 0 && (
-          <button onClick={() => setCartItems([])}>Remove All</button>
-        )} */}
         {cartItems.length !== 0 && (
           <Link className='w-full' to='/cart' onClick={handleDisplayCart}>
             <button className='w-full text-2xl my-4 py-4 px-12 rounded-3xl border border-gray hover:text-white hover:bg-cyan'>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../../context/cart-context';
 function Icons(props) {
   const { amount } = useContext(CartContext);
-  const { handleDisplaySearch, handleDisplayCart } = props;
+  const { handleDisplaySearch, handleDisplayCart, handleDisplayWish } = props;
   return (
     <ul className='flex text-xl text-grayDark'>
       <li className='m-4 header-nav' onClick={handleDisplaySearch}>
@@ -14,8 +14,8 @@ function Icons(props) {
         </button>
         <i className='fa fa-shopping-cart'></i>
       </li>
-      <li className='m-4 header-nav'>
-        <i className='fa fa-bars'></i>
+      <li className='m-4 header-nav' onClick={handleDisplayWish}>
+        <i className='fa fa-heart'></i>
       </li>
     </ul>
   );

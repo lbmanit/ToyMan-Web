@@ -6,10 +6,12 @@ import Icons from './common-icons/icons';
 import Pages from './pages/pages';
 const CheckCart = lazy(() => import('./common-icons/check-cart'));
 const SearchProducts = lazy(() => import('./common-icons/search-products'));
+const WishList = lazy(() => import('./common-icons/wish-list'));
 function Navbar() {
   const [isSticky, setSticky] = useState(false);
   const [isDisplaySearch, setIsDisplaySearch] = useState(false);
   const [isDisplayCart, setIsDisplayCart] = useState(false);
+  const [isDisplayWish, setIsDisplayWish] = useState(false);
   const handleScroll = () => {
     if (window.pageYOffset > 200) {
       setSticky(true);
@@ -40,6 +42,7 @@ function Navbar() {
         <Icons
           handleDisplaySearch={() => setIsDisplaySearch(true)}
           handleDisplayCart={() => setIsDisplayCart(true)}
+          handleDisplayWish={() => setIsDisplayWish(true)}
         />
       </nav>
       {isDisplaySearch && (
@@ -47,6 +50,9 @@ function Navbar() {
       )}
       {isDisplayCart && (
         <CheckCart handleDisplayCart={() => setIsDisplayCart(false)} />
+      )}
+      {isDisplayWish && (
+        <WishList handleDisplayWish={() => setIsDisplayWish(false)} />
       )}
     </React.Fragment>
   );

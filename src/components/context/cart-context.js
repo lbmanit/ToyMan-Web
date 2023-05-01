@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState('');
   useEffect(() => {
     window.localStorage.setItem('cartItems', encode(JSON.stringify(cartItems)));
   }, [cartItems]);
@@ -37,6 +39,7 @@ export const CartProvider = ({ children }) => {
         )
       );
     } else {
+      setAlertMessage('Item added to your cart!');
       setCartItems([
         ...cartItems,
         {
@@ -49,8 +52,13 @@ export const CartProvider = ({ children }) => {
         },
       ]);
     }
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
   };
   const removeCartItem = useCallback((id) => {
+    setAlertMessage('Remove item from cart completely!');
     setCartItems((prevItems) => {
       const newCartItem = prevItems
         .map((item) => {
@@ -75,6 +83,10 @@ export const CartProvider = ({ children }) => {
       );
       return newCartItem;
     });
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
   }, []);
   return (
     <CartContext.Provider
@@ -88,6 +100,7 @@ export const CartProvider = ({ children }) => {
       }}
     >
       {children}
+      {showAlert && <p className='alert-message'>{alertMessage}</p>}
     </CartContext.Provider>
   );
 };

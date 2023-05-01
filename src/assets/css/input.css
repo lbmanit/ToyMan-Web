@@ -36,6 +36,22 @@
   .contact-form {
     box-shadow: 1px 1px 10px 1px #ddd;
   }
+  .alert-message {
+    position: fixed;
+    background: #ecfef0;
+    color: #28a745;
+    border: 1px solid #28a745;
+    border-radius: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
 }
 body {
   margin: 0;
