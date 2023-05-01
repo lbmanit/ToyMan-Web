@@ -10,35 +10,35 @@ function WishList(props) {
   const { wishList, removeWishList } = useContext(WishContext);
   const WishItems = wishList.map((item, index) => {
     return (
-      <article key={index}>
-        <div className='flex items-center mt-8'>
-          <LazyLoad className='w-1/3 mr-8' height={100} offset={50} once>
-            <img src={item.avatarUrl} alt={item.title} />
-          </LazyLoad>
-          <div className='w-2/3'>
-            <div>
-              <h1 className='text-xl font-bold'>{item.title}</h1>
-              <h1 className='text-cyan text-lg'>
-                $ {item.details.mod === 'SALE' ? item.salePrice : item.price}
-              </h1>
-            </div>
-            <div className='flex flex-col'>
-              <button
-                className='w-1/2 text-lg bg-cyan text-white rounded-2xl py-1 my-2'
-                onClick={() => handleAddToCart(item, 1)}
-              >
-                Add To Cart
-              </button>
-              <button
-                className='w-1/2 text-lg bg-pink text-white rounded-2xl py-1 my-2'
-                onClick={() => removeWishList(item.id)}
-              >
-                Remove
-              </button>
+      <LazyLoad offset={100} once>
+        <article key={index}>
+          <div className='flex items-center mt-8'>
+            <img className='w-1/3 mr-8' src={item.avatarUrl} alt={item.title} />
+            <div className='w-2/3'>
+              <div>
+                <h1 className='text-xl font-bold'>{item.title}</h1>
+                <h1 className='text-cyan text-lg'>
+                  $ {item.details.mod === 'SALE' ? item.salePrice : item.price}
+                </h1>
+              </div>
+              <div className='flex flex-col'>
+                <button
+                  className='w-1/2 text-lg bg-cyan text-white rounded-2xl py-1 my-2'
+                  onClick={() => handleAddToCart(item, 1)}
+                >
+                  Add To Cart
+                </button>
+                <button
+                  className='w-1/2 text-lg bg-pink text-white rounded-2xl py-1 my-2'
+                  onClick={() => removeWishList(item.id)}
+                >
+                  Remove
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </LazyLoad>
     );
   });
   return (

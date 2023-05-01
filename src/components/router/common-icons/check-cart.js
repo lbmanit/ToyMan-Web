@@ -11,34 +11,34 @@ function CheckCart(props) {
   const { cartItems, removeCartItem, totalPrice } = useContext(CartContext);
   const cartItem = cartItems.map((item, index) => {
     return (
-      <article
-        onMouseEnter={() => setIsShowRemove(true)}
-        onMouseLeave={() => setIsShowRemove(false)}
-        className='relative'
-        key={index}
-      >
-        <div className='flex items-center mt-8'>
-          <LazyLoad className='w-1/4' height={100} offset={50} once>
-            <img src={item.avatarUrl} alt={item.title} />
-          </LazyLoad>
-          <div className='px-4'>
-            <h1 className='cursor-pointer text-xl font-bold hover:text-cyan'>
-              {item.title}
-            </h1>
-            <div className='flex text-lg'>
-              <h1>{item.quantity}</h1>
-              <h1 className='mx-2'>x</h1>
-              <h1>$ {item.price}</h1>
+      <LazyLoad offset={100} once>
+        <article
+          onMouseEnter={() => setIsShowRemove(true)}
+          onMouseLeave={() => setIsShowRemove(false)}
+          className='relative'
+          key={index}
+        >
+          <div className='flex items-center mt-8'>
+            <img className='w-1/4' src={item.avatarUrl} alt={item.title} />
+            <div className='px-4'>
+              <h1 className='cursor-pointer text-xl font-bold hover:text-cyan'>
+                {item.title}
+              </h1>
+              <div className='flex text-lg'>
+                <h1>{item.quantity}</h1>
+                <h1 className='mx-2'>x</h1>
+                <h1>$ {item.price}</h1>
+              </div>
             </div>
           </div>
-        </div>
-        {isShowRemove && (
-          <i
-            className='absolute top-1/3 left-2 remove fa fa-times cursor-pointer text-grayDark jumpActive'
-            onClick={() => removeCartItem(item.id)}
-          ></i>
-        )}
-      </article>
+          {isShowRemove && (
+            <i
+              className='absolute top-1/3 left-2 remove fa fa-times cursor-pointer text-grayDark jumpActive'
+              onClick={() => removeCartItem(item.id)}
+            ></i>
+          )}
+        </article>
+      </LazyLoad>
     );
   });
   return (

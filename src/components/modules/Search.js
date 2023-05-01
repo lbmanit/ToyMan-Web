@@ -88,7 +88,6 @@ function Search(props) {
               >
                 <LazyLoad
                   className='w-1/4 rounded-xl'
-                  height={563}
                   offset={100}
                   once
                   placeholder={<Spinner />}

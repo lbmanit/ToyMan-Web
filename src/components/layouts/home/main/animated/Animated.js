@@ -20,7 +20,7 @@ function Animated() {
         onMouseOver={() => setHoverIndex(index)}
         onMouseOut={() => setHoverIndex(null)}
       >
-        <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+        <LazyLoad offset={100} once placeholder={<Spinner />}>
           <img
             className='animated-img'
             src={e.url}
@@ -48,7 +48,9 @@ function Animated() {
     );
   });
   return (
-    <section className='flex justify-center my-8'>{animatedElement}</section>
+    <LazyLoad offset={100} once placeholder={<Spinner />}>
+      <section className='flex justify-center my-8'>{animatedElement}</section>
+    </LazyLoad>
   );
 }
 

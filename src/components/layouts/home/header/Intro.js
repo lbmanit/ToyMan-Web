@@ -35,7 +35,7 @@ function Intro() {
           </div>
         </div>
       </div>
-      <LazyLoad height={800} offset={50} once placeholder={<Spinner />}>
+      <LazyLoad offset={100} once placeholder={<Spinner />}>
         <img
           className={`${change ? 'next-intro' : 'prev-intro'}`}
           src={change ? animated : h1thmb}

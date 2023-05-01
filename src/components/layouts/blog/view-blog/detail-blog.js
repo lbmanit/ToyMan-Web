@@ -86,7 +86,6 @@ function DetailBlog() {
           <div className='flex justify-between '>
             <LazyLoad
               className='mr-4 my-8'
-              height={200}
               offset={100}
               once
               placeholder={<Spinner />}
@@ -99,7 +98,6 @@ function DetailBlog() {
             </LazyLoad>
             <LazyLoad
               className='ml-4  my-8'
-              height={563}
               offset={100}
               once
               placeholder={<Spinner />}

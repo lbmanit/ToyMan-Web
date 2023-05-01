@@ -4,17 +4,20 @@ import recent_img1 from '../../../../../assets/images/recentPhotos/post5-copyrig
 import recent_img2 from '../../../../../assets/images/recentPhotos/post9-copyright.webp';
 import recent_img3 from '../../../../../assets/images/recentPhotos/post10-copyright.webp';
 import recent_img4 from '../../../../../assets/images/recentPhotos/post11-copyright.webp';
-import Spinner from '../../../../../app/Spinner';
+// import Spinner from '../../../../../app/Spinner';
 function RecentPhotos() {
   const photos = [recent_img1, recent_img2, recent_img3, recent_img4];
   const [recentPhotos, setRecentPhotos] = useState(photos);
   const memoizedPhotos = recentPhotos.map((imgUrl, index) => {
     return (
-      <div key={index} className='w-1/4 m-6 overflow-hidden'>
-        <LazyLoad height={563} offset={100} once>
-          <img className='recent-photos' src={imgUrl} alt={index} />
-        </LazyLoad>
-      </div>
+      <LazyLoad
+        key={index}
+        className='w-1/4 m-6 overflow-hidden'
+        offset={100}
+        once
+      >
+        <img className='recent-photos' src={imgUrl} alt={index} />
+      </LazyLoad>
     );
   });
   return (

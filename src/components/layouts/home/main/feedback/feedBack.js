@@ -37,7 +37,7 @@ function FeedBack() {
         key={user.id}
       >
         <div className='relative flex items-center'>
-          <LazyLoad height={563} offset={100} once placeholder={<Spinner />}>
+          <LazyLoad offset={100} once placeholder={<Spinner />}>
             <img src={user.avatarUser} alt={user.name} />
           </LazyLoad>
           <div className='m-4'>
@@ -54,25 +54,27 @@ function FeedBack() {
   });
 
   return (
-    <section className='container m-auto right-active'>
-      <h1 className='text-3xl text-center mt-24'>Customer Saying</h1>
-      <h3 className='text-xl text-center text-cyan m-8'>
-        Customer Testimonials
-      </h3>
-      <div className='relative'>
-        <div className='flex'>{feedBackUsers}</div>
-        <div className='feedback-slide-btn cursor-pointer'>
-          <i
-            className='feedback-slide-btn-left far fa-arrow-alt-circle-left absolute text-5xl'
-            onClick={prevSlide}
-          ></i>
-          <i
-            className='feedback-slide-btn-right far fa-arrow-alt-circle-right absolute text-5xl'
-            onClick={nextSlide}
-          ></i>
+    <LazyLoad offset={100} once placeholder={<Spinner />}>
+      <section className='container m-auto right-active'>
+        <h1 className='text-3xl text-center mt-24'>Customer Saying</h1>
+        <h3 className='text-xl text-center text-cyan m-8'>
+          Customer Testimonials
+        </h3>
+        <div className='relative'>
+          <div className='flex'>{feedBackUsers}</div>
+          <div className='feedback-slide-btn cursor-pointer'>
+            <i
+              className='feedback-slide-btn-left far fa-arrow-alt-circle-left absolute text-5xl'
+              onClick={prevSlide}
+            ></i>
+            <i
+              className='feedback-slide-btn-right far fa-arrow-alt-circle-right absolute text-5xl'
+              onClick={nextSlide}
+            ></i>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </LazyLoad>
   );
 }
 
