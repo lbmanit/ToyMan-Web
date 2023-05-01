@@ -21,7 +21,7 @@ export const WishProvider = ({ children }) => {
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
+    }, 1000);
   };
   const removeWishList = useCallback((id) => {
     setWishList((prevItems) => {
@@ -36,7 +36,7 @@ export const WishProvider = ({ children }) => {
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
+    }, 1000);
   }, []);
   return (
     <WishContext.Provider

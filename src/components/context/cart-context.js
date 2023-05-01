@@ -55,7 +55,7 @@ export const CartProvider = ({ children }) => {
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
+    }, 1000);
   };
   const removeCartItem = useCallback((id) => {
     setAlertMessage('Remove item from cart completely!');
@@ -86,7 +86,7 @@ export const CartProvider = ({ children }) => {
     setShowAlert(true);
     setTimeout(() => {
       setShowAlert(false);
-    }, 3000);
+    }, 1000);
   }, []);
   return (
     <CartContext.Provider
