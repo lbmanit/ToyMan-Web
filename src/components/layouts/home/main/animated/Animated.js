@@ -1,15 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
-import animatedData from '../../../../../data/animatedData';
 import Spinner from '../../../../../app/Spinner';
+import useFetch from '../../../../../customHooks/useFetch';
+import urlAnimatedData from '../../../../../data/animated-data.JSON';
 function Animated() {
-  const [animated, setAnimated] = useState([]);
   const [hoverIndex, setHoverIndex] = useState(null);
-  useEffect(() => {
-    setAnimated(animatedData);
-  }, []);
-  const animatedElement = animated.map((e, index) => {
+  const { data } = useFetch(urlAnimatedData);
+  const animatedElement = data.map((e, index) => {
     const styleHover = {
       transform: hoverIndex === index ? 'scale(1.2)' : 'none',
     };
@@ -48,9 +46,7 @@ function Animated() {
     );
   });
   return (
-    <LazyLoad offset={100} once placeholder={<Spinner />}>
-      <section className='flex justify-center my-8'>{animatedElement}</section>
-    </LazyLoad>
+    <section className='flex justify-center my-8'>{animatedElement}</section>
   );
 }
 

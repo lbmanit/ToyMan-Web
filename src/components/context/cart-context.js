@@ -18,8 +18,8 @@ export const CartProvider = ({ children }) => {
       (amount, item) => amount + parseInt(item.quantity),
       0
     );
-  }, [cartItems]);
-  const handleAddToCart = (item, quantity) => {
+  }, []);
+  const handleAddToCart = useCallback((item, quantity) => {
     const finalPrice =
       item.details.mod === 'SALE' ? item.salePrice : item.price;
     const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
@@ -56,38 +56,41 @@ export const CartProvider = ({ children }) => {
     setTimeout(() => {
       setShowAlert(false);
     }, 1000);
-  };
-  const removeCartItem = useCallback((id) => {
-    setAlertMessage('Remove item from cart completely!');
-    setCartItems((prevItems) => {
-      const newCartItem = prevItems
-        .map((item) => {
-          if (item.id === id) {
-            if (item.quantity > 1) {
-              return {
-                ...item,
-                quantity: parseInt(item.quantity) - 1,
-                total: parseInt(item.total) - parseInt(item.price),
-              };
-            } else {
-              return null;
-            }
-          } else {
-            return item;
-          }
-        })
-        .filter((item) => item !== null);
-      window.localStorage.setItem(
-        'cartItems',
-        encode(JSON.stringify(newCartItem))
-      );
-      return newCartItem;
-    });
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 1000);
   }, []);
+  const removeCartItem = useCallback(
+    (id) => {
+      setAlertMessage('Remove item from cart completely!');
+      setCartItems((prevItems) => {
+        const newCartItem = prevItems
+          .map((item) => {
+            if (item.id === id) {
+              if (item.quantity > 1) {
+                return {
+                  ...item,
+                  quantity: parseInt(item.quantity) - 1,
+                  total: parseInt(item.total) - parseInt(item.price),
+                };
+              } else {
+                return null;
+              }
+            } else {
+              return item;
+            }
+          })
+          .filter((item) => item !== null);
+        window.localStorage.setItem(
+          'cartItems',
+          encode(JSON.stringify(newCartItem))
+        );
+        return newCartItem;
+      });
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 1000);
+    },
+    [cartItems]
+  );
   return (
     <CartContext.Provider
       value={{

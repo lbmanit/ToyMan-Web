@@ -22,14 +22,17 @@ import './assets/css/search.css';
 import './assets/css/shop/size-guide.css';
 import './assets/css/shop/shipping.css';
 import './assets/css/wish-list.css';
+import { ItemsProvider } from './pages/items/hooks/items-context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CartProvider>
-      <WishProvider>
-        <App />
-      </WishProvider>
-    </CartProvider>
+    <ItemsProvider>
+      <CartProvider>
+        <WishProvider>
+          <App />
+        </WishProvider>
+      </CartProvider>
+    </ItemsProvider>
   </React.StrictMode>
 );
 

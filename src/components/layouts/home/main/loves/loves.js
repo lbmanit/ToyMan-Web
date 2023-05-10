@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PreviewItem from '../../../shop/preview-item/preview-item';
 import itemsData from '../../../../../data/items-data';
-import LazyLoad from 'react-lazyload';
 function Loves() {
   const [collections, setCollections] = useState(itemsData);
   const [currentIndex, setCurrentIndex] = useState(0);

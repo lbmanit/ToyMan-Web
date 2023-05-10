@@ -10,7 +10,7 @@ export const WishProvider = ({ children }) => {
   useEffect(() => {
     window.localStorage.setItem('wishList', encode(JSON.stringify(wishList)));
   }, [wishList]);
-  const addToWishList = (item) => {
+  const addToWishList = useCallback((item) => {
     const existingItem = wishList.find((wishItem) => wishItem.id === item.id);
     if (existingItem) {
       setAlertMessage('This item is already in your wishlist!');
@@ -22,7 +22,7 @@ export const WishProvider = ({ children }) => {
     setTimeout(() => {
       setShowAlert(false);
     }, 1000);
-  };
+  }, []);
   const removeWishList = useCallback((id) => {
     setWishList((prevItems) => {
       setAlertMessage('Remove item from wishlist completely!');

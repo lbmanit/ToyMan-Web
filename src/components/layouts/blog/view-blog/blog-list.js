@@ -1,18 +1,18 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
-import blogsData from '../../../../data/blogs-data';
-// import Spinner from '../../../../app/Spinner';
 import { encode } from 'base-64';
+import useFetch from '../../../../customHooks/useFetch';
+import urlBlogsData from '../../../../data/blogs-data.JSON';
 function BlogList() {
-  const [blogs, setBlogs] = useState(blogsData);
+  const { data } = useFetch(urlBlogsData);
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [change, setChange] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
   const blogsInPage = 6;
   const endIndex = currentIndex + blogsInPage;
-  const blog = blogs.slice(currentIndex, endIndex).map((blog, index) => {
+  const blogs = data.slice(currentIndex, endIndex).map((blog, index) => {
     const styleImg = {
       transform: hoverIndex === index ? 'scale(1.2)' : 'none',
     };
@@ -22,7 +22,7 @@ function BlogList() {
         className='blog p-4 cursor-pointer'
         to={{
           pathname: `/news/${blog.id}`,
-          search: `?blogs=${encode(JSON.stringify(blogsData))}`,
+          search: `?blogs=${encode(JSON.stringify(data))}`,
         }}
       >
         <article
@@ -46,18 +46,18 @@ function BlogList() {
     );
   });
   const handleIncrement = useCallback(() => {
-    if (countPage >= Math.ceil(blogs.length / blogsInPage)) {
+    if (countPage >= Math.ceil(data.length / blogsInPage)) {
       return;
     } else {
       setChange(true);
       setCountPage(countPage + 1);
       const newIndex =
-        currentIndex === blogs.length - blogsInPage
+        currentIndex === data.length - blogsInPage
           ? currentIndex
           : currentIndex + blogsInPage;
       setCurrentIndex(newIndex);
     }
-  }, [countPage, blogs.length, currentIndex]);
+  }, [countPage, data.length, currentIndex]);
   const handleDecrement = useCallback(() => {
     if (countPage === 1) {
       return;
@@ -67,7 +67,7 @@ function BlogList() {
       const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
       setCurrentIndex(newIndex);
     }
-  }, [countPage, blogs.length, currentIndex]);
+  }, [countPage, data.length, currentIndex]);
   return (
     <React.Fragment>
       <div className='flex nav-blog'>
@@ -84,7 +84,7 @@ function BlogList() {
           change ? 'right-active' : 'left-active'
         }`}
       >
-        {blog}
+        {blogs}
       </div>
       <div className='flex justify-center items-center mb-8'>
         <i
