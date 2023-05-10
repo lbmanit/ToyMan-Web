@@ -1,5 +1,5 @@
 import React from 'react';
-import Search from '../../modules/Search';
+// import Search from '../../modules/Search';
 function SearchProducts(props) {
   const { handleDisplaySearch } = props;
   return (
@@ -10,7 +10,7 @@ function SearchProducts(props) {
           onClick={handleDisplaySearch}
         ></i>
         <div className='search-item-product text-3xl flex py-4'>
-          <Search handleDisplaySearch={handleDisplaySearch} />
+          {/* <Search handleDisplaySearch={handleDisplaySearch} /> */}
         </div>
       </div>
     </section>

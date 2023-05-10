@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { CartContext } from '../../context/cart-context';
+import { CartContext } from './hooks/cart-context';
 import { Link } from 'react-router-dom';
 function ViewCart() {
   const { cartItems, setCartItems, removeCartItem, totalPrice } =

@@ -3,10 +3,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import { CartContext } from '../cart/hooks/cart-context';
-import RefundPolicy from './content-info/refund-policy';
+import RefundPolicy from '../../components/content-info/refund-policy';
 import PrivacyPolicy from '../../components/content-info/privacy-policy';
-import TermsService from './content-info/terms-service';
-import ContactInfo from './content-info/contact-info';
+import TermsService from '../../components/content-info/terms-service';
+import ContactInfo from '../../components/content-info/contact-info';
 import useFetch from '../../customHooks/useFetch';
 function FormPayCart() {
   const { setCartItems } = useContext(CartContext);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import feedBackData from '../../data/feedback-data';
-import Spinner from '../../../../../app/Spinner';
+import Spinner from '../../components/spinner';
 
 function FeedBack() {
   const [users, setUsers] = useState(feedBackData);

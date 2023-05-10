@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import toymanLogo from '../toymanlogo.jpeg';
-import Icons from './router/common-icons/icons';
-import CheckCart from './common-icons/check-cart';
-import SearchProducts from './common-icons/search-products';
-import WishList from './common-icons/wish-list';
+import toymanLogo from '../assets/images/logo/toymanlogo.jpeg';
+import Icons from '../pages/common-icons/icons';
+import CheckCart from '../pages/common-icons/check-cart';
+import SearchProducts from '../pages/common-icons/search-products';
+import WishList from '../pages/common-icons/wish-list';
 function Header() {
   const [isSticky, setSticky] = useState(false);
   const [isDisplaySearch, setIsDisplaySearch] = useState(false);

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import itemsData from '../../../../../data/items-data';
-import Featured from './navTrends/featured';
-import BestSellers from './navTrends/best-sellers';
-import NewArrivals from './navTrends/new-arrivals';
+import itemsData from '../../../data/items-data';
+import Featured from '../../../components/layouts/home/main/trends/navTrends/featured';
+import BestSellers from './nav-trends/best-sellers';
+import NewArrivals from '../../../components/layouts/home/main/trends/navTrends/new-arrivals';
 // import LazyLoad from 'react-lazyload';
 function Trends() {
   const [collections, setCollections] = useState(itemsData);

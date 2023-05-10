@@ -1,6 +1,6 @@
 import React, { lazy, useState } from 'react';
-import categoriesData from '../../../../../data/categoriesData.js';
-const Category = lazy(() => import('./category.js'));
+import categoriesData from '../../../data/categoriesData.js';
+const Category = lazy(() => import('./category.jsx'));
 function Categories() {
   const [categories, setCategories] = useState(categoriesData);
   const newCategories = categories.map((category, index) => {

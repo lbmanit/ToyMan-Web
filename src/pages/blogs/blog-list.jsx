@@ -1,9 +1,8 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
-import { encode } from 'base-64';
-import useFetch from '../../../customHooks/useFetch';
-import urlBlogsData from '../../../../data/blogs-data.JSON';
+import useFetch from '../../customHooks/useFetch';
+import urlBlogsData from '../../data/blogs-data.JSON';
 function BlogList() {
   const { data } = useFetch(urlBlogsData);
   const [countPage, setCountPage] = useState(1);
@@ -17,14 +16,7 @@ function BlogList() {
       transform: hoverIndex === index ? 'scale(1.2)' : 'none',
     };
     return (
-      <Link
-        key={index}
-        className='blog p-4 cursor-pointer'
-        to={{
-          pathname: `/news/${blog.id}`,
-          search: `?blogs=${encode(JSON.stringify(data))}`,
-        }}
-      >
+      <Link key={index} className='blog p-4 cursor-pointer' to={blog.id}>
         <article
           onMouseOver={() => setHoverIndex(index)}
           onMouseOut={() => setHoverIndex(null)}

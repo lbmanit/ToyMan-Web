@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import LazyLoad from 'react-lazyload';
 import Question from './question';
 import url from './question-data.JSON';
-import image from '../../../../../assets/images/questions/toys_party.webp';
+import image from '../../../assets/images/questions/toys_party.webp';
 function Questions() {
   const [questions, setQuestions] = useState([]);
   useEffect(() => {

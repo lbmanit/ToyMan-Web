@@ -1,25 +1,13 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Spinner from '../../../../app/Spinner';
-import Search from '../../../modules/Search';
+import Spinner from '../../../components/spinner';
+// import Search from '../../../modules/Search';
 import RelatedBlogs from './related-blogs';
-import { encode, decode } from 'base-64';
 function DetailBlog() {
   const [change, setChange] = useState(false);
   const { id } = useParams();
-  const location = useLocation();
-  let blogs = [];
-  const searchParams = new URLSearchParams(location.search);
-  const blogsParam = searchParams.get('blogs');
-  if (blogsParam) {
-    try {
-      blogs = JSON.parse(decode(blogsParam));
-    } catch (error) {
-      console.error(error);
-    }
-  }
   const mainBlog = blogs.find((blog) => blog.id === parseInt(id));
   const { image, title, content, mainContent, animated, dateUpLoad, author } =
     mainBlog;
@@ -31,10 +19,7 @@ function DetailBlog() {
         <Link
           key={blog.id}
           className='flex justify-between items-center my-6'
-          to={{
-            pathname: `/news/${blog.id}`,
-            search: `?blogs=${encode(JSON.stringify(blogs))}`,
-          }}
+          to={blog.id}
         >
           <RelatedBlogs {...blog} handleChange={handleChange} />
         </Link>
@@ -64,7 +49,7 @@ function DetailBlog() {
           <div>
             <h1 className='text-xl font-bold'>Search</h1>
             <div className='search-store text-base my-6 py-3 px-4'>
-              <Search />
+              {/* <Search /> */}
             </div>
           </div>
           <div>

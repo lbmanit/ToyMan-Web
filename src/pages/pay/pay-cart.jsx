@@ -1,8 +1,8 @@
 import React from 'react';
 import { useContext } from 'react';
-import { CartContext } from '../../../pages/cart/hooks/cart-context';
+import { CartContext } from '../cart/hooks/cart-context';
 import FormPayCart from './form-pay-cart';
-import Page404 from '../../page-404';
+import Page404 from '../../components/page-404';
 function PayCart() {
   const { cartItems, totalPrice } = useContext(CartContext);
   const cartList = cartItems.map((item, index) => {

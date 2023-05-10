@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../../context/cart-context';
+import { CartContext } from '../cart/hooks/cart-context';
 function Icons(props) {
   const { amount } = useContext(CartContext);
   const { handleDisplaySearch, handleDisplayCart, handleDisplayWish } = props;

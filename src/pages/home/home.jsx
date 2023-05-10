@@ -1,13 +1,13 @@
 import React, { lazy, Suspense } from 'react';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../../app/Spinner';
+import Spinner from '../../components/spinner';
 const Categories = lazy(() => import('./category/categories'));
 const Trends = lazy(() => import('./trends/trends'));
 const Animated = lazy(() => import('./animated'));
 const FeedBack = lazy(() => import('./feedback'));
 const Loves = lazy(() => import('./loves'));
 const RecentPhotos = lazy(() => import('./recent-photos'));
-const Questions = lazy(() => import('./questions'));
+const Questions = lazy(() => import('./questions/questions'));
 const Sponsors = lazy(() => import('./sponsors'));
 function Home() {
   return (

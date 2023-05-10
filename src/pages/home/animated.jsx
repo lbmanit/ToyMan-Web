@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
-import Spinner from '../../../../../app/Spinner';
+import Spinner from '../../components/spinner';
 import useFetch from '../../customHooks/useFetch';
-import urlAnimatedData from '../../../../../data/animated-data.JSON';
+import urlAnimatedData from '../../data/animated-data.JSON';
 function Animated() {
   const [hoverIndex, setHoverIndex] = useState(null);
   const { data } = useFetch(urlAnimatedData);

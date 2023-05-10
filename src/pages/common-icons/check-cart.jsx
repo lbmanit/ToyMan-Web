@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CartContext } from '../../context/cart-context';
+import { CartContext } from '../cart/hooks/cart-context';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 function CheckCart(props) {

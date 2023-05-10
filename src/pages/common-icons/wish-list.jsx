@@ -1,9 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
-import { WishContext } from '../../context/wish-context';
-import { CartContext } from '../../context/cart-context';
-import LazyLoad from 'react-lazyload';
-
+import { WishContext } from '../wish/hooks/wish-context';
+import { CartContext } from '../cart/hooks/cart-context';
 function WishList(props) {
   const { handleDisplayWish } = props;
   const { handleAddToCart } = useContext(CartContext);
