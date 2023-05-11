@@ -13,7 +13,7 @@ const SearchPage = lazy(() => import('../pages/search/search-page'));
 // const ViewCart = lazy(() => import('../pages/cart/view-cart'));
 // const PayCart = lazy(() => import('../pages/pay/pay-cart'));
 // const CompletePay = lazy(() => import('../pages/pay/complete-pay'));
-// const Contact = lazy(() => import('../pages/contact/contact'));
+const Contact = lazy(() => import('../pages/contact/contact'));
 function App() {
   return (
     <Suspense fallback={<Spinner />}>
@@ -32,6 +32,7 @@ function App() {
             <Route path='search/:search' element={<SearchPage />} />
             <Route path='*' element={<Page404 />} />
           </Route>
+          <Route path='contact' element={<Contact />} />
         </Routes>
         <ScrollPage />
       </BrowserRouter>
