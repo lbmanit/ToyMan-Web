@@ -5,7 +5,7 @@ function Page404() {
     <section className='left-active'>
       <div className='flex nav-404'>
         <div className='container m-auto flex items-center font-bold'>
-          <Link to='/'>
+          <Link to='.'>
             <h1 className='text-cyan text-xl'>Home</h1>
           </Link>
           <h1 className='text-cyan text-xl mx-2'>/</h1>

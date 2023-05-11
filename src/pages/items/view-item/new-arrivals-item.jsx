@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import itemsData from '../../../data/items-data';
-import PreviewItem from '../../../components/layouts/shop/preview-item/preview-item';
+import PreviewItem from '../preview-item/preview-item';
+import { useContext } from 'react';
+import { ItemsContext } from '../hooks/items-context';
 function NewArrivalsItem() {
-  const [items, setItems] = useState(itemsData);
+  const data = useContext(ItemsContext);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const [slideLeft, setSlideLeft] = useState(false);
   const [slideRight, setSlideRight] = useState(false);
   const newArrivalsItem = () => {
     const endIndex = currentIndex + 3;
-    return items.slice(currentIndex, endIndex).map((item, index) => {
+    return data.slice(currentIndex, endIndex).map((item, index) => {
       return <PreviewItem key={index} {...item} />;
     });
   };
   const handlePrevClick = () => {
-    const newIndex = currentIndex === 0 ? items.length - 3 : currentIndex - 1;
+    const newIndex = currentIndex === 0 ? data.length - 3 : currentIndex - 1;
     setCurrentIndex(newIndex);
     setSlideLeft(true);
     setSlideRight(false);
@@ -23,7 +24,7 @@ function NewArrivalsItem() {
     }, 500);
   };
   const handleNextClick = () => {
-    const newIndex = currentIndex === items.length - 3 ? 0 : currentIndex + 1;
+    const newIndex = currentIndex === data.length - 3 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     setSlideLeft(false);
     setSlideRight(true);

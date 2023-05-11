@@ -1,5 +1,5 @@
 import React from 'react';
-import PreviewItem from '../../../../components/layouts/shop/preview-item/preview-item';
+import PreviewItem from '../../../items/preview-item/preview-item';
 function BestSellers({ collections }) {
   const bestSellers = collections
     .filter((item) => item.details.mod === 'SALE')

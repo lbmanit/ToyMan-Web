@@ -4,6 +4,8 @@ import App from './app/App';
 import reportWebVitals from './app/reportWebVitals';
 import { CartProvider } from './pages/cart/hooks/cart-context';
 import { WishProvider } from './pages/wish/hooks/wish-context';
+import { BlogProvider } from './pages/blogs/hooks/blog-context';
+import { ItemsProvider } from './pages/items/hooks/items-context';
 import './assets/css/input.css';
 import './assets/css/homepage/animated.css';
 import './assets/css/homepage/loves.css';
@@ -22,17 +24,18 @@ import './assets/css/search.css';
 import './assets/css/shop/size-guide.css';
 import './assets/css/shop/shipping.css';
 import './assets/css/wish-list.css';
-import { ItemsProvider } from './pages/items/hooks/items-context';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ItemsProvider>
-      <CartProvider>
+    <CartProvider>
+      <BlogProvider>
         <WishProvider>
-          <App />
+          <ItemsProvider>
+            <App />
+          </ItemsProvider>
         </WishProvider>
-      </CartProvider>
-    </ItemsProvider>
+      </BlogProvider>
+    </CartProvider>
   </React.StrictMode>
 );
 

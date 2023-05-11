@@ -42,7 +42,7 @@ function Header() {
             <Link to='/collections'>Shop</Link>
           </li>
           <li className='m-4 header-nav'>
-            <Link to='/news'>Blog</Link>
+            <Link to='/blogs'>Blog</Link>
           </li>
           <li className='m-4 header-nav'>
             <Link to='/pages'>Pages</Link>

@@ -1,5 +1,5 @@
 import React from 'react';
-import vb_img from '../../../../assets/images/children/vb.webp';
+import vb_img from '../../../assets/images/children/vb.webp';
 function PromotionVideo() {
   return (
     <section

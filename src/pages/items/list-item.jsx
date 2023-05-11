@@ -1,12 +1,13 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useContext, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import PreviewItem from './preview-item/preview-item';
-import itemsData from '../../../data/items-data';
-import singleCollection from '../../../data/single-collection';
-import NewArrivalsItem from './view-item/new-arrivals-item';
+import singleCollection from '../../data/single-collection';
 import LazyLoad from 'react-lazyload';
-import Spinner from '../../../app/Spinner';
+import Spinner from '../../components/spinner';
+import { ItemsContext } from './hooks/items-context';
+import PreviewItem from './preview-item/preview-item';
+import NewArrivalsItem from './view-item/new-arrivals-item';
 function Collections() {
+  const dataItems = useContext(ItemsContext);
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [slideLeft, setSlideLeft] = useState(false);
@@ -21,14 +22,14 @@ function Collections() {
   function handleArrangeItems(event) {
     const { value } = event.target;
     if (value === 'min') {
-      itemsData.sort((a, b) => a.price - b.price);
+      dataItems.sort((a, b) => a.price - b.price);
     } else if (value === 'max') {
-      itemsData.sort((a, b) => b.price - a.price);
+      dataItems.sort((a, b) => b.price - a.price);
     } else {
-      return itemsData;
+      return dataItems;
     }
   }
-  const filteredItems = itemsData.filter((item) =>
+  const filteredItems = dataItems.filter((item) =>
     selectedTypes.length === 0
       ? true
       : selectedTypes.includes(item.details.productType)
@@ -191,7 +192,7 @@ function Collections() {
         </div>
         <div>
           <p className='text-xl text-center font-bold mb-8'>
-            Showing {filteredItems.length} of {itemsData.length} result
+            Showing {filteredItems.length} of {dataItems.length} result
           </p>
           <div
             className={`m-auto flex ${slideLeft ? 'left-active' : ''} ${

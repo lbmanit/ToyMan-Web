@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import LazyLoad from 'react-lazyload';
-import recent_img1 from '../../../../../assets/images/recentPhotos/post5-copyright.webp';
-import recent_img2 from '../../../../../assets/images/recentPhotos/post9-copyright.webp';
-import recent_img3 from '../../../../../assets/images/recentPhotos/post10-copyright.webp';
-import recent_img4 from '../../../../../assets/images/recentPhotos/post11-copyright.webp';
+import recent_img1 from '../../assets/images/recentPhotos/post5-copyright.webp';
+import recent_img2 from '../../assets/images/recentPhotos/post9-copyright.webp';
+import recent_img3 from '../../assets/images/recentPhotos/post10-copyright.webp';
+import recent_img4 from '../../assets/images/recentPhotos/post11-copyright.webp';
 function RecentPhotos() {
   const photos = [recent_img1, recent_img2, recent_img3, recent_img4];
   const [recentPhotos, setRecentPhotos] = useState(photos);

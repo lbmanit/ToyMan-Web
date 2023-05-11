@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import itemsData from '../../../data/items-data';
-import Featured from '../../../components/layouts/home/main/trends/navTrends/featured';
+import Featured from './nav-trends/featured';
 import BestSellers from './nav-trends/best-sellers';
-import NewArrivals from '../../../components/layouts/home/main/trends/navTrends/new-arrivals';
-// import LazyLoad from 'react-lazyload';
+import NewArrivals from './nav-trends/new-arrivals';
+import { useContext } from 'react';
+import { ItemsContext } from '../../items/hooks/items-context';
 function Trends() {
-  const [collections, setCollections] = useState(itemsData);
+  const data = useContext(ItemsContext);
   const [selectTab, setSelectTab] = useState('featured');
   const styleNav = {
     backgroundColor: '#e83e8c',
@@ -80,13 +80,9 @@ function Trends() {
         </li>
       </ul>
       <div className='favorite-items flex flex-wrap my-8'>
-        {selectTab === 'featured' && <Featured collections={collections} />}
-        {selectTab === 'bestSellers' && (
-          <BestSellers collections={collections} />
-        )}
-        {selectTab === 'newArrivals' && (
-          <NewArrivals collections={collections} />
-        )}
+        {selectTab === 'featured' && <Featured collections={data} />}
+        {selectTab === 'bestSellers' && <BestSellers collections={data} />}
+        {selectTab === 'newArrivals' && <NewArrivals collections={data} />}
       </div>
     </section>
   );

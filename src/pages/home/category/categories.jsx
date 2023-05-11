@@ -1,9 +1,10 @@
-import React, { lazy, useState } from 'react';
-import categoriesData from '../../../data/categoriesData.js';
-const Category = lazy(() => import('./category.jsx'));
+import React from 'react';
+import urlCategoriesData from '../../../data/categories-data.JSON';
+import useFetch from '../../../customHooks/useFetch.jsx';
+import Category from './category';
 function Categories() {
-  const [categories, setCategories] = useState(categoriesData);
-  const newCategories = categories.map((category, index) => {
+  const { data } = useFetch(urlCategoriesData);
+  const newCategories = data.map((category, index) => {
     return <Category key={index} {...category} />;
   });
   return (

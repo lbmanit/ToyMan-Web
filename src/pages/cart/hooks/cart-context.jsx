@@ -18,45 +18,50 @@ export const CartProvider = ({ children }) => {
       (amount, item) => amount + parseInt(item.quantity),
       0
     );
-  }, []);
-  const handleAddToCart = useCallback((item, quantity) => {
-    const finalPrice =
-      item.details.mod === 'SALE' ? item.salePrice : item.price;
-    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-    if (existingItem) {
-      const total = cartItems.reduce((acc, item) => {
-        return acc + item.quantity * item.price;
-      }, 0);
-      setCartItems(
-        cartItems.map((cartItem) =>
-          cartItem.id === item.id
-            ? {
-                ...cartItem,
-                quantity: cartItem.quantity + quantity,
-                total: cartItem.price * quantity + total,
-              }
-            : cartItem
-        )
+  }, [cartItems]);
+  const handleAddToCart = useCallback(
+    (item, quantity) => {
+      const finalPrice =
+        item.details.mod === 'SALE' ? item.salePrice : item.price;
+      const existingItem = cartItems.find(
+        (cartItem) => cartItem.id === item.id
       );
-    } else {
-      setAlertMessage('Item added to your cart!');
-      setCartItems([
-        ...cartItems,
-        {
-          id: item.id,
-          avatarUrl: item.avatarUrl,
-          title: item.title,
-          price: finalPrice,
-          total: finalPrice * quantity,
-          quantity,
-        },
-      ]);
-    }
-    setShowAlert(true);
-    setTimeout(() => {
-      setShowAlert(false);
-    }, 1000);
-  }, []);
+      if (existingItem) {
+        const total = cartItems.reduce((acc, item) => {
+          return acc + item.quantity * item.price;
+        }, 0);
+        setCartItems(
+          cartItems.map((cartItem) =>
+            cartItem.id === item.id
+              ? {
+                  ...cartItem,
+                  quantity: cartItem.quantity + quantity,
+                  total: cartItem.price * quantity + total,
+                }
+              : cartItem
+          )
+        );
+      } else {
+        setAlertMessage('Item added to your cart!');
+        setCartItems([
+          ...cartItems,
+          {
+            id: item.id,
+            avatarUrl: item.avatarUrl,
+            title: item.title,
+            price: finalPrice,
+            total: finalPrice * quantity,
+            quantity,
+          },
+        ]);
+      }
+      setShowAlert(true);
+      setTimeout(() => {
+        setShowAlert(false);
+      }, 1000);
+    },
+    [cartItems]
+  );
   const removeCartItem = useCallback(
     (id) => {
       setAlertMessage('Remove item from cart completely!');

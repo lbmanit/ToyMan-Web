@@ -1,22 +1,26 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
-import useFetch from '../../customHooks/useFetch';
-import urlBlogsData from '../../data/blogs-data.JSON';
+import { useContext } from 'react';
+import { BlogContext } from './hooks/blog-context';
 function BlogList() {
-  const { data } = useFetch(urlBlogsData);
+  const dataBlogs = useContext(BlogContext);
   const [countPage, setCountPage] = useState(1);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [change, setChange] = useState(false);
   const [hoverIndex, setHoverIndex] = useState(null);
   const blogsInPage = 6;
   const endIndex = currentIndex + blogsInPage;
-  const blogs = data.slice(currentIndex, endIndex).map((blog, index) => {
+  const blogs = dataBlogs.slice(currentIndex, endIndex).map((blog, index) => {
     const styleImg = {
       transform: hoverIndex === index ? 'scale(1.2)' : 'none',
     };
     return (
-      <Link key={index} className='blog p-4 cursor-pointer' to={blog.id}>
+      <Link
+        key={blog.id}
+        className='blog p-4 cursor-pointer'
+        to={{ pathname: `/blogs/${blog.id}` }}
+      >
         <article
           onMouseOver={() => setHoverIndex(index)}
           onMouseOut={() => setHoverIndex(null)}
@@ -38,18 +42,18 @@ function BlogList() {
     );
   });
   const handleIncrement = useCallback(() => {
-    if (countPage >= Math.ceil(data.length / blogsInPage)) {
+    if (countPage >= Math.ceil(dataBlogs.length / blogsInPage)) {
       return;
     } else {
       setChange(true);
       setCountPage(countPage + 1);
       const newIndex =
-        currentIndex === data.length - blogsInPage
+        currentIndex === dataBlogs.length - blogsInPage
           ? currentIndex
           : currentIndex + blogsInPage;
       setCurrentIndex(newIndex);
     }
-  }, [countPage, data.length, currentIndex]);
+  }, [countPage, dataBlogs.length, currentIndex]);
   const handleDecrement = useCallback(() => {
     if (countPage === 1) {
       return;
@@ -59,12 +63,12 @@ function BlogList() {
       const newIndex = currentIndex === 0 ? 0 : currentIndex - blogsInPage;
       setCurrentIndex(newIndex);
     }
-  }, [countPage, data.length, currentIndex]);
+  }, [countPage, dataBlogs.length, currentIndex]);
   return (
     <React.Fragment>
       <div className='flex nav-blog'>
         <div className='container m-auto flex items-center font-bold'>
-          <Link to='/'>
+          <Link to='..'>
             <h1 className='text-cyan text-xl m-2 ml-16'>Home</h1>
           </Link>
           <h1 className='text-cyan text-xl m-2'>/</h1>

@@ -1,24 +1,22 @@
 import React, { useState, useContext } from 'react';
 import LazyLoad from 'react-lazyload';
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { decode } from 'base-64';
-import { CartContext } from '../../context/cart-context';
+import { Link, useParams } from 'react-router-dom';
+import { CartContext } from '../cart/hooks/cart-context';
+import { WishContext } from '../wish/hooks/wish-context';
 import SizeGuide from './view-item/size-guide';
 import Shipping from './view-item/shipping';
 import Reassurance from './view-item/reassurance';
 import Description from './view-item/description';
 import RelatedItems from './view-item/related-items';
 import PromotionVideo from './view-item/promotion-video';
-import { WishContext } from '../../context/wish-context';
+import { ItemsContext } from './hooks/items-context';
 function DetailItem() {
+  const dataItems = useContext(ItemsContext);
   const { handleAddToCart } = useContext(CartContext);
   const { addToWishList } = useContext(WishContext);
   const { id } = useParams();
   const [count, setCount] = useState(1);
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const items = JSON.parse(decode(searchParams.get('toys')));
-  const mainItem = items.find((item) => item.id === parseInt(id));
+  const mainItem = dataItems.find((item) => parseInt(item.id) === parseInt(id));
   const { avatarUrl, title, price, salePrice, details } = mainItem;
   const [isDisplaySize, setIsDisplaySize] = useState(false);
   const [isDisplayShipping, setIsDisplayShipping] = useState(false);
@@ -106,14 +104,12 @@ function DetailItem() {
               </button>
             </div>
           </div>
-          <div className='cursor-pointer flex items-center text-lg my-4'>
+          <div
+            className='cursor-pointer flex items-center text-lg my-4'
+            onClick={() => addToWishList(mainItem)}
+          >
             <i className='fa fa-heart'></i>
-            <button
-              className='mx-2 my-4'
-              onClick={() => addToWishList(mainItem)}
-            >
-              Add to wishlist
-            </button>
+            <h1 className='mx-2 my-4'>Add to wishlist</h1>
           </div>
           <Reassurance />
         </div>

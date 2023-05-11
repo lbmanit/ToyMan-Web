@@ -1,5 +1,5 @@
 import React from 'react';
-import PreviewItem from '../../../../shop/preview-item/preview-item';
+import PreviewItem from '../../../items/preview-item/preview-item';
 function NewArrivals({ collections }) {
   const newArrivals = collections
     .filter((item) => item.details.mod === 'NEW')

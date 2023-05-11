@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Question from './question';
-import url from './question-data.JSON';
+import urlQuestions from '../../../data/question-data.JSON';
 import image from '../../../assets/images/questions/toys_party.webp';
+import useFetch from '../../../customHooks/useFetch';
 function Questions() {
-  const [questions, setQuestions] = useState([]);
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(url);
-        const data = await res.json();
-        setQuestions(data);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData();
-  }, []);
-  const newQuestion = questions.map((question, index) => {
+  const { data } = useFetch(urlQuestions);
+  const newQuestion = data.map((question, index) => {
     return <Question key={index} {...question} />;
   });
   return (

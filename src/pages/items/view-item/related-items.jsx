@@ -1,17 +1,18 @@
 import React from 'react';
-import itemsData from '../../../../data/items-data';
 import PreviewItem from '../preview-item/preview-item';
 import { useState } from 'react';
+import { useContext } from 'react';
+import { ItemsContext } from '../hooks/items-context';
 function RelatedItems(props) {
+  const data = useContext(ItemsContext);
   const { id } = props;
-  const [items, setItems] = useState(itemsData);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const [slideLeft, setSlideLeft] = useState(false);
   const [slideRight, setSlideRight] = useState(false);
   const relatedItems = () => {
     const endIndex = currentIndex + 3;
-    return items
+    return data
       .filter((item) => item.id !== parseInt(id))
       .slice(currentIndex, endIndex)
       .map((item, index) => {
@@ -19,7 +20,7 @@ function RelatedItems(props) {
       });
   };
   const handlePrevClick = () => {
-    const newIndex = currentIndex === 0 ? items.length - 3 : currentIndex - 1;
+    const newIndex = currentIndex === 0 ? data.length - 3 : currentIndex - 1;
     setCurrentIndex(newIndex);
     setSlideLeft(true);
     setSlideRight(false);
@@ -28,7 +29,7 @@ function RelatedItems(props) {
     }, 500);
   };
   const handleNextClick = () => {
-    const newIndex = currentIndex === items.length - 3 ? 0 : currentIndex + 1;
+    const newIndex = currentIndex === data.length - 3 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     setSlideLeft(false);
     setSlideRight(true);

@@ -1,10 +1,14 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
-// import Spinner from '../../../../app/Spinner';
+import { Link } from 'react-router-dom';
 function RelatedBlogs(props) {
-  const { image, title, dateUpLoad, handleChange } = props;
+  const { id, image, title, dateUpLoad, handleChange } = props;
   return (
-    <article className='recent-blog flex items-center' onClick={handleChange}>
+    <Link
+      to={{ pathname: `/blogs/${id}` }}
+      className='recent-blog flex items-center'
+      onClick={handleChange}
+    >
       <LazyLoad className='w-1/3 blog-img' offset={100} once>
         <img src={image} alt={title} />
       </LazyLoad>
@@ -12,7 +16,7 @@ function RelatedBlogs(props) {
         <h1 className='my-2'>{dateUpLoad}</h1>
         <h1 className='my-2 text-base font-bold'>{title}</h1>
       </div>
-    </article>
+    </Link>
   );
 }
 

@@ -3,23 +3,26 @@ import LazyLoad from 'react-lazyload';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Spinner from '../../../components/spinner';
-// import Search from '../../../modules/Search';
 import RelatedBlogs from './related-blogs';
+import { useContext } from 'react';
+import { BlogContext } from '../hooks/blog-context';
+import Search from '../../search/search';
 function DetailBlog() {
+  const dataBlogs = useContext(BlogContext);
   const [change, setChange] = useState(false);
   const { id } = useParams();
-  const mainBlog = blogs.find((blog) => blog.id === parseInt(id));
+  const mainBlog = dataBlogs.find((blog) => parseInt(blog.id) === parseInt(id));
   const { image, title, content, mainContent, animated, dateUpLoad, author } =
     mainBlog;
-  const relatedBlogs = blogs
-    .filter((blog) => blog.id !== parseInt(id))
+  const relatedBlogs = dataBlogs
+    .filter((blog) => blog !== mainBlog)
     .slice(0, 3)
     .map((blog) => {
       return (
         <Link
           key={blog.id}
           className='flex justify-between items-center my-6'
-          to={blog.id}
+          to={{ pathname: `/blogs/${blog.id}` }}
         >
           <RelatedBlogs {...blog} handleChange={handleChange} />
         </Link>
@@ -49,7 +52,7 @@ function DetailBlog() {
           <div>
             <h1 className='text-xl font-bold'>Search</h1>
             <div className='search-store text-base my-6 py-3 px-4'>
-              {/* <Search /> */}
+              <Search />
             </div>
           </div>
           <div>

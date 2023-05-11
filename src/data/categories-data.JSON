@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1680897102812,
+    "image": "/static/media/category_img1.0bd5a476094027051861.jpeg",
+    "modalContent": "For Baby"
+  },
+  {
+    "id": 1680897106092,
+    "image": "/static/media/category_img2.a933c7fa2a615907b647.jpeg",
+    "modalContent": "1 to 2 years"
+  },
+  {
+    "id": 1680897106483,
+    "image": "/static/media/category_img3.7dde7d5a2b2cd76394c0.jpeg",
+    "modalContent": "2 to 4 years"
+  },
+  {
+    "id": 1680897106832,
+    "image": "/static/media/category_img4.edf4d52e4ae545e5084f.jpeg",
+    "modalContent": "5 to 7 years"
+  },
+  {
+    "id": 1680897107162,
+    "image": "/static/media/category_img5.1325e98e5e57fc1baabf.jpeg",
+    "modalContent": "8 to 11 years"
+  },
+  {
+    "id": 1680897107497,
+    "image": "/static/media/category_img6.ddeb869d957996299698.jpeg",
+    "modalContent": "12 years & up"
+  }
+]

@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import PreviewItem from '../../components/layouts/shop/preview-item/preview-item';
-import itemsData from '../../data/items-data';
+import PreviewItem from '../items/preview-item/preview-item';
+import { useContext } from 'react';
+import { ItemsContext } from '../items/hooks/items-context';
 function Loves() {
-  const [collections, setCollections] = useState(itemsData);
+  const data = useContext(ItemsContext);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isShow, setIsShow] = useState(false);
   const [slideLeft, setSlideLeft] = useState(false);
   const [slideRight, setSlideRight] = useState(false);
   const loveItems = () => {
     const endIndex = currentIndex + 3;
-    return collections.slice(currentIndex, endIndex).map((item, index) => {
+    return data.slice(currentIndex, endIndex).map((item, index) => {
       return <PreviewItem key={index} {...item} />;
     });
   };
   const handlePrevClick = () => {
-    const newIndex =
-      currentIndex === 0 ? collections.length - 3 : currentIndex - 1;
+    const newIndex = currentIndex === 0 ? data.length - 3 : currentIndex - 1;
     setCurrentIndex(newIndex);
     setSlideLeft(true);
     setSlideRight(false);
@@ -24,8 +24,7 @@ function Loves() {
     }, 500);
   };
   const handleNextClick = () => {
-    const newIndex =
-      currentIndex === collections.length - 3 ? 0 : currentIndex + 1;
+    const newIndex = currentIndex === data.length - 3 ? 0 : currentIndex + 1;
     setCurrentIndex(newIndex);
     setSlideLeft(false);
     setSlideRight(true);
@@ -49,7 +48,7 @@ function Loves() {
             slideRight ? 'right-active' : ''
           }`}
         >
-          {loveItems()}
+          {/* {loveItems()} */}
         </div>
         {isShow && (
           <div className='cursor-pointer opacity-80 flex flex-col justify-center items-center'>
