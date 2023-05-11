@@ -13,7 +13,7 @@ function Home() {
   return (
     <Suspense fallback={<Spinner />}>
       <main>
-        <LazyLoad offset={100} once placeholder={<Spinner />}>
+        <LazyLoad height={150} once placeholder={<Spinner />}>
           <Categories />
         </LazyLoad>
         <LazyLoad offset={100} once placeholder={<Spinner />}>

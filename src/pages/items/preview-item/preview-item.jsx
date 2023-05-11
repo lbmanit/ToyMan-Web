@@ -41,11 +41,7 @@ function PreviewItem(props) {
         onMouseEnter={() => setIsShow(true)}
         onMouseLeave={() => setIsShow(false)}
       >
-        <Link
-          to={{
-            pathname: `collections/${id}`,
-          }}
-        >
+        <Link to={id}>
           <LazyLoad offset={100} once placeholder={<Spinner />}>
             <img className='rounded-2xl' src={avatarUrl} alt={title} />
           </LazyLoad>

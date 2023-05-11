@@ -27,15 +27,15 @@ import './assets/css/wish-list.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CartProvider>
+    <ItemsProvider>
       <BlogProvider>
-        <WishProvider>
-          <ItemsProvider>
+        <CartProvider>
+          <WishProvider>
             <App />
-          </ItemsProvider>
-        </WishProvider>
+          </WishProvider>
+        </CartProvider>
       </BlogProvider>
-    </CartProvider>
+    </ItemsProvider>
   </React.StrictMode>
 );
 

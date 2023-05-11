@@ -48,7 +48,7 @@ function Loves() {
             slideRight ? 'right-active' : ''
           }`}
         >
-          {/* {loveItems()} */}
+          {loveItems()}
         </div>
         {isShow && (
           <div className='cursor-pointer opacity-80 flex flex-col justify-center items-center'>

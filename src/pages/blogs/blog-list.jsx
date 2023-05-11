@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import { useContext } from 'react';
@@ -41,7 +41,7 @@ function BlogList() {
       </Link>
     );
   });
-  const handleIncrement = useCallback(() => {
+  const handleIncrement = useMemo(() => {
     if (countPage >= Math.ceil(dataBlogs.length / blogsInPage)) {
       return;
     } else {
@@ -54,7 +54,7 @@ function BlogList() {
       setCurrentIndex(newIndex);
     }
   }, [countPage, dataBlogs.length, currentIndex]);
-  const handleDecrement = useCallback(() => {
+  const handleDecrement = useMemo(() => {
     if (countPage === 1) {
       return;
     } else {
