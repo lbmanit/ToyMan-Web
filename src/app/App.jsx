@@ -5,9 +5,9 @@ const Layout = lazy(() => import('../components/layout'));
 const Page404 = lazy(() => import('../components/page-404'));
 const ScrollPage = lazy(() => import('../components/scroll'));
 const HomeLayout = lazy(() => import('../components/home-layout'));
-const ShopLayout = lazy(() => import('../components/shop-layout'));
+const Collections = lazy(() => import('../pages/items/list-item'));
 const DetailItem = lazy(() => import('../pages/items/detail-item'));
-const BlogLayout = lazy(() => import('../components/blog-layout'));
+const BlogList = lazy(() => import('../pages/blogs/blog-list'));
 const DetailBlog = lazy(() => import('../pages/blogs/view-blog/detail-blog'));
 const SearchPage = lazy(() => import('../pages/search/search-page'));
 // const ViewCart = lazy(() => import('../pages/cart/view-cart'));
@@ -22,17 +22,17 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route index element={<HomeLayout />} />
             <Route path='collections'>
-              <Route index element={<ShopLayout />} />
+              <Route index element={<Collections />} />
               <Route path=':id' element={<DetailItem />} />
             </Route>
             <Route path='blogs'>
-              <Route index element={<BlogLayout />} />
+              <Route index element={<BlogList />} />
               <Route path=':id' element={<DetailBlog />} />
             </Route>
             <Route path='search/:search' element={<SearchPage />} />
             <Route path='*' element={<Page404 />} />
+            <Route path='contact' element={<Contact />} />
           </Route>
-          <Route path='contact' element={<Contact />} />
         </Routes>
         <ScrollPage />
       </BrowserRouter>

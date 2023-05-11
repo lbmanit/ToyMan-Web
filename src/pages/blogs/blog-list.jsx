@@ -1,8 +1,9 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LazyLoad from 'react-lazyload';
 import { useContext } from 'react';
 import { BlogContext } from './hooks/blog-context';
+import { useCallback } from 'react';
 function BlogList() {
   const dataBlogs = useContext(BlogContext);
   const [countPage, setCountPage] = useState(1);
@@ -16,11 +17,7 @@ function BlogList() {
       transform: hoverIndex === index ? 'scale(1.2)' : 'none',
     };
     return (
-      <Link
-        key={blog.id}
-        className='blog p-4 cursor-pointer'
-        to={{ pathname: `/blogs/${blog.id}` }}
-      >
+      <Link key={index} className='blog p-4 cursor-pointer' to={`${blog.id}`}>
         <article
           onMouseOver={() => setHoverIndex(index)}
           onMouseOut={() => setHoverIndex(null)}
@@ -41,7 +38,7 @@ function BlogList() {
       </Link>
     );
   });
-  const handleIncrement = useMemo(() => {
+  const handleIncrement = useCallback(() => {
     if (countPage >= Math.ceil(dataBlogs.length / blogsInPage)) {
       return;
     } else {
@@ -54,7 +51,7 @@ function BlogList() {
       setCurrentIndex(newIndex);
     }
   }, [countPage, dataBlogs.length, currentIndex]);
-  const handleDecrement = useMemo(() => {
+  const handleDecrement = useCallback(() => {
     if (countPage === 1) {
       return;
     } else {

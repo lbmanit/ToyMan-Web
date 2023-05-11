@@ -13,11 +13,11 @@ function SearchPage() {
     if (search) {
       if (product.type === 'blog') {
         return {
-          pathname: `${product.id}`,
+          pathname: `blogs/${product.id}`,
         };
       } else if (product.type === 'item') {
         return {
-          pathname: `${product.id}`,
+          pathname: `collections/${product.id}`,
         };
       }
     }

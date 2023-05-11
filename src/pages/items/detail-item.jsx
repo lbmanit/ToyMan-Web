@@ -3,13 +3,13 @@ import LazyLoad from 'react-lazyload';
 import { Link, useParams } from 'react-router-dom';
 import { CartContext } from '../cart/hooks/cart-context';
 import { WishContext } from '../wish/hooks/wish-context';
+import { ItemsContext } from './hooks/items-context';
 import SizeGuide from './view-item/size-guide';
 import Shipping from './view-item/shipping';
 import Reassurance from './view-item/reassurance';
 import Description from './view-item/description';
 import RelatedItems from './view-item/related-items';
 import PromotionVideo from './view-item/promotion-video';
-import { ItemsContext } from './hooks/items-context';
 function DetailItem() {
   const dataItems = useContext(ItemsContext);
   const { handleAddToCart } = useContext(CartContext);
@@ -42,6 +42,10 @@ function DetailItem() {
         <div className='container m-auto flex items-center'>
           <Link className='text-cyan' to='/'>
             Home
+          </Link>
+          <h1 className='text-cyan mx-2'>/</h1>
+          <Link className='text-cyan' to='..' relative='path'>
+            Shop
           </Link>
           <h1 className='text-cyan mx-2'>/</h1>
           <h1 className='text-pink'>{title}</h1>

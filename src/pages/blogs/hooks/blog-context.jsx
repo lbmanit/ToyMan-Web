@@ -1,11 +1,15 @@
-import { createContext, useMemo } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import urlBlogsData from '../../../data/blogs-data.JSON';
-import useFetch from '../../../customHooks/useFetch';
 export const BlogContext = createContext();
 export const BlogProvider = ({ children }) => {
-  const { data } = useFetch(urlBlogsData);
-  const dataBlogs = useMemo(() => {
-    return data;
+  const [dataBlogs, setDataBlogs] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(urlBlogsData);
+      const data = await res.json();
+      setDataBlogs(data);
+    };
+    fetchData().catch((err) => console.log(err));
   }, []);
   return (
     <BlogContext.Provider value={dataBlogs}>{children}</BlogContext.Provider>

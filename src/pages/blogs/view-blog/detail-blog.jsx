@@ -22,7 +22,7 @@ function DetailBlog() {
         <Link
           key={blog.id}
           className='flex justify-between items-center my-6'
-          to={{ pathname: `/blogs/${blog.id}` }}
+          to={`${blog.id}`}
         >
           <RelatedBlogs {...blog} handleChange={handleChange} />
         </Link>
@@ -40,7 +40,7 @@ function DetailBlog() {
             <h1 className='text-cyan text-xl m-2 ml-16'>Home</h1>
           </Link>
           <h1 className='text-cyan text-xl m-2'>/</h1>
-          <Link to='/news'>
+          <Link to='..' relative='path'>
             <h1 className='text-cyan text-xl m-2'>Blog</h1>
           </Link>
           <h1 className='text-cyan text-xl m-2'>/</h1>
