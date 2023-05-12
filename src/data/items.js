@@ -4,9 +4,7 @@ import img3 from '../assets/images/items/7_45c66778-a809-4284-93e9-e8444fbf3c6e_
 import img4 from '../assets/images/items/8_large.webp';
 import img5 from '../assets/images/items/9_483907f5-d09f-4823-9d27-5b450c462752_large.webp';
 import img6 from '../assets/images/items/11_5e530394-9272-4151-9c11-76493207fcf3_large.webp';
-// import img7 from '../assets/images/items/10_037fbf0e-0846-428a-a2f8-1bd8e869fd03_x110@2x.avif';
 import img8 from '../assets/images/items/12_0a5200ad-0a21-41fe-b979-78d8644cfbad_large.webp';
-// import img9 from '../assets/images/items/18_large.webp';
 import img10 from '../assets/images/items/1_large.webp';
 import img11 from '../assets/images/items/15_large.webp';
 export default [

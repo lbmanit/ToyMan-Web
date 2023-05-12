@@ -7,12 +7,15 @@ const ScrollPage = lazy(() => import('../components/scroll'));
 const HomeLayout = lazy(() => import('../components/home-layout'));
 const Collections = lazy(() => import('../pages/items/list-item'));
 const DetailItem = lazy(() => import('../pages/items/detail-item'));
+const RelatedItems = lazy(() =>
+  import('../pages/items/view-item/related-items')
+);
 const BlogList = lazy(() => import('../pages/blogs/blog-list'));
 const DetailBlog = lazy(() => import('../pages/blogs/view-blog/detail-blog'));
 const SearchPage = lazy(() => import('../pages/search/search-page'));
-// const ViewCart = lazy(() => import('../pages/cart/view-cart'));
-// const PayCart = lazy(() => import('../pages/pay/pay-cart'));
-// const CompletePay = lazy(() => import('../pages/pay/complete-pay'));
+const ViewCart = lazy(() => import('../pages/cart/view-cart'));
+const PayCart = lazy(() => import('../pages/pay/pay-cart'));
+const CompletePay = lazy(() => import('../pages/pay/complete-pay'));
 const Contact = lazy(() => import('../pages/contact/contact'));
 function App() {
   return (

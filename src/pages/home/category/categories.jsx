@@ -1,10 +1,12 @@
-import React from 'react';
-import urlCategoriesData from '../../../data/categories-data.JSON';
-import useFetch from '../../../customHooks/useFetch.jsx';
+import React, { useEffect, useState } from 'react';
+import categoriesData from '../../../data/categories-data';
 import Category from './category';
 function Categories() {
-  const { data } = useFetch(urlCategoriesData);
-  const newCategories = data.map((category, index) => {
+  const [categories, setCategories] = useState([]);
+  useEffect(() => {
+    setCategories(categoriesData);
+  }, []);
+  const newCategories = categories.map((category, index) => {
     return <Category key={index} {...category} />;
   });
   return (

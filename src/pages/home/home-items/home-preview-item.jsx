@@ -2,10 +2,10 @@ import React from 'react';
 import LazyLoad from 'react-lazyload';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import ProductActionItem from './product-action';
-import ViewItem from './view-item';
+import HomeProductActionItem from './home-product-action';
+import HomeViewItem from './home-view-item';
 import Spinner from '../../../components/spinner';
-function PreviewItem(props) {
+function HomePreviewItem(props) {
   const { id, avatarUrl, title, price, salePrice, details } = props;
   const [isShow, setIsShow] = useState(false);
   const [isDisplay, setIsDisplay] = useState(false);
@@ -40,7 +40,7 @@ function PreviewItem(props) {
         onMouseEnter={() => setIsShow(true)}
         onMouseLeave={() => setIsShow(false)}
       >
-        <Link to={`${id}`}>
+        <Link to={`collections/${id}`}>
           <LazyLoad offset={100} once placeholder={<Spinner />}>
             <img className='rounded-2xl' src={avatarUrl} alt={title} />
           </LazyLoad>
@@ -74,7 +74,7 @@ function PreviewItem(props) {
           </h3>
         )}
         {isShow && (
-          <ProductActionItem
+          <HomeProductActionItem
             item={props}
             isShow={isShow}
             handleDisplay={handleDisplay}
@@ -82,7 +82,7 @@ function PreviewItem(props) {
         )}
       </article>
       {isDisplay && (
-        <ViewItem
+        <HomeViewItem
           item={props}
           count={count}
           handleHide={handleHide}
@@ -95,4 +95,4 @@ function PreviewItem(props) {
   );
 }
 
-export default PreviewItem;
+export default HomePreviewItem;

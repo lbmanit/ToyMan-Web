@@ -1,15 +1,10 @@
 import { createContext, useState, useEffect } from 'react';
-import urlBlogsData from '../../../data/blogs-data.JSON';
+import blogsData from '../../../data/blogs-data';
 export const BlogContext = createContext();
 export const BlogProvider = ({ children }) => {
   const [dataBlogs, setDataBlogs] = useState([]);
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch(urlBlogsData);
-      const data = await res.json();
-      setDataBlogs(data);
-    };
-    fetchData().catch((err) => console.log(err));
+    setDataBlogs(blogsData);
   }, []);
   return (
     <BlogContext.Provider value={dataBlogs}>{children}</BlogContext.Provider>

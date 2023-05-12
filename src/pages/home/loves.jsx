@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import PreviewItem from '../items/preview-item/preview-item';
+import HomePreviewItem from './home-items/home-preview-item';
 import { useContext } from 'react';
 import { ItemsContext } from '../items/hooks/items-context';
 function Loves() {
@@ -11,7 +11,7 @@ function Loves() {
   const loveItems = () => {
     const endIndex = currentIndex + 3;
     return data.slice(currentIndex, endIndex).map((item, index) => {
-      return <PreviewItem key={index} {...item} />;
+      return <HomePreviewItem key={index} {...item} />;
     });
   };
   const handlePrevClick = () => {
