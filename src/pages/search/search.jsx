@@ -20,7 +20,7 @@ function Search(props) {
       return hasTag || hasTitle;
     });
     setSearchProducts(results);
-  }, [searchValue]);
+  }, [searchValue, dataBlogs, dataItems]);
   const handleLinkClick = (product) => {
     if (searchValue) {
       if (product.type === 'blog') {
