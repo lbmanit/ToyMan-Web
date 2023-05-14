@@ -59,7 +59,7 @@ function CheckCart(props) {
           </div>
         )}
         {cartItems.length !== 0 && (
-          <Link className='w-full' to='/cart' onClick={handleDisplayCart}>
+          <Link className='w-full' to='cart' onClick={handleDisplayCart}>
             <button className='w-full text-2xl my-4 py-4 px-12 rounded-3xl border border-gray hover:text-white hover:bg-cyan'>
               View Cart
             </button>

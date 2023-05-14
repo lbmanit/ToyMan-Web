@@ -39,7 +39,7 @@ function FormPayCart() {
   return (
     <div>
       <div className='flex items-center'>
-        <Link className='return-cart' to='cart'>
+        <Link className='return-cart' to='..'>
           Cart
         </Link>
         <i className='fa fa-angle-right m-2'></i>
@@ -156,15 +156,12 @@ function FormPayCart() {
         <div className='flex justify-between items-center mt-8 mb-16'>
           <Link
             className='return-cart flex justify-between items-center'
-            to='/cart'
+            to='..'
           >
             <i className='fa fa-angle-left'></i>
-            <h1 className='mx-4'>Return to cart</h1>
+            <button className='mx-4'>Return to cart</button>
           </Link>
-          <Link
-            className='continue-shipping text-base px-3 py-6'
-            to='/cart/checkouts/complete'
-          >
+          <Link className='continue-shipping text-base px-3 py-6' to='complete'>
             <button onClick={() => setCartItems([])}>
               Continue to shipping
             </button>

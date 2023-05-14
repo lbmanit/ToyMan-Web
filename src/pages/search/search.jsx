@@ -25,11 +25,11 @@ function Search(props) {
     if (searchValue) {
       if (product.type === 'blog') {
         return {
-          pathname: `blogs/${product.id}`,
+          pathname: `/blogs/${product.id}`,
         };
       } else if (product.type === 'item') {
         return {
-          pathname: `collections/${product.id}`,
+          pathname: `/collections/${product.id}`,
         };
       }
     }

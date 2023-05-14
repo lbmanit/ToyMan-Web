@@ -53,7 +53,7 @@ function ViewCart() {
             <div className='flex justify-between items-center my-12'>
               <Link
                 className='cursor-pointer border py-4 px-12 rounded-3xl bg-cyan text-white hover:bg-pink'
-                to='/collections'
+                to='..'
               >
                 <button>CONTINUE SHOPPING</button>
               </Link>
@@ -108,7 +108,7 @@ function ViewCart() {
                 </div>
                 <Link
                   className='border py-4 px-12 rounded-3xl bg-cyan text-white hover:bg-pink'
-                  to='/cart/checkouts'
+                  to='checkouts'
                 >
                   <button>PROCEED TO CHECKOUT</button>
                 </Link>

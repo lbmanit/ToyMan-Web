@@ -7,9 +7,6 @@ const ScrollPage = lazy(() => import('../components/scroll'));
 const HomeLayout = lazy(() => import('../components/home-layout'));
 const Collections = lazy(() => import('../pages/items/list-item'));
 const DetailItem = lazy(() => import('../pages/items/detail-item'));
-const RelatedItems = lazy(() =>
-  import('../pages/items/view-item/related-items')
-);
 const BlogList = lazy(() => import('../pages/blogs/blog-list'));
 const DetailBlog = lazy(() => import('../pages/blogs/view-blog/detail-blog'));
 const SearchPage = lazy(() => import('../pages/search/search-page'));
@@ -33,8 +30,15 @@ function App() {
               <Route path=':id' element={<DetailBlog />} />
             </Route>
             <Route path='search/:search' element={<SearchPage />} />
-            <Route path='*' element={<Page404 />} />
+            <Route path='cart'>
+              <Route index element={<ViewCart />} />
+              <Route path='checkouts'>
+                <Route index element={<PayCart />} />
+                <Route path='complete' element={<CompletePay />} />
+              </Route>
+            </Route>
             <Route path='contact' element={<Contact />} />
+            <Route path='*' element={<Page404 />} />
           </Route>
         </Routes>
         <ScrollPage />
